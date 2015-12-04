@@ -1,0 +1,44 @@
+\colquestion{Признак Дини равномерной сходимости ФР и следствие из него (теорема Дини для ФП)}
+\begin{theorem}[Признак Дини равномерно сходящихся ФР]
+	Пусть
+	\begin{enumerate}
+		\item Члены ФР \eqref{eq:1_10} непрерывны и сохраняют один и тот же знак на $X = [a, b], \forall n \in \mathbb{N}$.
+		\item $\sum u_n(x) \overset{X}{\to} S(x)$.
+	\end{enumerate}
+	Тогда, если $S(x) = \sum\limits_{n=1}^{\infty} u_n (x)$ - непрерывная функция на $[a, b]$, т.е. $S(x) \in C([a, b])$, то $\sum u_n(x) \overset{X}{\rightrightarrows}$.
+\end{theorem}
+\begin{proof}
+	Рассмотрим на $X = [a,b]$ остатки ряда $R_n(x) = u_{n+1}(x) + \ldots + \ldots =$ $= S(x) - S_n(x)$.	Нетрудно видеть, что выполняются следующие свойства:
+	\begin{enumerate}
+		\item $\forall \; fix \; n \in \mathbb{N} \Rightarrow \mathbb{R}_n (x)$ - непрерывная функция на $[a,b]$ как разность двух непрерывных функций.
+		\item $\forall \; fix \; x \in X \Rightarrow$ ФП $(R_n(x))$ убывает в случае, когда $\forall u_n (x) > 0$, т.к. $R_n(x) = u_n(x) +$ $+ R_{n+1}(x) \geqslant R_{n+1}(x), \forall n \in \mathbb{N}$.
+		\item Т.к. имеет место \eqref{eq:1_14}, то $\forall \; fix \; x \in X \Rightarrow R_n(x) \overset{X}{\to} 0$.
+	\end{enumerate}
+	Предположим, что рассматриваемая положительная поточечная сходимость на $X$ ФР не является равномерной сходимостью на $X$.
+
+	Тогда по правилу де Моргана имеем: $\exists \; \varepsilon_0 > 0 \; | \; \forall \nu \in \mathbb{R} \; \exists \; n (\nu) \geqslant 0, \exists x (\nu) \in X | R_{n \nu} (x_\nu) > \varepsilon_0$. Для простоты будем считать, что $\exists \; x_n \in X \; | \; R_n (x_n) > \varepsilon_0$. По принципу выбора из ограниченной последовательности $x_n$ можно выбрать сходящуюся подпоследовательность, т.е. $x_{nk} \underset{n_k \to \infty}{\longrightarrow} x_0$, при этом в силу использования $x = [a,b]$ - компакт, получаем, что $x_0 \in X$. Если зафиксируем $m \in \mathbb{N}$, то $\forall n_k \geqslant m \Rightarrow R_{nk} 	(x_{nk}) > \varepsilon_0$, по свойствам остаткам будем иметь, что $R_{m} (x_{nk}) \geqslant R_{nk} (x_{nk}) > \varepsilon_0$. В неравенстве $R_m (x_{nk}) > \varepsilon_0$, переходя к пределу при $n_k \to \infty \; \forall m \in \mathbb{N}$, получаем в силу непрерывности $R_n(x): R_m (x_0) = \lim\limits_{n_k \to \infty} R_m(x_{nk}) \geqslant x_0$, что противоречит последнему из свойств остатка, а именно $R_m(x_0) \overset{X}{\longrightarrow}$ при $m \to \infty$, поэтому из нашего предположения следует, что выполняется $R_m(x_0) \to 0$, противоречие, т.е. выполняется $\sum u_n(x) \overset{X}{\rightrightarrows}$.
+\end{proof}
+\begin{consequence}[Теорема Дини для ФП]
+	Если для ФП $f_n(x), n \in \mathbb{N}$ на $X = [a,b]$ выполняются свойства:
+	\begin{enumerate}
+		\item $\forall f_n(x) \in C([a,b])$ и $\forall \; fix \; x \in X \Rightarrow f_n(x)$ монотонна.
+		\item $f_n(x) 	\overset{X}{\longrightarrow}f(x)$. Тогда, если $f(n) \in C([a,b])$, то $f_n(x) \overset{X}{\rightrightarrows}$.
+	\end{enumerate}
+\end{consequence}
+\begin{proof}
+	следует из того, что члены рассматриваемой ФП $f_n(x)$ можно рассматривать как частичные суммы соответствующего ФР с общим членом
+	\begin{equation}
+	\label{eq:1_27}
+	\begin{cases}
+	u_n(x) = f_n(x) - f_{n-1}(x),\\
+	f_0(x) = 0.
+	\end{cases}
+	\end{equation}
+	Действительно, $S_n(x) = f_n(x) - f_0(x) = f_n(x), \forall n \in \mathbb{N}$.
+
+	А далее к соответствующему ФР применима теорема Дини равномерно сходящихся ФР.
+\end{proof}
+\begin{notes}
+	\item В дальнейшем связь \eqref{eq:1_27} будем использовать для переформулирования соответствующих результатов, полученных для ФР с помощью перехода на соответствующую ФП. Такие ряды и последовательности, связанные с \eqref{eq:1_27}, будем называть ассоциированными между собой.
+	\item Теорема Дини, с одной стороны, даёт одно из достаточных условий равномерной сходимости ФР, а, с другой стороны, даёт признак неравномерной сходимости ФР, а именно: если у знакопостоянного поточечно сходящегося $\sum u_n(x)$ на $[a,b]$ сумма $S(x)$ является функцией разрывной, то этот ряд сходится неравномерно на $[a,b]$  (то же самое для ФП).
+\end{notes}

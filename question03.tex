@@ -1,0 +1,33 @@
+\colquestion{Признак Дирихле равномерной сходимости ФР и следствие из него (признак Лейбница равномерной сходимости ФР)}
+\begin{theorem}[Признак Дирихле равномерной сходимости ФР] Пусть для ФП $a_n(x)$ частичные суммы $\sum a_n(x)$ ограничены в совокупности (равномерно на $X$), т.е.
+	\begin{equation}
+	\label{eq:1_24}
+	\forall n \in X \text{ и } \forall n \in \mathbb{N} \Rightarrow \abs{a_1 (x) + a_2(x) + \ldots + a_n(x)} \leqslant c,
+	\end{equation}
+	где $c = const > 0$, не зависит ни от $n$, ни от $x$. Если $\forall \; fix \; x \in X \left( b_n(x) \right)$ - числовая последовательность является монотонной, то в случае
+	\begin{equation}
+	\label{eq:1_25}
+	\left( b_n(x) \right) \overset{X}{\rightrightarrows} 0,
+	\end{equation}
+	имеем $\sum a_n(x) b_n(x) \rightrightarrows$.
+\end{theorem}
+\begin{proof}
+	Монотонная последовательность $\left( b_n(x) \right) \forall \; fix \; x \in X$ позволяет так же, как и в ЧР, использовать на основе \eqref{eq:1_24} оценку Абеля:
+	\begin{equation}
+	\label{eq:1_26}
+	\abs{\sum_{k = n+1}^{n+m} a_k(x) b_k(x)} \leqslant 2 < \abs{\abs{b_{n+1}(x)} + 2 \abs{b_{n+m} (x)}}.
+	\end{equation}
+
+		Если выполняется \eqref{eq:1_25}, то тогда $\forall \varepsilon$ по $\tilde{\varepsilon} = \frac{\varepsilon}{6 c} > 0 \; \exists \; \nu (\varepsilon) \in \mathbb{R} \; | \; \forall n \in \mathbb{N}, \forall n \in X \Rightarrow$ $\Rightarrow \abs{b_{n+1} (x) } \leqslant \tilde{\varepsilon} $ и $ \abs{b_{n+m} (x)} \leqslant \tilde{\varepsilon}$, поэтому для частичных сумм $S_n(x) = \sum\limits_{k=1}^{n} a_k(x) b_k(x)$ в силу \eqref{eq:1_26} $\forall n \geqslant \nu $ и $ \forall m \in \mathbb{N} $ и $ \forall x \in X$ имеем: $\abs{S_{n+m} (x)  - S_m(x)} = \abs{\sum_{k = n+1}^{n+m} a_k(m) b_k(x)} \leqslant 2c (\tilde{\varepsilon} 	+ 2 \tilde{\varepsilon} ) = 6 c \tilde{\varepsilon} = \varepsilon$. Отсюда по критерию Коши равномерной сходимости ФР следует, что $\sum\limits a_n(x) b_n(x) \overset{X}{\rightrightarrows}$.
+\end{proof}
+\begin{consequence}[Признак Лейбница равномерной сходимости ФР]
+	Если $\forall x \in X$ последовательность $\left(b_n(x)\right)$ является монотонной,то в случае $b_n(x) \overset{X}{\rightrightarrows}
+	0 \Rightarrow 	\sum (-1)^n b_n(x)	\overset{X}{\rightrightarrows}$.
+\end{consequence}
+\begin{proof}
+	Следует из того, что в условии теоремы $a_n = (-1)^n$ не зависит от $x$, причём $\abs{\sum\limits_{k=1}^{n} a_k} \leqslant 1 = const, \forall n \in \mathbb{N}$.
+\end{proof}
+
+\begin{note}
+	По аналогичной схеме доказывается признак Абеля равномерной сходимости ФР: если для ФП 	$a_n(x) \Rightarrow \sum a_n (x) \rightrightarrows$, то в случае, когда $\forall \; fix \; x \in X$ последовательность $\left(b_n(x)\right)$ монотонна и равномерно ограничена (ограничена в совокупности, т.е. $\exists \; c \geqslant 0 \; | \; \forall n \in$ $\in \mathbb{N} $ и $ \forall x \in X \Rightarrow \abs{b_n(x)} \leqslant c $), то тогда $\sum a_n(x) b_n(x) \overset{X}{\rightrightarrows} $.
+\end{note}

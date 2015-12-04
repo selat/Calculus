@@ -1,0 +1,9 @@
+# Ignore full sources
+lecture*.tex
+matan.tex
+matan.pdf
+
+# Ignore temporary files
+*.aux
+*.log
+*.toc
