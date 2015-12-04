@@ -1,0 +1,45 @@
+\colquestion{Супремальный критерий равномерной сходимости функциональных последовательностей (ФП) и замечания к нему}
+\begin{theorem}[Супремальный критерий равномерной сходимости ФП]
+	\begin{equation}
+		\label{eq:lecture01-09}
+		f_n(x) \xrightarrow[\to]{x}f(x) \Leftrightarrow
+		r_n = \sum\limits_{x \in X}\abs{f_n(x) - f(x)} \xrightarrow[n \to \infty]{}0
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	\circled{$\Rightarrow$} Если выполнено \eqref{eq:lecture01-07}, то, учитывая, что в
+	\eqref{eq:lecture01-06} используется
+	$\forall n \geqslant \nu(\varepsilon)$, $\forall x \in X$, получим
+	\begin{equation*}
+		\begin{split}
+			&r_n = \sup_{x \in \mathbb{R}}\abs{f_n(x) - f(x)} \leqslant \varepsilon, \text{ т.е. }\\
+			&\forall \varepsilon > 0, \exists \nu(\varepsilon) \in \mathbb{R} \,\vert\, \forall
+			n \geqslant \nu \Rightarrow 0 \leqslant r_n \leqslant \varepsilon, \text{ т.е. }
+			r_n \xrightarrow[n \to \infty]{}0.
+		\end{split}
+	\end{equation*}\\
+	\circled{$\Leftarrow$}
+	Пусть выполнено \eqref{eq:lecture01-09}, тогда
+	\begin{equation*}
+		\forall \varepsilon > 0 \exists \nu(\varepsilon) \in \mathbb{R} \,\vert\, \forall n
+		\geqslant \nu \land \forall x \in X \Rightarrow
+		\abs{f_n(x) - f(x)} \leqslant \sup\limits_{x \in X}\abs{f_n(x) - f(x)} = r_n \leqslant
+		\varepsilon.
+	\end{equation*}
+	Таким образом, имеем \eqref{eq:lecture01-06}, где $\nu$ зависит от $\forall \varepsilon > 0$ и
+	не зависит от конкретного элемента множества $X$.
+\end{proof}
+
+\begin{notes}
+  \item Если известно, что $\forall n \in \mathbb{N}$ и $\forall x \in X \Rightarrow
+\abs{f_n(x) - f(x)} \leqslant a_n$, где $(a_n)$ - б.м.п, то тогда имеем \eqref{eq:lecture01-07}.
+Сформулированное утверждение даёт \important{мажоритарный признак} (достаточное условие)
+равномерной сходимости ФП.
+\item Если
+  \begin{equation*}
+	  \exists x_n \in X \,\vert\, g_n(x) = \abs{f_n(x) - f(x)} \Rightarrow g_n(x) \centernot{
+	  \xrightarrow[n \to \infty]{}} 0,
+  \end{equation*}
+  то тогда равномерной сходимости нет, т.е. $f_n(x) \centernot{\xrightarrow[\to]{x}} f(x)$. Это
+  даёт достаточное условие (признак) неравномерной сходимости ФП.
+\end{notes}

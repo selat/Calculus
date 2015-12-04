@@ -1,0 +1,48 @@
+\colquestion{Теорема о непрерывности суммы равномерно сходящегося ФР и замечания к ней}
+\begin{theorem}[о непрерывности суммы равномерно сходящегося ФР]
+	Если все члены $u_n(x), n \in \mathbb{N}$ ФР \eqref{eq:1_10} непрерывны на $X = [a,b]$, то в случае равномерной сходимости этого ряда на $[a,b]$ его сумма $S(x)$ будет непрерывной функцией на $[a,b]$.
+\end{theorem}
+\begin{proof}
+	Требуется обосновать  \eqref{eq:1_29} $\forall \; x_0 \in [a,b]$, причём в случае концевых значений $x_0 = a, \; x_0 = b$ будем использовать соответствующие односторонние пределы, т.е. рассматривать одностороннюю непрерывность.
+
+	Для $fix \; x_0 \in [a,b]$ придадим произвольные приращения $\Delta x \in \mathbb{R} \; | \; (x_0 + \Delta x) \in [a,b]$ и рассмотрим соответствующие приращения суммы \eqref{eq:1_12} ФР \eqref{eq:1_10}:
+    \begin{equation*}
+        \Delta S(x_0) = S(x_0 + \Delta x) - S(x_0).
+    \end{equation*}
+
+    Из равномерной сходимости ФР \eqref{eq:1_10} на
+    $X = [a,b] \Rightarrow \forall \varepsilon > 0, \;$
+    ${ \exists \; \nu = \nu(\varepsilon) \in \mathbb{R} \; | \; \forall n \geqslant \nu }$,
+    $ \forall x \in [a,b]$ для частичных сумм $S_n(x) = u_1(x) + u_2(x) + \ldots + u_n(x)$ ряда \eqref{eq:1_10} имеем: $\abs{S_n(x) - S(x)} \leqslant \varepsilon$.
+
+	Отсюда, в частности, для $x = x_0 \in X $ и $ x = x_0 + \Delta x \in X \Rightarrow$
+	\begin{equation}
+	\label{eq:1_30}
+	\begin{cases}
+	\abs{S_n(x_0) - S(x_0)} \leqslant \varepsilon, \\
+	\abs{S_n(x_0 + \Delta x) - S(x_0 + \Delta x)} \leqslant \varepsilon.
+	\end{cases}
+	\end{equation}
+
+	Далее из непрерывности $\forall u_n(x)$ в $x_0 \in [a,b]$ следует непрерывность частичных сумм в $x_0$ (как конечных сумм непрерывных функций).
+
+	В силу этого, для $ \forall \; \varepsilon, \exists \; \delta > 0, \forall \abs{\Delta x} \leq \delta \Rightarrow$
+	\begin{equation}
+    	\label{eq:1_31}
+    	\Rightarrow \abs{S_n(x_0 + \Delta x) - S_n(x_0)} \leqslant \varepsilon.
+	\end{equation}
+
+	Таким образом,  в силу \eqref{eq:1_30}, \eqref{eq:1_31} имеем: $\forall \varepsilon > 0$, выбирая $n \geqslant \nu$ и рассматривая $\forall \abs{\Delta x}	 \leqslant \delta$, имеем:
+
+	$\abs{\Delta S(x_0)} = \abs{S_n(x_0) - S(x_0) + S_n(x_0 + \Delta x) - S_n(x_0) + S (x_0 + \Delta x) - S_n(x_0 + \Delta x)} \leqslant \\  \leqslant \abs{S_n(x_0) - S(x_0)} + \abs{S_n(x_0 + \Delta x) - S_n(x_0)} + \abs{S(x_0 + \Delta x	) - S_n(x_0 + \Delta x)} \leqslant \varepsilon + \varepsilon + \varepsilon = 3 \cdot \varepsilon$.
+
+    Вследствие этого:
+	$\forall \varepsilon \; \exists \; \delta > 0, \; \forall \abs{\Delta x} \leqslant \delta \Rightarrow \abs{\Delta S(x_0)} \leqslant M \cdot \varepsilon, M = const = 3 > 0$.
+
+	Отсюда по М-лемме для Ф1П следует, что $\Delta S(x_0) \underset{\Delta x \to 0}{\to} 0$, что на языке приращений равносильно \eqref{eq:1_29}. При этом, т.к. из равномерной сходимости следует поточечная сходимость ЧР в правой части \eqref{eq:1_29} будет сходящимся.
+\end{proof}
+
+\begin{notes}
+	\item Доказанную теорему часто называют теоремой Стокса-Зейделя или теоремой Стокса-Зайделя.
+	\item В условии доказанной теоремы равномерную сходимость можно заменить для произвольного множества $ X \subset \mathbb{R}$ на локальную равномерную сходимость.
+\end{notes}

@@ -1,0 +1,38 @@
+\colquestion{Теорема о почленном дифференцировании ФР}
+
+\begin{theorem}[о почленном дифференцировании ФР]
+	Пусть ФР \eqref{eq:1_10} на $X = [a,b]$ удовлетворяет условиям:
+	\begin{enumerate}
+		\item $\sum u_n(x) \overset{X}{\rightarrow}$,
+		\item $\exists u_n^{'}(x)$, непрерывная для $\forall n \in \mathbb{N}, x \in X$.
+	\end{enumerate}
+	Тогда, если
+    \begin{equation}
+        \label{eq:1_34}
+        \sum u_n^{'}(x) \overset{X}{\rightrightarrows}
+    \end{equation}
+    то рассмотренный ФР \eqref{eq:1_10} можно почленно дифференцировать на $[a,b]$, т.е.
+	\begin{equation}
+	\label{eq:1_35}
+	\exists \left( \sum_{n=1}^{\infty} u_n (x) \right)^{'} = \sum_{k=n}^{\infty} u_n^{'}(x), \forall x \in X.
+	\end{equation}
+\end{theorem}
+
+\newpage
+
+\begin{proof}
+	В силу \eqref{eq:1_34}, по условию 2 рассматриваемой теоремы получаем, что по теореме об интегрировании ФР $\sum u_n^{'}(t)$ можно почленно интегрировать на
+    	$\forall [a,x] \subset [a,b]$, \nolinebreak т.е.
+
+    \begin{equation*}
+        \exists \dint\limits_a^x \left(\sum\limits_{n=1}^{\infty} u_n^{'}(t)\right)dt = \sum_{n=1}^{\infty} \dint\limits_a^x u_n^{'}(t)dt = \sum_{n=1}^{\infty} [u_n]^{t = x}_{t = a} = \sum\limits_{n=1}^{\infty}\left(u_n(x) - u_n(a)\right).
+    \end{equation*}
+
+	Отсюда в силу условия 1 (поточечная сходимость для \eqref{eq:1_10}) получаем, что
+    \begin{equation*}
+            \exists S(x) = \sum\limits_{n=1}^{\infty} u_n(x) = \sum\limits_{n=1}^{\infty}u_n(a) + \dint\limits_a^x \sum\limits_{n=1}^{\infty}u_n^{'}(t)dt.
+    \end{equation*}
+
+	Используя далее теорему Барроу о дифференцировании интеграла с переменным верхним пределом от непрерывной подынтегральной функции, получаем:\\
+	$\exists S^{'}(x) = (const)^{'} + \left(\dint\limits_a^x \left( \sum\limits_{n=1}^{\infty} u_n^{'} (t) \right)dt \right)^{'}_x = \sum\limits_{n=1}^{\infty}u_n^{'} (x)$, что соответствует \eqref{eq:1_35}.
+\end{proof}
