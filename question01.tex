@@ -4,10 +4,10 @@
 	\label{eq:lecture01-06}
 	\text{для } \forall \; fix \; x \in X \text{ и } \text{для } \forall \; \varepsilon > 0 \Rightarrow \exists \; \nu = \nu(x, \varepsilon) \in \mathbb{R}\; | \text{ для } \forall \; n \geqslant \nu(\varepsilon) \Rightarrow \abs{f_n(x) - f(x)} \leqslant \varepsilon.
 	\end{equation}
-	Для обозначения сходимости для $f_n (x)$ на X будем использовать запись:
+	Для обозначения равномерной сходимости для $f_n (x)$ на X будем использовать запись:
 	\begin{equation}
 	\label{eq:lecture01-07}
-	f_n(x) \overset{X}{\rightrightarrows} f(x)
+	f_n(x) \overset{X}{\rightrightarrows} f(x).
 	\end{equation}
 \end{col-answer-preambule}
 
@@ -16,7 +16,7 @@
 	\begin{equation}
 	\label{eq:lecture01-09}
 	f_n(x) \overset{X}{\rightrightarrows}f(x) \Leftrightarrow
-	r_n = \sup_{x \in X}\abs{f_n(x) - f(x)} \xrightarrow[n \to \infty]{}0
+	r_n = \sup_{x \in X}\abs{f_n(x) - f(x)} \xrightarrow[n \to \infty]{}0.
 	\end{equation}
 \end{theorem}
 \begin{proof}
@@ -31,7 +31,7 @@
 	\end{split}
 	\end{equation*}\\
 	\circled{$\Leftarrow$}
-	Пусть выполнена правая часть \eqref{eq:lecture01-09}, тогда
+	Пусть выполнена \eqref{eq:lecture01-09}, тогда
 	\begin{equation*}
 	\begin{split}
 	& \text{для }\forall \; \varepsilon > 0 \; \exists \; \nu(\varepsilon) \in \mathbb{R} \; \,\vert\, \text{ для }\forall \; n
@@ -46,7 +46,7 @@
 
 \begin{notes}
 	\item Если известно, что для $\forall \; n \in \mathbb{N}$ и для $\forall \; x \in X \Rightarrow
-	\abs{f_n(x) - f(x)} \leqslant a_n$, где $(a_n)$ - б.м.п, то тогда имеем \eqref{eq:lecture01-07}.
+	\abs{f_n(x) - f(x)} \leqslant a_n$, где $\left(a_n\right)$ - б.м.п, то тогда имеем \eqref{eq:lecture01-07}.
 	Сформулированное утверждение даёт \important{мажоритарный признак} (достаточное условие)
 	равномерной сходимости ФП.
 	\item Если
