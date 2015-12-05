@@ -9,6 +9,7 @@
 \usepackage{xparse}
 \usepackage{enumitem}
 \usepackage{centernot}
+\usepackage{comment}
 
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 
@@ -233,6 +234,9 @@
 }
 
 \newcommand{\colquestion}[1]{\section{#1}}
+\newenvironment{col-answer-preambule}
+               {\ignorespaces}
+               {\ignorespacesafterend}
 
 \begin{document}
 \begin{center}
