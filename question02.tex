@@ -1,19 +1,46 @@
+\begin{col-answer-preambule}
+	Для обозначения равномерной сходимости ФР $\sum u_n(x)$ на X будем использовать запись:
+	\begin{equation}
+	\label{eq:lecture01-20}
+	\sum u_n(x) \overset{X}{\rightrightarrows}.
+	\end{equation}
+	Критерий Коши сходимости ФР:
+	$\eqref{eq:lecture01-20} \Leftrightarrow \forall \; \varepsilon > 0 \; \exists \; \nu (\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \; n$
+	$ \geqslant \nu \; $ и $\text{для }\forall \; m \in \mathbb{N} $ и $\text{для }	\forall \; x \in X \Rightarrow$
+	\begin{equation}
+	\label{eq:lecture01-21}
+	\abs{S_{n+m}(x) - S_n(x)} = \abs{ \sum\limits_{k = n + 1}^{k = n + m} u_k(x) } \leqslant \varepsilon.
+	\end{equation}
+	\begin{equation}
+	\label{eq:1_21}
+	\end{equation}
+	
+	Критерий Коши сходимости числовых последовательностей:
+	\begin{equation}
+	\label{eq:lecture01-temp}
+	\end{equation}
+\end{col-answer-preambule}
+
 \colquestion{Мажорантный признак Вейерштрасса равномерной сходимости функционального ряда (ФР) и замечания к нему}
 \begin{theorem}[мажорантный признак Вейерштрасса равномерной сходимости ФР] Если ФР имеет на $X$ сходяющуюся числовую мажоранту, то он равномерно сходится на $X$.
 \end{theorem}
 \begin{proof}
-	Доказательство с использованием критерия Коши сходимости числовых последовательностей и критерия Коши сходимости ФР:
+	Доказательство с использованием критерия Коши сходимости числовых последовательностей и критерия Коши сходимости ФР \eqref{eq:lecture01-21}:
 
 	Т.к. $\sum a_n$ сходится, то
 	\begin{equation}
 	\label{eq:1_23}
-	\forall \varepsilon > 0 \; \exists \; \nu(\varepsilon) \in \mathbb{R} \; | \; \forall	n \geqslant \nu, \forall 	m \in \mathbb{N} \Rightarrow \abs{\sum_{k = n+1}^{n+m} a_k} \leqslant \varepsilon.
+	\text{для } \forall \; \varepsilon > 0 \; \exists \; \nu(\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \;	n \geqslant \nu \text{ и для } \forall \; m \in \mathbb{N} \Rightarrow \abs{\sum_{k = n+1}^{n+m} a_k} \leqslant \varepsilon.
 	\end{equation}
 
-	Если выполняется неравенство $\abs{u_n(x)} \leqslant a_n, \forall n \in \mathbb{N}, \forall x \in X$, то для частичных сумм \eqref{eq:1_11} ФР \eqref{eq:1_10} имеем: $\abs{S_{m+n} (x) - S_n (x)} = \abs{\sum\limits_{k = n+1}^{n+m} u_k(x)} \leqslant \sum\limits_{k = n + 1}^{n+m} \abs{u_k (x)} \leqslant \sum\limits_{k = n+1}^{n+m} a_k = \abs{\sum\limits_{k = n+1}^{n+m} a_k} \leqslant \varepsilon$, это $\forall n \geqslant \nu = \nu(\varepsilon), \forall m \in \mathbb{N}$, что в силу \eqref{eq:1_21} даёт \eqref{eq:1_20}.
+	Если выполняется неравенство $\abs{u_n(x)} \leqslant a_n, \text{ для } \forall \; n \in \mathbb{N} \text{ и для } \forall \; x \in X$, то для частичных сумм ФР $\sum u_n(x)$ имеем: $\abs{S_{m+n} (x) - S_n (x)} = \abs{\sum\limits_{k = n+1}^{n+m} u_k(x)} \leqslant \sum\limits_{k = n + 1}^{n+m} \abs{u_k (x)} \leqslant \sum\limits_{k = n+1}^{n+m} a_k = \abs{\sum\limits_{k = n+1}^{n+m} a_k} \leqslant \varepsilon$, это для $\forall \; n \geqslant \nu = \nu(\varepsilon) \text{ и для } \forall \; m \in \mathbb{N}$, что в силу \eqref{eq:lecture01-21} даёт \eqref{eq:lecture01-20}.
 \end{proof}
 
 \begin{notes}
 	\item Принцип Вейерштрасса является лишь достаточным условием равномерной сходимости ФР. На практике сходимость числовой мажоранты $\left( a_n \right)$ либо находится с помощью соответствующих оценок $\abs{u_n(x)}$ сверху, либо берут $a_n = \underset{x \in X}{sup} \abs{u_n(x)}$. В последнем случае получаем наиболее точную мажоранту, но в случае расходимости $\sum a_n$ даже для этой самой точной мажоранты ничего о равномерной сходимости ФР сказать нельзя, т.е. требуются дополнительные исследования.
-	\item Обобщая признак Вейерштрасса, где используется сходимость числовой мажоранты - признак равомерной сходимости ФР, используя функцию мажоранты, а именно, если $\exists \; v_n(x) \geqslant 0 \; | \; \abs{u_n(x)} \leqslant v_n(x) \; \forall n \in \mathbb{N} $ и $ 	\forall x \in X$ и $\sum v_n(x)	 \overset{X}{\rightrightarrows}$, то тогда для \eqref{eq:1_10} имеем \eqref{eq:1_19}, \eqref{eq:1_20}.
+	\item Обобщая признак Вейерштрасса, где используется сходимость числовой мажоранты - признак равомерной сходимости ФР, используют функцию мажоранты, а именно получаем:
+	\begin{equation*}
+	 \text{если } \exists \; v_n(x) \geqslant 0 \; : \; \abs{u_n(x)} \leqslant v_n(x) \; \text{для } \forall \; n \in \mathbb{N} \text{ и для } \forall \; x \in X \text{ и } \sum v_n(x)	 \overset{X}{\rightrightarrows},
+	 \end{equation*}
+	 то тогда для ФР $\sum u_n(x)$ имеем \eqref{eq:lecture01-20}.
 \end{notes}
