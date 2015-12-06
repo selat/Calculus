@@ -1,0 +1,38 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Теорема о почленном дифференцировании СИЗОП.}
+\begin{theorem}[о почленном дифференцировании СИЗОП]
+	Пусть $f(x,y)$ непрерывна на $[a,b] \times [c,d]$ и для неё:
+	\begin{equation*}
+	\exists \; \dfrac{\partial f(x,y)}{\partial y} - \text{непрерывна на $[a,b] \times [c,d]$}.
+	\end{equation*}
+	
+	Тогда СИЗОП \eqref{eq:lecture04-11} будет непрерывно дифференцируемой функцией на $[c,d]$, для которой производная вычисляется по правилу Лейбница:
+	\begin{equation}
+	\label{eq:lecture04-14}
+	F^{'}(y) = \left(\dintl_a^b f(x,y) dx\right)^{'}_y = \dintl_a^b f^{'}_{y}(x,y)dx = \dintl_a^b \dfrac{\partial f(x,y)}{\partial y} dx.
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Для доказательства воспользуемся теоремой об интегрируемости СИЗОП. Рассмотрим функцию
+	\begin{equation}
+	\label{eq:lecture04-15}
+	G(y) = \dintl_a^b \dfrac{\partial f(x,y)}{\partial y} dx.
+	\end{equation}
+	
+	В силу полученных ранее результатов, СИЗОП \eqref{eq:lecture04-15} корректно определён и является непрерывно дифференцируемой функцией на $[c,d]$. Поэтому функция $G(y)$ для $\forall \; fix \; y \in \; ]c,d[$ будет интегрируемой на $[c,y]$. А значит, получаем:
+	\begin{equation*}
+	\exists \dintl_c^y G(t)dt \overset{\eqref{eq:lecture04-15}}{=} \dintl_c^y \left(\dintl_a^b  \dfrac{\partial f(x,t)}{\partial t} dx \right) dt.
+	\end{equation*}
+	
+	Отсюда, меняя порядок интегрирования, в силу теоремы о почленном интегрировании СИЗОП, имеем:
+	\begin{equation*}
+	\dintl_c^y G(t)dt = \dintl_a^b \left(\dintl_c^y \dfrac{\partial f(x,t)}{\partial t} dt\right) dx = \dintl_a^b \begin{sqcases} f(x,t) \end{sqcases}_{t = c}^{t = y}dx = \dintl_a^b \left(f(x,y) - f(x,c)\right) dx \overset{\eqref{eq:lecture04-11}}{=} F(y) - c_0,
+	\end{equation*}
+	где $c_0 = \dintl_a^b f(x,c)dx = const$.
+	
+	Отсюда получаем, что $F(y) = c_0 + \dintl_c^y G(t)dt$.
+	
+	Используя теорему Барроу о дифференцировании интегралов с переменным верхним пределом, получаем: \newline	 $\exists \; F^{'}(y) = \left(c_0\right)^{'}_{y} + \left(\dintl_c^y G(t) dt\right)^{'}_{y} = 0 + G(y) \overset{\eqref{eq:lecture04-15}}{=} \dintl_a^b \dfrac{\partial f(x,y)}{\partial y} dx$, что даёт \eqref{eq:lecture04-14}.
+\end{proof}

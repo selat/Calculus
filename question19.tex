@@ -1,0 +1,98 @@
+\begin{col-answer-preambule}
+	\begin{enumerate}
+	\item Пусть $f(x, y)$ определена для $\forall x \in \interval[{a; +\infty}[$ и $\forall y \in Y \subset \R{}$. Если $\forall \fix y \in Y \Rightarrow$
+	\begin{equation}
+	\label{eq:lecture04-17}
+	\dintl_a^{+\infty}f(x, y) = dx \xrightarrow[]{y}.
+	\end{equation}
+	
+	Тогда будет корректно определена функция:
+	\begin{equation}
+	\label{eq:lecture04-18}
+	F(y) = \dintl_a^{+\infty}f(x,y)dx, y \in Y.
+	\end{equation}
+
+	\item Пусть НИЗОП \eqref{eq:lecture04-18} сходится на $Y \subset \mathbb{R}$. Если $y_0$ -
+	предельная точка $Y$ и выполняется
+	\begin{equation*}
+	f(x, y) \xrightarrow[y \to y_0]{\interval[{a; +\infty}[} \phi(x),
+	\end{equation*}
+	то будем говорить, что в данном НИЗОП \important{допустим предельный переход}, если
+	\begin{equation}
+	\label{eq:lecture04-25}
+	\exists \lim\limits_{y \to y_0} \intl_a^{+\infty}f(x, y)dx = \intl_a^{+\infty}\lim\limits_  {y \to y_0}f(x, y)dx =
+	\intl_a^{+\infty}\phi(x)dx.
+	\end{equation}
+\end{enumerate}
+\end{col-answer-preambule}
+
+\colquestion{Теорема о предельном переходе в несобственных интегралах, зависящих от параметра (НИЗОП), следствие из неё и замечание к ней.}
+    \begin{theorem}[О предельном преходе в НИЗОП]
+    	Пусть для $\forall \; \fix y \in Y \Rightarrow f(x, y)$ непрерывна для $\forall \; x \geqslant a$ и для предельной точки $y \in Y$
+    	имеем
+    	\begin{equation}
+    	\label{eq:lecture04-26}
+    	f(x, y) \overset{\forall \; \interval[{a; A}]}{\underset{y \to y_0}{\rightrightarrows}} \phi(x), \text{ где } \forall \; A > a.
+    	\end{equation}
+    	Если $\dintl_a^{+\infty}f(x, y)dx \overset{y}{\rightrightarrows}$, то тогда возможен предельный переход
+    	\eqref{eq:lecture04-25}.
+    \end{theorem}
+    \begin{proof}
+    	Воспользуемся \important{теоремой о предельном переходе в функциональном ряду}, для чего, беря
+    	произвольную последовательность $(A_n) \uparrow +\infty$, по критерию Гейне существования
+    	конечного предела функции для \eqref{eq:lecture04-18} получаем
+    	\begin{align*}
+    	&\exists \lim\limits_{y \to y_0} F(y) = \lim\limits_{y \to y_0}\dintl_a^{+\infty}f(x, y)dx =
+    	\sqcase{\dintl_a^{+\infty} = \lim\limits_{An \to +\infty}\parenthesis{\dintl_{A_0}^{A_1} + \dintl_{A_1}^{A_2} + \ldots
+    			+ \dintl_{A_{n - 1}}^{A_n}} = \sum\limits_{n = 1}^{\infty}\dintl_{A_{n - 1}}^{A_n}f(x, y)dx}=\\
+    	&=\sum\limits_{n = 1}^{\infty}\lim\limits_{y \to y_0}\intl_{A_{n - 1}}^{A_n}f(x, y)dx =
+    	\sqcase{\text{По теореме о предельном переходе в СИЗОП}} =\\
+    	&=\sum\limits_{n = 1}^{\infty}\intl_{A_{n - 1}}^{A_n}\lim\limits_{y \to y_0}f(x, y)dx =
+    	\sum\limits_{n = 1}^{\infty}\dintl_{A_{n - 1}}^{A_n}\phi(x)dx =
+    	\lim\limits_{An \to +\infty}\parenthesis{\dintl_{A_0 = a}^{A_1} + \intl_{A_1}^{A_2} + \ldots
+    		+ \intl_{A_{n - 1}}^{A_n}} =\\
+    	&=\lim\limits_{An \to +\infty}\dintl_a^{A_n}\phi(x)dx = \dintl_a^{+\infty}\phi(x)dx,
+    	\end{align*}
+    	т.е. имеем \eqref{eq:lecture04-25}.
+    \end{proof}
+    
+    \begin{consequence}[О непрерывности НИЗОП]
+    	Пусть $f(x, y)$ непрерывная для $\forall \; x \in \interval[{a; +\infty}[$ и для
+    	$\forall \; y \in \interval[{c; d}]$. Если интеграл
+    	\begin{equation*}
+    	\intl_a^{+\infty}f(x, y)dx \overset{\interval[{c; d}]}{\rightrightarrows}
+    	\end{equation*}
+    	то НИЗОП \eqref{eq:lecture04-18} - непрерывная функция на $\interval[{c; d}]$, т.е.
+    	\begin{equation*}
+    	\text{для } \forall \; y \in \interval[{c; d}] \Rightarrow \exists \lim\limits_{y \to y_0}F(y) =
+    	\lim\limits_{y \to y_0}\intl_a^{+\infty}f(x, y)dx = \intl_a^{+\infty}f(x, y)dx = F(y_0).
+    	\end{equation*}
+    \end{consequence}
+    \begin{proof}
+    	Из непрерывности $f(x, y)$ на $\interval[{a; +\infty}[\times\interval[{c; d}]$ следует, что
+    	\begin{equation*}
+    	\text{для } \forall \; \fix A \geqslant a \Rightarrow f(x, y)
+    	\overset{\interval[{a; A}]}{\underset{y \to y_0}{\rightrightarrows}} f(x, y) =
+    	\phi(x) (\text{для } \forall \;  \fix y_0 \in \interval[{c; d}])
+    	\end{equation*}
+    	Далее, используя доказательство теоремы в силу \eqref{eq:lecture04-25}
+    	\begin{equation*}
+    	\exists \lim\limits_{y \to y_0}F(y) = \intl_a^A\phi(x)dx \intl_a^{+\infty}f(x, y_0)dx =
+    	F(y_0),
+    	\end{equation*}
+    	что и требовалось доказать.
+    \end{proof}
+    \begin{note}
+    	Доказанная теорема и следствие справедливы и в отсутствии равномерной сходимости для
+    	рассматриваемого НИЗОП, если он сходится локально равномерно на $Y$,
+    	\begin{equation*}
+    	\text{для }\forall \interval[{\alpha; \beta}] \subset Y \Rightarrow \intl_a^{+\infty}f(x, y)dx
+    	\overset{\interval[{\alpha; \beta}]}{\rightrightarrows}
+    	\end{equation*}
+    	Это связано с тем, что свойство непрерывности функции на множестве определено в любой точке из
+    	этого множества. Поэтому, выбирая $\forall \; \fix y_0 \in Y$ и заключая его в соответствующий
+    	отрезок $y_0 \in \interval[{\alpha; \beta}] \subset Y$,  в случае локальной равномерной
+    	сходимости получаем, например, что \eqref{eq:lecture04-18} будет непрерывна на
+    	$\interval[{\alpha; \beta}]$, а значит, в точке $y_0$. А исходя из этого, получаем непрерывность
+    	\eqref{eq:lecture04-18} на всём $Y$.
+    \end{note}

@@ -1,0 +1,48 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Теорема о почленном дифференцировании НИЗОП и замечание к ней.}
+    \begin{theorem}[О почленном дифференцировании НИЗОП]
+    	Пусть $f(x, y)$ - непрерывна на $\interval[{a; +\infty}[\times\interval[{c; d}]$,
+    	$\exists \; f'_y(x, y)$ - непрерывная на $\interval[{a; +\infty}[\times\interval[{c; d}]$.
+    	Тогда если
+    	\begin{enumerate}
+    		\item $\dintl_a^{+\infty}f(x, y)dx \xrightarrow[]{\interval[{a; +\infty}[}$
+    		\item $\dintl_a^{+\infty}f'_y(x, y)dx \overset{\interval[{a; +\infty}[}
+    		{\rightrightarrows}$,
+    	\end{enumerate}
+    	то тогда НИЗОП \eqref{eq:lecture04-18} - функция почленно дифференцируема на $\interval[{a; +\infty}[$, и её производная
+    	вычисляется по правилу Лейбница:
+    	\begin{equation*}
+    	\label{eq:lecture04-28}
+    	\exists \; F'(y) \overset{\eqref{eq:lecture04-18}}{=}
+    	\parenthesis{\intl_a^{+\infty}f(x, y)dx}'_y = \intl_a^{+\infty}f'_y(x, y)dx
+    	\end{equation*}
+    \end{theorem}
+    \begin{proof}
+    	Для $\forall \; \fix y \in \interval[{c; d}]$ корректно определяем СИЗОП
+    	\begin{equation*}
+    	\Phi(y) = \intl_c^y\parenthesis{\intl_a^{+\infty}f'_y(x, t)dx}dt
+    	\end{equation*}
+    	В силу выполнения всех условий почленного интегрирования СИЗОП можем изменить порядок
+    	интегрирования
+    	\begin{align*}
+    	&\Phi(y) = \intl_a^{+\infty}\parenthesis{\intl_c^yf'_y(x, t)}dx =
+    	\intl_a^{+\infty}\sqcase{f(x, t)}_{t = c}^{t = y}dx =
+    	\intl_a^{+\infty}\parenthesis{\intl_c^yf(x, y) - f(x, c)}dx =\\
+    	&=\intl_a^{+\infty}f(x, y)dx - \intl_a^{+\infty}f(x, c)dx = F(y) - F(c)
+    	\end{align*}
+    	Отсюда, используя теорему Барроу о дифференцировании интеграла с переменным верхним пределом
+    	имеем
+    	\begin{align*}
+    	&\exists F'(y) = \parenthesis{\Phi(y) + F(c)}'_y =
+    	\parenthesis{\intl_c^y\parenthesis{\intl_a^{+\infty}f'_y(x, t)dt}dx}'_y =\\
+    	&=\sqcase{\intl_0^{+\infty}f'_y(x, t)dx}_{t = y} = \intl_a^{+\infty}f'_y(x, y)dx \Leftrightarrow
+    	\eqref{eq:lecture04-28}
+    	\end{align*}
+    \end{proof}
+    \begin{note}
+    	Так же, как и в условии непрерывности НИЗОП в доказательстве теоремы о почленном
+    	дифференцировании вместо равномерной сходимости рассмотрим НИЗОП используя локальную
+    	равномерную сходимость соответствующего НИЗОП.
+    \end{note}

@@ -1,0 +1,63 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Теорема об интегрировании НИЗОП и замечания к ней.}
+    \begin{theorem}[Об интегрировании НИЗОП]
+    	Пусть $f(x, y)$ непрерывная на декартовом произведении
+    	$\interval[{a; +\infty}[\times\interval[{c; d}]$. Если интеграл
+    	\begin{equation*}
+    	\intl_a^{+\infty}f(x, y)dx \overset{\interval[{c; d}]}{\rightrightarrows},
+    	\end{equation*}
+    	то тогда НИЗОП \eqref{eq:lecture04-18} является интегрируемой на $\interval[{c; d}]$
+    	функцией, для которой
+    	\begin{equation}
+    	\label{eq:lecture04-27}
+    	\intl_c^dF(y)dy = \intl_c^ddy\intl_a^{+\infty}f(x, y)dx = \intl_a^{+\infty}dx\intl_c^df(x, y)dy
+    	\end{equation}
+    \end{theorem}
+    \begin{proof}
+    	По той же схема, что и в предыдущей теореме, рассмотрим произвольную последовательность
+    	$(A_n) \uparrow +\infty (A_0 = a)$ и используем критерий Гейне на основании теоремы о
+    	почленном интегрировании СИЗОП, получаем:
+    	\begin{align*}
+    	&\exists \intl_c^dF(y)dy = \intl_c^d\parenthesis{\suml_{n = 1}^{\infty}\intl_{A_{n - 1}}^{A_n}f(x,y)dx}dy=
+    	\sqcase{&u_n(y) = \intl_{A_{n - 1}}^{A_n}f(x, y)dx \text{ непрерывна на } \interval[{c; d}]\\
+    		&\suml_{n = 1}^{\infty}u_n(y) = \intl_a^{+\infty}f(x, y)
+    		\overset{\interval[{c; d}]}\rightrightarrows} =\\
+    	&=\intl_c^d\suml_{n = 1}^{\infty}u_n(y)dy = \suml_{n = 1}^{\infty}\intl_c^du_n(y)dy =
+    	\suml_{n = 1}^{\infty}\intl_c^d\parenthesis{\intl_{A_{n - 1}}^{A_n}f(x, y)dx}dy =
+    	\suml_{n = 1}^{\infty}\intl_{A_{n - 1}}^{A_n}\parenthesis{\intl_c^d f(x, y)dx}dy =\\
+    	&= \liml_{A_n \to +\infty}\parenthesis{\intl_{A_0 = a}^{A_1} + \intl_{A_1}^{A_2} + \ldots +
+    		\intl_{A_{n - 1}}^{A_n}}= \liml_{A_n \to +\infty} \intl_{a}^{A_n}\parenthesis{
+    		\intl_c^d f(x, y)dx}dy = \intl_a^{+\infty}dx\intl_c^df(x ,y)dy
+    	\end{align*}
+    \end{proof}
+    \begin{notes}
+    	\item Доказанная теорема справедлива не только для случае $x \in \interval[{a; +\infty}[$,
+    	$y \in \interval[{c; d}]$, но и для случая $x \in \interval ]{a; +\infty}[$,
+    	$y \in \interval[{c; d}]$, при условии, что дополнительно ко всем условиям указанной
+    	теоремы выполняется, что точка $x = a$ не является точкой разрыва второго рода для
+    	$g(x, y)$, т.е.
+    	\begin{equation*}
+    	\exists \liml_{x \to a+0}f(x, y) \in \R{}
+    	\end{equation*}
+    	В этом случае, доопределяя функцию $f(x, y)$ в точке $x = a$, т.е. рассматривая функцию
+    	\begin{equation*}
+    	g(x, y) = \begin{cases}
+    	&f(x, y), x > a, y \in \interval[{c; d}]\\
+    	&\liml_{x \to a+0}f(x, y), y \in \interval[{c; d}]
+    	\end{cases}
+    	\end{equation*}
+    	Получаем её непрерывность в точке $x = a$ справа. А далее, учитывая, что рассмотренные
+    	интегралы от $f(x, y)$ и $g(x ,y)$ совпадают используя доказанную теорему.
+    	\item Можно показать, что наряду с интегрируемым НИЗОП по конечному промежутку возможно
+    	его почленное интегрирование по бесконечному промежутку $\interval[{c; +\infty}[$, если
+    	\begin{enumerate}
+    		\item $f(x, y)$ непрерывна на $\interval [{a; +\infty}[\times\interval[{c; +\infty}[$
+    		\item  $\dintl_a^{+\infty}f(x, y)dx \overset{\interval[{c; +\infty}[}
+    		{\rightrightarrows}, \dintl_a^{+\infty}f(x, y)dx
+    		\overset{\interval[{a; +\infty}[}{\rightrightarrows}$
+    	\end{enumerate}
+    	\item $\exists \dintl_c^{+\infty}dy\dintl_a^{+\infty}f(x, y)dx = \dintl_a^{+\infty}dx
+    	\dintl_c^{+\infty}f(x, y)dy)$ - существуют повторные интегралы.
+    \end{notes}

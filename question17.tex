@@ -1,0 +1,45 @@
+\begin{col-answer-preambule}
+	Предположим, что $f(x,y)$ определена для $\forall \; y \in Y$ и для $\forall \; x \in [a,b]$, причём при $\forall \; fix \; y \in Y$ $f(x,y)$ интегрируема по $x \in [a,b]$. В этом случае:
+	\begin{equation}
+	\label{eq:lecture04-11}
+	\exists \; F(y) = \dintl_a^b f(x,y)dx, y \in Y.
+	\end{equation}
+	
+	\eqref{eq:lecture04-11} - \important{интеграл Римана (собственный)}, зависящий от параметра $y \in Y$.
+	
+	В дальнейшем интеграл вида \eqref{eq:lecture04-11} будем кратко называть \important{СИЗОП}.
+\end{col-answer-preambule}
+
+\colquestion{Теорема о предельном переходе в собственных интегралах, зависящих от параметра (СИЗОП) и замечания к ней.}
+\begin{theorem}[о предельном переходе в СИЗОП]
+	Пусть определён СИЗОП \eqref{eq:lecture04-11}. Тогда, в случае $f(x,y) \underset{y \to y_0}{\overset{[a,b]}{\rightrightarrows}} \phi(x)$, где, как и в определении СИЗОП \eqref{eq:lecture04-11}, предполагая интегрируемость $f(x,y)$ по $x$, получаем:
+	\begin{equation}
+	\label{eq:lecture04-12}
+	\exists \; \lim\limits_{y \to y_0}\; \dintl_a^b f(x,y)dx = \dintl_a^b \phi(x)dx = \dintl_a^b \lim\limits_{y \to y_0}\; f(x,y)dx.
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	В силу \eqref{eq:lecture04-05} имеем \eqref{eq:lecture04-04}, откуда для $I = \dintl_a^b \phi(x)dx$, получаем:
+	\begin{equation*}
+	\abs{F(y) - I} \overset{\eqref{eq:lecture04-11}}{=} \abs{\dintl_a^b \left(f(x,y) - \phi(x)\right) dx} \leqslant \dintl_a^b \abs{f(x,y) - \phi(x)}dx \overset{\eqref{eq:lecture04-04}}{\leqslant} \dintl_a^b \varepsilon dx = \varepsilon(b-a).
+	\end{equation*}
+	
+	Таким образом, получаем, что $\exists \; M = b-a = const > 0$ такое, что для $\forall \; \varepsilon > 0 \; \exists \; \delta > 0$ такая, что \newline для $\forall \; y \in Y \text{ из } 0 < \abs{y - y_0} \leqslant \delta \Rightarrow \abs{F(y) - I} \leqslant M \varepsilon$.
+	
+	Откуда по $M$-лемме для сходимости Ф1П, получаем: $	F(y) \xrightarrow[y \to y_0]{} I$, т.е. имеем \eqref{eq:lecture04-12}.
+\end{proof}
+\begin{notes}
+	\item При доказательстве теоремы неявно предполагалось, что $\phi(x) \in \mathbb{R}([a,b])$. Это условие выполняется в силу критерия Гейне существования равномерного частного предела и соответствующего условия интегрируемости Ф1П.
+	\item Используя теорему Дини для Ф2П, в силу доказанной теоремы, получаем, что если для $\forall \; fix \; y \in Y \Rightarrow f(x,y)$ непрерывна на $X = [a,b]$, то в случае, когда $f(x,y)$ монотонна по $y$ на $Y = [c,d]$ получаем, что при выполнении условия поточечной сходимости:
+	\begin{equation*}
+	f(x,y) \underset{y \to y_0}{\overset{[a,b]}{\rightrightarrows}} \phi(x),
+	\end{equation*}
+	то имеем для $\forall \; y_0 \in [c,d] \Rightarrow \eqref{eq:lecture04-12}$.
+	\item Если $f(x,y)$ непрерывна для $\forall \; x \in [a,b]$ и для $\forall \; y \in [c,d]$, тогда справедливо \eqref{eq:lecture04-12}, где $\phi(x) = f(x, y_0)$, для $\forall \; fix \; y_0 \in [c,d]$.
+	
+	В частности, при указанных условиях СИЗОП \eqref{eq:lecture04-11} является непрерывной функцией на $Y \in [c,d]$, т.к.
+	\begin{equation*}
+	\exists \; \lim\limits_{y \to y_0} F(y) = \lim\limits_{y \to y_0} \dintl_a^b f(x,y)dx = \dintl_a^b \lim\limits_{y \to y_0} f(x,y)dx= \dintl_a^b f(x,y_0)dx = F(y_0),
+	\end{equation*}
+	что равносильно непрерывности \eqref{eq:lecture04-11} в любой точке $y_0 \in [c,d]$, причём на концах отрезка рассматривается односторонняя непрерывность.
+\end{notes}
