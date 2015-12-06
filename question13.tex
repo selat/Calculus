@@ -1,0 +1,46 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Теорема о замене переменной в несобственных интегралах (НИ) и замечание к ней.}
+\begin{theorem}[о замене переменных в НИ]
+	Будем одновременно рассматривать как НИ-1, так и НИ-2.
+	
+	Пусть $f(x)$ определена для $ \forall \; x \in [a;b[$, где либо $b = + \infty$ (НИ-1), либо $f(b-0) = \infty$ (НИ-2).
+	
+	Если функция $x(t) = \phi (t)$ - \important{непрерывно дифференцируема} для $\forall \; t \in [\alpha; \beta[$ и \important{строго монотонна}, то в случае, когда: $\begin{cases}
+	\phi (\alpha) = a, \\
+	\phi (\beta - 0) = b.
+	\end{cases}$, интеграл $\dint\limits_{a}^{b} f(x)dx$, где $b = + \infty$ (НИ-1) либо $f(b-0) = +\infty$ (НИ-2), сходится тогда и только тогда, когда сходится интеграл
+	\begin{equation}
+	\label{eq:lecture03-09}
+	\dint\limits_{\alpha}^{\beta} f(\phi(t)) \phi^{'}(t)dt.
+	\end{equation}
+	При этом справедлива формула замены переменных в НИ:
+	\begin{equation}
+	\label{eq:lecture03-10}
+	\dint\limits_{a}^{b} f(x)dx = \begin{sqcases} x = \phi(t) \Rightarrow dx = \phi^{'}(t)dt, \\ \left.x\right|_{a = \phi(\alpha)}^{b = \phi(\beta - 0)}.\end{sqcases} = \dint\limits_{\alpha}^{\beta} f(\phi(t)) \phi^{'}(t)dt,
+	\end{equation}
+	причём в правой части \eqref{eq:lecture03-10} может стоять как НИ, так и интеграл Римана.
+\end{theorem}
+\begin{proof}
+	Следует из соответствующей теоремы о замене переменных в ОИ (интеграле Римана).
+	
+	Для доказательства, выбирая для $\forall \; \gamma \in [\alpha; \beta[$, в силу строгой монотонности $\phi(t)$, получаем что $\phi(\gamma) \in [a;b[$. При этом для $\forall \; c \in [a;b[ \; \exists \; ! \; \gamma \in [\alpha; \beta[$.
+	
+	Тогда по \important{теореме о замене переменных в ОИ} имеем:
+	\begin{equation*}
+	\dint\limits_{a}^{c} f(x)dx = \begin{sqcases} x = \phi(t) \Rightarrow dx = \phi^{'}(t)dt, \\ \left.x\right|_{a = \phi(\alpha)}^{c} \Rightarrow \exists \; ! \; \gamma \in [\alpha; \beta[, c = \phi(t) \Rightarrow \left.t\right|_{\alpha}^{\beta}.\end{sqcases} = \dint\limits_{\alpha}^{\gamma} f(\phi(t)) \phi^{'}(t)dt.
+	\end{equation*}
+	
+	Отсюда, переходя к пределу и учитывая, что $\gamma \to \beta - 0 \Rightarrow c \to b - 0$, получаем \eqref{eq:lecture03-10}.
+\end{proof}
+\begin{note}
+	
+	Для НИ-2 вида $\dint\limits_{a}^{b-0}f(x)dx$ после замены переменных имеем:
+	\begin{equation*}
+	t = \left.\dfrac{1}{b-x} \right|_{\frac{1}{b-x	} > 0}^{+ \infty}, \text{ а для } \left.x\right|_{a}^{b-0},
+	\end{equation*}
+	отсюда получаем: $x = b - \dfrac{1}{t} \Rightarrow dx = \dfrac{dt}{t^2} \Rightarrow \dint\limits_{a}^{b} f(x)dx = \dint\limits_{\frac{1}{b-a}}^{+\infty} \dfrac{f(b-\frac{1}{t})}{t^2}dt$.
+	
+	Тем самым мы \important{свели НИ-2 к соответствующему НИ-1}. Дальнейшее исследование которого, например, на сходимость, можно проводить с помощью полученных ранее условий сходимости НИ-1.
+\end{note}
