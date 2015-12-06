@@ -1,0 +1,65 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Критерий Гейне равномерной сходимости Ф2П и замечания к нему.}
+\begin{theorem}[критерий Гейне равномерной 	сходимости Ф2П]
+	Для того, чтобы $f(x,y) \underset{y \to y_0}{\overset{X}{\rightrightarrows}} \phi(x)$ необходимо и достаточно, чтобы для $\forall \; y_n \in Y, \linebreak y_n \to y_0, y_n \ne y_0$, где $y_0$ - предельная точка для множества $Y$, выполнялось:
+	\begin{equation}
+	\label{eq:lecture04-090}
+	g_n(x) = f(x, y_n) \underset{n \to \infty}{\overset{X}{\rightrightarrows}} \phi(x)
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	\circled{$\Rightarrow$}. Пусть выполняется \eqref{eq:lecture04-05}, тогда для $\forall \; \varepsilon > 0 \; \exists \; \delta > 0$ такая, что для $\forall \; y \in Y \text{ из } 0 < \abs{y - y_0} \leqslant \delta$, для $\forall \; x \in X \Rightarrow \abs{f(x,y) - \phi(x)} \leqslant \varepsilon$.
+	
+	Рассматривая $\forall \; \left(y_n\right) \in Y$, в пределах точки $y_0$ по найденному ранее  $\delta > 0 \; \exists \; \nu \in \mathbb{R}$ такое, что для $\forall \; n \geqslant \nu \Rightarrow \abs{y_n - y_0} \leqslant \delta$.
+	
+	Окончательно получаем: для $\forall \; \varepsilon > 0 \; \exists \; \nu \in \mathbb{R}$ такое, что для $\forall \; n \geqslant \nu$, для $\forall \; x \in X \Rightarrow \linebreak \Rightarrow \abs{y_n - y_0} \leqslant \delta \Rightarrow \abs{f(x,y_n) - \phi(x)} \leqslant \varepsilon$, т.е. имеем \eqref{eq:lecture04-090}.
+	
+	\circled{$\Leftarrow$}. Пусть для $\forall \; \left(y_n\right) \in Y$ в предельной точке выполнено \eqref{eq:lecture04-090}. Тогда в силу того, что из равномерной сходимости $g_n(x) = f(x, y_n)$ следует поточечная сходимость ФП $g_n(x)$, получаем, что $g_n(x) \xrightarrow[n \to \infty]{X} \phi(x)$.
+	
+	Поэтому в силу критерия Гейне существования предела Ф1П получаем, что:
+	\begin{equation*}
+	f(x,y_0) = g_n(x) \xrightarrow[n \to \infty]{X} \phi(x) \Rightarrow f(x,y) \xrightarrow[y \to y_0]{X} \phi(x).
+	\end{equation*}
+	
+	Предположим, что имеем поточечную сходимость, но равномерной сходимости нет, т.е. получаем:
+	\begin{equation*}
+	f(x,y) \underset{y \to y_0}{\overset{X}{\rightrightarrows}} \phi(x).
+	\end{equation*}
+	
+	Тогда по \important{правилу де Моргана}, имеем:
+	\begin{equation*}
+	\exists \; \varepsilon_0 > 0 \text{ такое, что для } \forall \; \delta > 0 \; \exists \; y(\delta) \in Y, \exists	\; x(\delta) \in X  \text{ такое, что из } 0 < \abs{y(\delta) - y_0} \leqslant \delta \Rightarrow
+	\end{equation*}
+	\begin{equation}
+	\label{eq:lecture04-10}
+	\Rightarrow f\left(x(\delta), y(\delta)\right) - \phi(x(\delta)) > \varepsilon_0.
+	\end{equation}
+	
+	Выбирая для простоты $\delta = \dfrac{1}{n} \xrightarrow[n \to \infty]{}+0$, получаем, что $\begin{cases} \exists \; x_n = x\left(\dfrac{1}{n}\right) \in X, \\ \exists \; y_n = y\left(\dfrac{1}{n}\right) \in Y.
+	\end{cases} \text{ такие, что из} \linebreak 0 < \abs{y_n - y_0} \leqslant \leqslant \delta \Rightarrow \abs{f(x_n, y_n) - \phi(x_n)} > \varepsilon_0$.
+	
+	Используя условие $f(x_n, y) \xrightarrow[y \to y_0]{X} \phi(x_n)$, для найденного $\varepsilon_0 > 0$ получаем:
+	\begin{equation*}
+	\exists \; \delta_0 > 0 \text{ такая, что для } \forall \; y \in Y \text{ из } 0 < \abs{y_n - y_0} \leqslant \delta_0 \Rightarrow \abs{f(x_n,y_n) - \phi(x_n)} \leqslant \varepsilon_0.
+	\end{equation*}
+	
+	Подставляя $y = y_n$, получаем $0<\abs{y_n - y_0} \leqslant \delta_0 \Rightarrow \abs{f(x_n, y_n) - \phi(x_n)} \leqslant \varepsilon_0$.
+	
+	Выбирая теперь $\nu = \dfrac{1}{\delta_0} \in \mathbb{R}, \text{ для } \forall \; n \geqslant \nu \Rightarrow 0 < \abs{y_n - y_0} \leqslant \dfrac{1}{\nu} \leqslant \dfrac{1}{n}$. Отсюда в силу \eqref{eq:lecture04-10} при $\delta = \dfrac{1}{n} > 0$ получаем, что для $\forall \; n \geqslant \nu$ выполняется $\abs{f(x_n,y_n) - \phi(x_n)} > \varepsilon_0$. Противоречие.
+\end{proof}
+
+\begin{notes}
+	\item Доказанная теорема позволяет из соответствующих свойств ФП получить аналогичные свойства для равномерно сходящихся Ф2П, в том числе сформулированный ранее супремальный критерий равномерной сходимости Ф2П и критерий Коши для Ф2П. Кроме того, в силу теоремы Дини	для ФП имеем соответствующую теорему Дини для равномерной сходимости Ф2П.
+	
+	\begin{theorem}[Дини для равномерной сходимости Ф2П]
+		Пусть для $\forall \; fix \; y \in Y, f(x,y)$ непрерывна по $x \in [a,b] = X$, причём при монотонной сходимости $y \to y_0 \; (y \uparrow y_0 \text{ либо } y \downarrow y_0)$ соответственно получаем	$f(x,y)$ монотонно сходится к $\phi(x)$ $\left(f(x,y) \uparrow \downarrow \phi(x)\right)$. Тогда, если предельная функция $\phi(x) = \lim\limits_{y \to y_0} f(x,y)$ непрерывна на $X = [a,b]$, то кроме поточечной сходимости будем иметь равномерную сходимость \eqref{eq:lecture04-05}.
+	\end{theorem}
+	\item 	Аналогично получаем теорему	Стокса-Зейделя для Ф2П.
+	
+	\begin{theorem}[Стокса-Зейделя]
+		Пусть для $\forall \; fix \; y \in Y, f(x,y)$ непрерывна по $x \in [a,b] = X$.
+		Тогда, если $ f(x,y) \overset{[a,b]}{\underset{y \to y_0}{\rightrightarrows}}  \phi(x)$, где $y_0$ - предельная точка для $Y$, то предельная функция будет непрерывной на $[a,b]$.
+	\end{theorem}
+\end{notes}
