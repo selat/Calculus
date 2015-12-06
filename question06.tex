@@ -1,31 +1,29 @@
 \colquestion{Теорема о почленном интегрировании равномерно сходящегося ФР}
 \begin{theorem}[о почленном интегрировании равномерно сходящихся ФР]
-	Если $\forall u_n(x) \in C([a,b]), $ \\ $n \in \mathbb{N}$, то в случае, когда $\sum u_n(x) \overset{[a,b]}{\rightrightarrows}$, возможно почленное интегрирование этого ряда на $[a,b]$, т.е.
+	Если $\forall \; u_n(x) \in C([a,b]), $ \\ для $n \in \mathbb{N}$, то в случае, когда $\sum u_n(x) \overset{[a,b]}{\rightrightarrows}$, возможно почленное интегрирование этого ряда на $[a,b]$, т.е.
 	\begin{equation}
-	\label{eq:1_32}
+	\label{eq:lecture01-32}
 	\exists \dint\limits_a^b S(x)dx = \dint\limits_a^b \left(\sum_{n=1}^{\infty}u_n(x)\right)dx = \sum_{n=1}^{\infty} \dint\limits_a^b u_n(x)dx.
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	На основании теоремы о непрерывности суммы равномерно сходяшегося ФР получим, что сумма ряда $S(x) = \sum\limits_{n=1}^{\infty}u_n(x)$ будет непрерывна на $[a,b]$, а значит, интегрируема на $[a,b]$.
+	На основании теоремы о непрерывности суммы равномерно сходящихся ФР получим, что сумма ряда $S(x) = \sum\limits_{n=1}^{\infty}u_n(x)$ будет непрерывна на $[a,b]$, а значит, интегрируема на $[a,b]$.
 
-	Используя частичные суммы \eqref{eq:1_11} для \eqref{eq:1_10}, рассмотрим частичные суммы $T_n = \dint\limits_a^b S_n(x)dx  =$ \\$= 	\dint\limits_a^b \sum_{k=1}^{n} u_k(x)dx = \sum\limits_{k=1}^{n} \dint\limits_a^b u_k(x)dx$ для ЧР правой части \eqref{eq:1_32}.
+	Используя частичные суммы для $\sum u_n(x)$, рассмотрим частичные суммы $T_n = \dint\limits_a^b S_n(x)dx  =$ \\$= 	\dint\limits_a^b \sum_{k=1}^{n} u_k(x)dx = \sum\limits_{k=1}^{n} \dint\limits_a^b u_k(x)dx$ для ЧР правой части \eqref{eq:lecture01-32}.
 
 	Требуется доказать, что $\lim\limits_{n \to \infty} T_n = \dint\limits_a^b S(x)dx$.
 
-    Из равномерной сходимости \eqref{eq:1_10} на $[a,b]$ получим, что $\forall \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \forall n \geqslant \nu $ и $ \forall x \in [a,b] \Rightarrow$
+    Из равномерной сходимости $\sum u_n(x)$ на $[a,b]$ получим, что для $\forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \text{для } \forall \; n \geqslant \nu $ и для $ \forall \; x \in [a,b] \Rightarrow$
 	\begin{equation}
 	\label{eq:1_33}
 	 	\abs{S(x) - S_n(x)} = \abs{\sum_{k = n+1}^{\infty} u_k(x)} \leqslant \varepsilon
 	\end{equation}
 
-	Отсюда получаем, что $\abs{\dint\limits_a^b S(x)dx - I_n} = \abs{\dint\limits_a^b S(x)dx - \dint\limits_a^b S_n(x)dx} =  \abs{\dint\limits_a^b (S(x) - S_n(x))dx} \leqslant $ \\ $\leqslant \dint\limits_a^b \abs{S(x) - S_n(x)}dx \leqslant \dint\limits_a^b \varepsilon dx = M \varepsilon$, где $M = b - a = const \geqslant 0$. Таким образом, $\forall \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \forall n \geqslant \nu \Rightarrow \abs{\dint_a^b S(x) dx - I_n} \leqslant M \varepsilon$, поэтому по М-лемме сходимости ЧП следует, что
+	Отсюда получаем, что $\abs{\dint\limits_a^b S(x)dx - I_n} = \abs{\dint\limits_a^b S(x)dx - \dint\limits_a^b S_n(x)dx} =  \abs{\dint\limits_a^b (S(x) - S_n(x))dx} \leqslant $ \\ $\leqslant \dint\limits_a^b \abs{S(x) - S_n(x)}dx \leqslant \dint\limits_a^b \varepsilon dx = M \varepsilon$, где $M = b - a = const \geqslant 0$. 
+	
+	Таким образом, для $\forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \text{ для } \forall \; n \geqslant \nu \Rightarrow \abs{\dint\limits_a^b S(x) dx - I_n} \leqslant M \varepsilon$, поэтому по М-лемме сходимости ЧП следует, что
 	\begin{equation*}
     	\exists \lim\limits_{n \to \infty} I_n = \dint\limits_a^b S(x)dx = \dint\limits_a^b \left(\sum\limits_{k=1}^{\infty} u_k(x)\right) dx,
 	\end{equation*}
-	что равносильно \eqref{eq:1_32}.
+	что равносильно \eqref{eq:lecture01-32}.
 \end{proof}
-
-\begin{note}
-	Если на множестве сходимости $X \subset \mathbb{R}$ для \eqref{eq:1_10} нет равномерной сходимости, но есть локальная равномерная сходимость, то в случае непрерывности $\forall u_n(x)$ на $X$ можно почленно интегрировать ФР \eqref{eq:1_10}	на $\forall [a,b] \subset X$.
-\end{note}
