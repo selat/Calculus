@@ -1,19 +1,36 @@
+\begin{col-answer-preambule}
+Пусть $x_0$ - предельная точка множества сходимости $X \subset \mathbb{R}$ для ФР $\sum u_n(x)$.
+Будем говорить, что в $\sum u_n(x)$ \important{возможен почленный предельный переход} $x \to x_0$, если
+\begin{equation}
+\label{eq:lecture01-28}
+\exists \; lim \sum_{n = 1}^{\infty} u_n(x) = \sum_{n = 1}^{\infty} lim u_n(x),
+\end{equation}
+причём получившийся в левой части \eqref{eq:lecture01-28} ЧР является сходящимся.
+
+В частности, если $x_0 \in X$ и $\forall \; u_n(x)$ непрерывен в некоторой окрестности точки $x_0$, и значит, для $\forall \; n \in \mathbb{N} \; \exists \lim\limits_{x \to x_0} u_n(x) = u_n(x_0)$, то в случае выполнения \eqref{eq:lecture01-28} для суммы $S(x)$ ФР $\sum u_n(x)$ при $x \to x_0$ имеем:
+\begin{equation}
+\label{eq:lecture01-29}
+\exists \; \lim\limits_{x \to x_0} S(x) = \lim\limits_{x \to x_0} \sum_{n=1}^{\infty} u_n(x) = \sum_{n=1}^{\infty} \lim\limits_{x \to x_0} u_n(x) = \sum_{n=1}^{\infty} u_n(x_0) = S(x),
+\end{equation}
+что соответствует непрерывности $S(x)$ в точке $x_0 \in X$.
+\end{col-answer-preambule}
+
 \colquestion{Теорема о непрерывности суммы равномерно сходящегося ФР и замечания к ней}
 \begin{theorem}[о непрерывности суммы равномерно сходящегося ФР]
-	Если все члены $u_n(x), n \in \mathbb{N}$ ФР \eqref{eq:1_10} непрерывны на $X = [a,b]$, то в случае равномерной сходимости этого ряда на $[a,b]$ его сумма $S(x)$ будет непрерывной функцией на $[a,b]$.
+	Если все члены $u_n(x), n \in \mathbb{N}$, ФР $\sum u_n(x)$ непрерывны на $X = [a,b]$, то в случае равномерной сходимости этого ряда на $[a,b]$ его сумма $S(x)$ будет непрерывной функцией на $[a,b]$.
 \end{theorem}
 \begin{proof}
-	Требуется обосновать  \eqref{eq:1_29} $\forall \; x_0 \in [a,b]$, причём в случае концевых значений $x_0 = a, \; x_0 = b$ будем использовать соответствующие односторонние пределы, т.е. рассматривать одностороннюю непрерывность.
+	Требуется обосновать \eqref{eq:lecture01-29} для $\forall \; x_0 \in [a,b]$, причём в случае концевых значений $x_0 = a, \; x_0 = b$ будем использовать соответствующие односторонние пределы, т.е. рассматривать одностороннюю непрерывность.
 
-	Для $fix \; x_0 \in [a,b]$ придадим произвольные приращения $\Delta x \in \mathbb{R} \; | \; (x_0 + \Delta x) \in [a,b]$ и рассмотрим соответствующие приращения суммы \eqref{eq:1_12} ФР \eqref{eq:1_10}:
+	Для $fix \; x_0 \in [a,b]$ придадим произвольные приращения $\Delta x \in \mathbb{R} \; | \; (x_0 + \Delta x) \in [a,b]$ и рассмотрим соответствующие приращения суммы ФР $\sum u_n(x)$:
     \begin{equation*}
         \Delta S(x_0) = S(x_0 + \Delta x) - S(x_0).
     \end{equation*}
 
-    Из равномерной сходимости ФР \eqref{eq:1_10} на
-    $X = [a,b] \Rightarrow \forall \varepsilon > 0, \;$
-    ${ \exists \; \nu = \nu(\varepsilon) \in \mathbb{R} \; | \; \forall n \geqslant \nu }$,
-    $ \forall x \in [a,b]$ для частичных сумм $S_n(x) = u_1(x) + u_2(x) + \ldots + u_n(x)$ ряда \eqref{eq:1_10} имеем: $\abs{S_n(x) - S(x)} \leqslant \varepsilon$.
+    Из равномерной сходимости ФР $\sum u_n(x)$ на
+    $X = [a,b] \Rightarrow \text{для } \forall \; \varepsilon > 0 $
+    ${ \exists \; \nu = \nu(\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \; n \geqslant \nu }$,
+    $ \text{ и для } \forall \; x \in [a,b]$ для частичных сумм $S_n(x) = u_1(x) + u_2(x) + \ldots + u_n(x)$ ряда $\sum u_n(x)$ имеем: $\abs{S_n(x) - S(x)} \leqslant \varepsilon$.
 
 	Отсюда, в частности, для $x = x_0 \in X $ и $ x = x_0 + \Delta x \in X \Rightarrow$
 	\begin{equation}
@@ -24,25 +41,25 @@
 	\end{cases}
 	\end{equation}
 
-	Далее из непрерывности $\forall u_n(x)$ в $x_0 \in [a,b]$ следует непрерывность частичных сумм в $x_0$ (как конечных сумм непрерывных функций).
+	Далее из непрерывности $\forall \; u_n(x)$ в $x_0 \in [a,b]$ следует непрерывность частичных сумм в $x_0$ (как конечных сумм непрерывных функций).
 
-	В силу этого, для $ \forall \; \varepsilon, \exists \; \delta > 0, \forall \abs{\Delta x} \leq \delta \Rightarrow$
+	В силу этого, для $ \forall \; \varepsilon \; \exists \; \delta > 0 \; : \; \text{для } \forall \; \abs{\Delta x} \leq \delta \Rightarrow$
 	\begin{equation}
     	\label{eq:1_31}
     	\Rightarrow \abs{S_n(x_0 + \Delta x) - S_n(x_0)} \leqslant \varepsilon.
 	\end{equation}
 
-	Таким образом,  в силу \eqref{eq:1_30}, \eqref{eq:1_31} имеем: $\forall \varepsilon > 0$, выбирая $n \geqslant \nu$ и рассматривая $\forall \abs{\Delta x}	 \leqslant \delta$, имеем:
+	Таким образом,  в силу \eqref{eq:1_30}, \eqref{eq:1_31} имеем: для $\forall \varepsilon > 0$, выбирая $n \geqslant \nu$ и рассматривая $\forall \abs{\Delta x}	 \leqslant \delta$, имеем:
 
 	$\abs{\Delta S(x_0)} = \abs{S_n(x_0) - S(x_0) + S_n(x_0 + \Delta x) - S_n(x_0) + S (x_0 + \Delta x) - S_n(x_0 + \Delta x)} \leqslant \\  \leqslant \abs{S_n(x_0) - S(x_0)} + \abs{S_n(x_0 + \Delta x) - S_n(x_0)} + \abs{S(x_0 + \Delta x	) - S_n(x_0 + \Delta x)} \leqslant \varepsilon + \varepsilon + \varepsilon = 3 \cdot \varepsilon$.
 
-    Вследствие этого:
-	$\forall \varepsilon \; \exists \; \delta > 0, \; \forall \abs{\Delta x} \leqslant \delta \Rightarrow \abs{\Delta S(x_0)} \leqslant M \cdot \varepsilon, M = const = 3 > 0$.
+    Поэтому получаем:
+	для	$\forall \; \varepsilon \; \exists \; \delta > 0 : \; \text{для } \forall \; \abs{\Delta x} \leqslant \delta \Rightarrow \abs{\Delta S(x_0)} \leqslant M \cdot \varepsilon, M = const = 3 > 0$.
 
-	Отсюда по М-лемме для Ф1П следует, что $\Delta S(x_0) \underset{\Delta x \to 0}{\to} 0$, что на языке приращений равносильно \eqref{eq:1_29}. При этом, т.к. из равномерной сходимости следует поточечная сходимость ЧР в правой части \eqref{eq:1_29} будет сходящимся.
+	Отсюда по М-лемме для Ф1П следует, что $\Delta S(x_0) \underset{\Delta x \to 0}{\to} 0$, что на языке приращений равносильно \eqref{eq:lecture01-29}. При этом, т.к. из равномерной сходимости следует поточечная сходимость ЧР в правой части \eqref{eq:lecture01-29} будет сходящимся.
 \end{proof}
 
 \begin{notes}
 	\item Доказанную теорему часто называют теоремой Стокса-Зейделя или теоремой Стокса-Зайделя.
-	\item В условии доказанной теоремы равномерную сходимость можно заменить для произвольного множества $ X \subset \mathbb{R}$ на локальную равномерную сходимость.
+	\item В условии доказанной теоремы равномерную сходимость можно заменить для произвольного множества $ X \subset \mathbb{R}$ на локальную равномерную сходимость. Будем говорить, что ФР $\sum u_n(x)$ сходится локально равномерно на $X \subset \mathbb{R}$, если для $\forall \; [a,b] \subset X \Rightarrow \sum u_n(x) (x) \overset{[a,b]}{\rightrightarrows}$. У $\sum u_n(x)$ может быть локальная равномерная сходимость на $X$, но может не быть полной (???) равномерной сходимости на $X$. В случае локальной равномерной сходимости $\sum u_n(x)$ на $X$ берём $\forall x_0 \in X$ и заключаём её в некоторый отрезок $x_0 \in [a,b] \subset X$. Т.к. есть равномерная сходимость для $\sum u_n(x)$ на этом отрезке, то по доказанной теореме сумма $S(x)$ в случае непрерывности $\forall \; u_n(x)$ на $X$ будет непрерывна на $[a,b] \subset X$ и, в частности, непрерывна в $x_0 \in X$, а т.к. это можно сделать для $\forall \; x_0 \in X$, то тем самым получаем непрерывность $S(x)$ на $X \subset \mathbb{R}$ даже в случае, когда нет равномерной сходимости ФР на $X$.
 \end{notes}
