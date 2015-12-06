@@ -1,0 +1,31 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Формула Даламбера для вычисления радиуса сходимости СтР.}
+\begin{theorem}[формула Даламбера для вычисления радиуса сходимости СтР]
+	Если существует конечный или бесконечный предел
+	\begin{equation}
+	\label{2.05}
+	\limninf \abs{\dfrac{a_n}{a_{n+1}}},
+	\end{equation}
+	то для радиуса сходимости ряда \eqref{2.01} имеем:
+	\begin{equation}
+	\label{2.06}
+	R = \limninf \abs{\dfrac{a_n}{a_{n+1}}}.
+	\end{equation}
+\end{theorem}
+\begin{proof}$  $
+	
+	Без ограничения общности будем считать, что в \eqref{2.01} $ \forall \; a_n \neq 0 $.
+	Т.к. СтР \eqref{2.01} сходится при $ x=x_0 $, то рассмотрим случай $ x \ne x_0 $.
+	
+	Если $ x \in I = \; \interval]{ \nullFrac x_0-R \;;\; x_0 + R \nullFrac}[ $, где $ R \geq 0 $, то по признаку Даламбера сходимости ЧР для \eqref{2.01} имеем:
+	\begin{equation*}
+	\exists \; d = \limninf \dfrac{\abs{a_{n+1} (x-x_0)^{n+1}}}{\abs{a_{n} (x-x_0)^{n}}} =
+	\limninf \abs{\dfrac{a_{n+1}}{a_n}} \abs{x-x_0} \overset{\eqref{2.06}}{=} \dfrac{\abs{x-x_0}}{R}.
+	\end{equation*}
+	
+	В силу того, что $ x \in I $ и, значит, $ \abs{x-x_0} < R$, получаем, что   $ d < 1 $ и СтР \eqref{2.01} будет сходящимся.
+	Если $ d > 1 $, т.е. $ \abs{x-x_0} > R $, то \eqref{2.01} расходится.
+	Таким образом, \eqref{2.06} будет радиусом сходимости для \eqref{2.01}.
+\end{proof}
