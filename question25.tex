@@ -1,0 +1,46 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Вторая теорема Фруллани.}
+\begin{statementDotted}{Вторая теорема Фруллани}$  $
+	
+	Пусть $ f(x) $ непрерывна для $ \forall \; x \geq 0 $ и $\forall \; A > 0 \Rightarrow$
+	$ \exists \dintl_A^{+\infty} \dfrac{f(x)}{x} dx \in \mathbb{R} $ - сходится. 
+	
+	Тогда:    
+	\begin{equation}
+	\label{5.07}
+	\Phi (a, b) \overset{\eqref{5.04}}{=} f(0) \ln \frac{b}{a}.
+	\end{equation}
+\end{statementDotted}
+\begin{proof}
+	Действуя как в предыдущей теореме, получим:
+	\begin{align*}
+	& \Phi (a, b) \overset{\eqref{5.04}}{=} \limlim{\alpha \to + 0}{\beta \to + \infty} \dintl_\alpha^\beta \dfrac{f(ax)-f(bx)}{x} \; dx
+	= \ldots
+	= \lim\limits_{\alpha \to +0} \;  \dintl_{\alpha a}^{\alpha b} \dfrac{f(t)}{t} dt -
+	\lim\limits_{\beta \to + \infty} \; \dintl_{\beta a}^{\beta b} \dfrac{f(t)}{t} dt 
+	= \\ &
+	= \begin{sqcases}
+	1) \; \exists \; c \in [\alpha a; \alpha b] \Rightarrow \dintl_{\alpha   	
+		a}^{\alpha b} \dfrac{f(\alpha t)}{t} dt
+	= f(c) \dintl_{\alpha a}^{\alpha b} \dfrac{dt}{t} = f(c) \ln \frac{b}{a} 
+	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \\
+	2) \; \dintl_{\beta a}^{\beta b} \dfrac{f(t)}{t} dt 
+	= \dintl_{A>0}^{\beta b} \dfrac{f(t)}{t} dt \;  - 
+	\dintl_{A>0}^{\beta a} \dfrac{f(t)}{t} dt 
+	\xrightarrow[\beta \to + \infty]{}
+	\underbrace{\dintl_{A>0}^{+\infty} \dfrac{f(t)}{t} dt}_{\text{сходится}} -
+	\underbrace{\dintl_{A>0}^{+\infty} \dfrac{f(t)}{t} dt}_{\text{сходится}}
+	= 0
+	\end{sqcases} 
+	= \\ &       
+	= \lim\limits_{\alpha \to +0} f(c) \ln\dfrac{b}{a} 
+	= \begin{sqcases}
+	\alpha a \leq c \leq \beta b \\
+	\alpha \to +0, \;
+	c \to 0
+	\end{sqcases}
+	= f(0) \ln \dfrac{b}{a}.
+	\end{align*}
+\end{proof}

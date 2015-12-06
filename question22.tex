@@ -1,0 +1,91 @@
+\begin{col-answer-preambule}
+	Интегралом Дирихле называется интеграл:
+	\begin{equation}
+	\label{5.01}
+	I = \dintlzi \dfrac{\sin x}{x} dx = \dfrac{\pi}{2}.
+	\end{equation}
+\end{col-answer-preambule}
+
+\colquestion{Вычисление интеграла Дирихле и его обобщения.}
+
+В данном случае $ \dfrac{\sin x}{x} \xrightarrow[x \to 0]{} 1 \in \R{} $,
+поэтому $ x=0 $ - точка устранимого разрыва, и интеграл \eqref{5.01} представляет собой НИ-1:
+\begin{equation*}
+I = \underbrace{\dintl_{0}^{1} \dfrac{\sin x}{x} dx}_{\substack{\text{сходится как} \\ \text{интеграл Римана}}} + 
+\underbrace{\dintl_{1}^{+\infty} \dfrac{\sin x}{x} dx}_{\substack{\text{сходится по признаку} \\ \text{Дирихле для НИ-1}}}.
+\end{equation*}
+В данном случае сходимость будет условной.
+
+Для получения значения \eqref{5.01} рассмотрим при $ \fix a > 0 $ НИЗОП-1:
+\begin{equation}
+\label{5.02}
+\begin{cases}
+F(y) = \dintlzi e^{-ax} \cos (xy) \; dx, \\
+y = [0; + \infty[.
+\end{cases}
+\end{equation}
+В \eqref{5.02} подынтегральная функция $ f(x,y) = e^{-ax} \cos (xy) $,
+во-первых,  является непрерывной для $ \forall x \geq 0 $ и $ \forall y \geq 0 $, 
+а, во-вторых, в силу неравенства
+$ \abs{f(x,y)} =  e^{-ax} \abs{\cos (xy)} \leq e^{-ax} = \varphi (x), $
+где $ \dintlzi \varphi (x) \; dx = \sqcase{-e^{-ax} \dfrac{1}{a}}_0^{+\infty} = \dfrac{1}{a} \in \R{}$ - сходится, по мажорантному признаку Вейерштрасса получаем, что 
+$ F(y) \overset{[0; +\infty[}{\rightrightarrows} $. 
+
+В связи с этим, возможно почленное интегрирование этого НИЗОП, например, по ${ y \in [0; 1] }$.
+Имеем:
+\begin{align*}
+& \exists \; G(a) =  \dintl_0^1 F(y) \; dy \overset{\eqref{5.02}}{=} \dintl_0^1 dy \dintlzi e^{-ax} \cos (xy) \; dx = \dintlzi dx \dintl_0^1 e^{-ax} \cos (xy) \; dy = \\
+& = \dintlzi \sqcase{e^{-ax} \cdot \dfrac{\sin (xy)}{x}}_{y=0}^{y=1} dx = 
+\dintlzi e^{-ax} \cdot  \dfrac{\sin x}{x} \; dx.
+\end{align*}
+
+%\newpage
+
+С другой стороны, интеграл вида \eqref{5.02} был вычислен нами ранее, и для него было получено значение 
+\begin{equation*}
+F(y) = \sqcase{\text{Демидович, № 1828}} =
+\sqcase{\dfrac{y \sin (xy) - a \cos xy}{a^2+y^2}e^{-ax}}_{x=0}^{x=+\infty} =
+\dfrac{a}{a^2+y^2}, \; \forall \fix a  > 0.
+\end{equation*}
+Таким образом:
+\begin{equation*}
+G(a) = \dintl_0^1 F(y) \; dy = \dintl_0^1 \dfrac{a \; dy}{a^2 + y^2}= \sqcase{\arctg \dfrac{y}{a}}_0^1 = \arctg \dfrac{1}{a}, \; a > 0. 
+\end{equation*}
+
+Ранее на основании признака Абеля было показано, что
+$ G(a) = \dintlzi e^{-ax} \dfrac{\sin x}{x}  \; dx \overset{a \in [0; +\infty[}{\rightrightarrows} $. \linebreak
+А так как в данном случае $ g(x, a) = e^{-ax} \dfrac{\sin x}{x}  $ - непрерывна для 
+$ \forall \; x  \neq 0$, $ \forall \; a \in \R{} $ и выполняется 
+$ g(x,a) \xrightarrow[x \to + 0]{}  1 \in \R{} $, то $ G(a) $ будет непрерывна для НИЗОП-2 как функция от $ a \geq 0 $. В связи  с этим:
+\begin{align*}
+& \lim\limits_{a \to +0} G(a) = G(0) = \left. \dintlzi e^{-ax} \; \dfrac{\sin x}{x} \; dx \nullFrac\right\vert_{a=0} = \dintlzi \dfrac{\sin x}{x} dx = I, \\
+& I = \lim\limits_{a \to +0} G(a) = \lim\limits_{a \to +0} \left(\arctg \dfrac{1}{a}\right) = \dfrac{\pi}{2} \Rightarrow \eqref{5.01}.
+\end{align*}
+
+\begin{consequence}[обобщение интеграла Дирихле]
+	Для $ \forall \; b \in \R{{}} $ существует интеграл
+\end{consequence}
+\begin{equation}
+\label{5.03}
+\dintlzi \dfrac{\sin(bx)}{x} \; dx = \dfrac{\pi}{2} \sgn b =
+\begin{cases}
+\dfrac{\pi}{2},\;\;\;\; 	b > 0, \\
+0, 	\;\;\;\;\; 				b = 0, \\
+- \dfrac{\pi}{2},\;\;		b < 0.
+\end{cases}
+\end{equation}
+\begin{proof}
+	Действительно, если $ b > 0 $, то, делая замену $ t =  bx \dvert_0^{+\infty} $, получим:
+	\begin{equation*}
+	\dintlzi \dfrac{\sin bx}{x} dx = 
+	\dintlzi \dfrac{\sin t}{\left(\dfrac{t}{b}\right)} 
+	\cdot \dfrac{dt}{b} = 
+	\dintlzi \dfrac{\sin t}{t} \; dt = \dfrac{\pi}{2}.
+	\end{equation*}    
+	Если же $ b < 0 $, то аналогичным образом получаем:
+	\begin{equation*}
+	\dintlzi \dfrac{\sin bx}{x} dx = 
+	- \dintlzi \dfrac{\sin (-bx)}{x} \; dx \; \overset{-b \; >\;  0}{=} \; - \dfrac{\pi}{2}.
+	\end{equation*}
+	Случай $ b = 0 $ проверяется непосредственной подстановкой.
+\end{proof}
