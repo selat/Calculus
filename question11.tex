@@ -1,0 +1,79 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Теорема о локальной равномерной сходимости СтР, замечания к ней и следствие из неё (о равенстве степенных рядов).}
+\begin{theorem}[о локальной равномерной сходимости СтР]
+	Если СтР \eqref{2.01} имеет ненулевой радиус сходимости, то этот ряд \eqref{2.01}  сходится равномерно на любом отрезке из интервала сходимости данного ряда.
+\end{theorem}
+\begin{proof}$  $
+	
+	Рассмотрим $ \forall \; [a, b] \subset I = \interval]{ \nullFrac x_0-R \;;\; x_0 + R \nullFrac}[$, где $ R > 0 $ - радиус сходимости СтР \eqref{2.01}. Имеем:
+	\begin{equation}
+	\label{2.10}
+	x_0-R < a < b < x+R \Rightarrow -R < a-x_0 < b-x_0 < R \Rightarrow
+	\begin{cases}
+	\abs{a-x_0} < R, \\
+	\abs{b-x_0} < R.
+	\end{cases}
+	\end{equation}
+	Полагая $ r = \max \left\{\nullFrac \abs{a-x_0}, \; \abs{b-x_0} \nullFrac \right\} $, в силу \eqref{2.10} получаем:
+	\begin{equation}
+	\label{2.11}
+	0 \leq r < R.
+	\end{equation}
+	Отсюда для $ \forall \; x \in [a, b] $ получаем:
+	\begin{equation*}
+	\abs{x - x_0} \leq \max \left\{\nullFrac \abs{a-x_0}, \; \abs{b-x_0} \nullFrac \right\} = r,
+	\end{equation*}
+	поэтому для $ \forall \; n \in \mathbb{N}_0 $ имеем:
+	\begin{equation*}
+	\abs{a_n (x-x_0)^n} = \abs{a_n} \abs{x-x_0}^n \leq \abs{a_n} r^n = c_n
+	\text{ - мажоранта.}
+	\end{equation*}
+	
+	Применяя к ряду $ c_n $ обобщённый признак Коши сходимости ЧР, получаем:
+	\begin{equation*}
+	\exists \; \overline{\limninf} \sqrt[n]{\abs{c_n}} =
+	\overline{\limninf} \sqrt[n]{\abs{a_n} r^n} =
+	r \cdot \underbrace{\overline{\limninf} \sqrt[n]{\abs{a_n}}}_{\frac{1}{R}}
+	\overset{\eqref{2.09}}{=} \dfrac{r}{R} \overset{\eqref{2.11}}{<} 1,
+	\end{equation*}
+	а значит, ряд $ \sum c_n $ сходится.\\
+	
+	Таким образом, мы получили равномерно сходящуюся числовую мажоранту, и поэтому, по мажорантному признаку Вейерштрасса для ФР, рассматриваемый СтР \eqref{2.01} будет равномерно сходиться на
+	$ \forall \; [a, b] \subset I$.
+\end{proof}
+
+\begin{notes}
+	\item Из доказанной теоремы следует, что любой СтР сходится локально равномерно на интервале своей сходимости.
+	
+	\item Применяя теорему Стокса-Зейделя для ФР и учитывая, что в \eqref{2.01} все слагаемые являются непрерывными функциями на $ I $,
+	в силу локальной равномерной сходимости \eqref{2.01} на $ I $, внутри интервала сходимости сумма любого СтР \eqref{2.01}  будет являться непрерывной функцией.
+\end{notes}
+\begin{consequence}[о равенстве СтР]
+	Если для СтР \eqref{2.01} с непрерывной суммой $ S_n(x) $ есть степенной ряд
+	$ \sumnzi b_n (x-x_0)^n $ с соответствующей суммой $ T(x) $, причём $ T(x) = S(x) $ в некоторой окрестности центра разложения \nolinebreak$ x_0 $, то тогда и сами СтР совпадают,
+	т.е. $ a_n = b_n, \; \text{для } \; \forall \; n \in \mathbb{N}_0 $.
+\end{consequence}
+
+\begin{proof} Пусть имеем, что
+	\begin{equation*}
+	S(x) = a_0 + a_1 (x-x_0) + \ldots = b_0 + b_1 (x-x_0) + \ldots = T(x).
+	\end{equation*}
+	
+	В силу непрерывности $ S(x) $ и $ T(x) $ в соответствующей окрестности точки $ x_0 $ при
+	$ x \to x_0 $, получаем:
+	\begin{equation*}
+	\begin{split}
+	& a_0 = \lim\limits_{x\to x_0} S(x) = \lim\limits_{x\to x_0} T(x) = b_0, \text{ отсюда }\\
+	& a_1 (x-x_0) + a_2(x-x_0)^2 + \ldots = b_1 (x-x_0) + b_2(x-x_0)^2 + \ldots.
+	\end{split}
+	\end{equation*}
+	Таким образом, для $ \forall \; x \neq x_0 $ имеем:
+	\begin{equation*}
+	a_1 + a_2(x-x_0)  + \ldots =  b_1 + b_2(x-x_0) + \ldots.
+	\end{equation*}
+	
+	Используя опять соответствующую окрестность точки $ x_0 $, при $ x \to x_0 $, получим, что
+	$ a_1 = b_1 $ и так далее (по ММИ).
+\end{proof}
