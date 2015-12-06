@@ -1,0 +1,44 @@
+\begin{col-answer-preambule}
+Под \important{степенным рядом} будем подразумевать ФР вида
+\begin{equation}
+\label{2.01}
+a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + \ldots +  a_n(x-x_0)^n + \ldots
+= \sum_{n=0}^{\infty} a_n(x-x_0)^n,
+\end{equation}
+где $ \fix x_0 \in \R{} $ - центр для СтР, а $ \forall \;	 a_n \in \R{} $ - соответствующая числовая последовательность (\important{коэффициенты СтР}).
+\end{col-answer-preambule}
+
+\colquestion{Теорема Абеля о сходимости степенного ряда (СтР) и замечание к ней.}
+\begin{statementDotted}{Теорема Абеля}[о сходимости степенных рядов]
+	
+	Если СтР \eqref{2.01} сходится при $ x = x_1 \neq x_0 $, то он будет сходится абсолютно для любого $ x $, где
+	\begin{equation}
+	\label{2.02}
+	\abs{x-x_0} < \abs{x_1 - x_0}.
+	\end{equation}
+	
+\end{statementDotted}
+\begin{proof}
+	Из сходимости ряда $ \sumnzi a_n(x_1-x_0)^n $ следует в силу необходимого условия сходимости ЧР, что $ a_n(x_1-x_0)^n \xrightarrow[n \to \infty]{} 0$ ,
+	а т.к. $\forall$ ЧП является ограниченной, то
+	$ \exists \; M  = \const > 0 :
+	\abs{a_n(x_1-x_0)^n} \leq M, \text{ для } \forall \; n \in \mathbb{N}$, т. е.
+	\begin{equation}
+	\label{2.03}
+	\abs{a_n} \leq \dfrac{M}{\abs{x_1-x_0}^n}.
+	\end{equation}
+	
+	Для $\forall \; x $, удовлетворяющего \eqref{2.02}, в силу \eqref{2.03} получаем:
+	\begin{equation*}
+	\abs{a_n (x - x_0)^n} = \abs{a_n} \abs{x - x_0}^n \overset{\eqref{2.03}}{\leq}
+	\dfrac{M \abs{x - x_0}^n}{\abs{x_1 - x_0}^n} = Mq^n,
+	\text{ где } q = \dfrac{\abs{x - x_0}}{\abs{x_1 - x_0}} \in [0;1[.
+	\end{equation*}
+	
+	Таким образом, мы получили сходящуюся мажоранту, ибо ряд $ \sumnzi Mq^n = M \sumnzi q^n $ сходится при $ q \in [0;1[ $.
+	
+	По признаку сравнения сходимости ЧР имеем, что для $ \forall \; x $, удовлетворяющего \eqref{2.02}, ряд \eqref{2.01} будет сходиться.
+\end{proof}
+\begin{note}
+	Из полученных выше результатов следует, что если рассмотреть множество $ X_0 $ всех $ x $, удовлетворяющих \eqref{2.02}, то имеем, что $ X_0 \subset X $, т.е. $X_0$ - некоторое подмножество множества $X$ сходимости для \eqref{2.01}.
+\end{note}
