@@ -1,13 +1,24 @@
 \begin{col-answer-preambule}
-	Определение предельной функции $f(x) \overset{X}{=} \lim\limits_{n \to \infty} f_n(x)$ на $(\varepsilon-\delta)$-языке:
+	Обозначение поточечной сходимости:
+	\begin{equation}
+	\label{eq:lecture01-05}
+	f_n(x) \overset{X}{\rightarrow}f(x)
+	\end{equation}
+	Определение \eqref{eq:lecture01-05} на $(\varepsilon-\delta)$-языке:
 	\begin{equation}
 	\label{eq:lecture01-06}
-	\text{для } \forall \; fix \; x \in X \text{ и } \text{для } \forall \; \varepsilon > 0 \Rightarrow \exists \; \nu = \nu(x, \varepsilon) \in \mathbb{R}\; | \text{ для } \forall \; n \geqslant \nu(\varepsilon) \Rightarrow \abs{f_n(x) - f(x)} \leqslant \varepsilon.
+	\text{для } \forall \; \varepsilon > 0 \text{ и }
+	\text{для } \forall \; fix \; x \in X \; \exists \; \nu = \nu(x, \varepsilon) \in \mathbb{R}\; | \text{ для } \forall \; n \geqslant \nu \Rightarrow \abs{f_n(x) - f(x)} \leqslant \varepsilon.
 	\end{equation}
-	Для обозначения равномерной сходимости $f_n (x)$ на X будем использовать запись:
+	Обозначение равномерной сходимости:
 	\begin{equation}
 	\label{eq:lecture01-07}
-	f_n(x) \overset{X}{\rightrightarrows} f(x).
+	f_n(x) \overset{X}{\rightrightarrows}f(x)
+	\end{equation}
+	Определение \eqref{eq:lecture01-07} на $(\varepsilon-\delta)$-языке:
+	\begin{equation}
+	\label{eq:lecture01-06fixed}
+	\text{для } \forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \in \mathbb{R}\; | \text{ для } \forall \; fix \; x \in X  \text{ и } \text{ для } \forall \; n \geqslant \nu\Rightarrow \abs{f_n(x) - f(x)} \leqslant \varepsilon.
 	\end{equation}
 \end{col-answer-preambule}
 
@@ -20,7 +31,7 @@
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	\circled{$\Rightarrow$} Если выполнена \eqref{eq:lecture01-07}, то, учитывая, что в \eqref{eq:lecture01-06} используется
+	\circled{$\Rightarrow$} Если выполнена \eqref{eq:lecture01-07}, то, учитывая, что в \eqref{eq:lecture01-06fixed} используется
 	$\forall \; n \geqslant \nu(\varepsilon)$ и $\forall \; fix \; x		 \in X$, получаем
 	\begin{equation*}
 	\begin{split}
