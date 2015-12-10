@@ -3,30 +3,38 @@
 \end{col-answer-preambule}
 
 \colquestion{Формула двойной подстановки для НИ и интегрирование по частям в НИ.}
-\important{Формула Ньютона-Лейбница для НИ.}
-
-Пусть для простоты для $f(x)$, определённой для $\forall \; x \in [a, b[$, где $b = + \infty$ или $f(b - 0) = \infty$ существует дифференцируемая первообразная $F(x)$, т.е. $\exists \; F^{'}(x) = f(x), \text{для }\forall \; x \in [a, b[$. Тогда имеем:
+\begin{theorem}[Формула Ньютона-Лейбница для НИ.]
+Пусть для $f(x)$, определённой для $\forall \; x \in [a, b[$, где $b = + \infty$ или $f(b - 0) = \infty$ существует дифференцируемая первообразная $F(x)$, т.е. $\exists \; F^{'}(x) = f(x), \text{для }\forall \; x \in [a, b[$. Тогда имеем:
 \begin{equation*}
 \begin{split}
-&\dint\limits_{a}^{b} f(x)dx = \lim\limitslimits{c \to + \infty, b \to + \infty}{(c \to b-0,b \to -0)} \dint\limits_{a}^{c} f(x)dx = \lim\limits_{c\to b-0} \begin{sqcases} F(x) \end{sqcases}^{c}_{a} = \\
+&\dint\limits_{a}^{b} f(x)dx = \lim\limitslimits{c \to + \infty}{c \to b-0} \dint\limits_{a}^{c} f(x)dx = \lim\limits_{c\to b-0} \begin{sqcases} F(x) \end{sqcases}^{c}_{a} = \\
 & =\lim\limits_{c\to b-0} \left(F(c) - F(a)\right) = F(b-0) - F(a) = \begin{sqcases} F(x) \end{sqcases}^{b-0}_{a}.
 \end{split}
 \end{equation*}
-При этом исходный интеграл сходится тогда и только тогда, когда значения $\linebreak F(b-0), F(+\infty)$ конечны.
-
+При этом используемый интеграл сходится тогда и только тогда, когда значения $\linebreak F(b-0), F(+\infty)$ конечны.
+\end{theorem}
+\begin{proof}
+	Для $fix \; x_0 \in [a,b[$ рассмотрим $F_0(x) = \dintl_{x_0}^	{x}f(t)dt$ - одну из первообразных для $f(x)$, т.к. по теореме Барроу $\exists \; F_0^{'}(x) = f(x)$. Рассмотрим $\forall \; F(x)$ - первообразную $f(x)$ на $[a,b[$. Тогда $\exists \; c_0 = const \; | \; F(x) = F_0(x) + c_0$, т.е. $F(x) - c_0 = F_0(x) = \dintl_{x_0}^{x}f(t)dt$. Полагая здесь $x := a, x := b-0$, имеем: \newline $\begin{cases}F(a) - c_0 = \dintl_{x_0}^{a} f(t)dt, \\ F(b-0) - c_0 = \dintl_{x_0}^{b} f(t)dt. \end{cases} \Rightarrow \left(F(b-0) - c_0\right) - \left(F(a) - c_0\right) = \dintl_{x_0}^{b-0} f(t)dt - \dintl_{x_0}^{a} f(t)dt = \dintl_{x_0}^{b-0} f(t)dt + \dintl_{a}^{x_0} f(t)dt = \dintl_{a}^{b-0} f(t)dt = \newline = F(b-0) - F(a)$.
+	
+	$\dintl_{a}^{b-0} f(t)dt$ сходится $\Leftrightarrow F(b-0)$, т.к. $F(a) = const \in \mathbb{R}$.
+\end{proof}
+\begin{note}
 На практике формулы двойной подстановки используются в том же виде, что и для ОИ: $\dint\limits_{a}^{b} f(x)dx = \begin{sqcases} \dint\limits f(x)dx \end{sqcases}^b_a$.
-\important{Интегрирование по частям в НИ.}
+\end{note}
+\begin{theorem}[Интегрирование по частям в НИ.]
+Пусть $u = u(x), v = v(x)$ непрерывно дифференцируемы на $\forall \; x \in [a; b[$, где $b = + \infty$ или $f(b-0) = \infty$.
 
-Пусть $u = u(x), v = v(x)$ определены для $\forall \; x \in [a; b[$ и $f(b) = \infty$.
-
-Если существует конечный предел $\lim\limitslimits{x \to b-0}{(x\to +\infty)} u(x) v(x) = u(b-0)v(b-0) \in \mathbb{R}$.
-
-В случае сходимости одного из использованных ниже интегралов, получаем:
+Если существует конечный предел $\lim\limitslimits{x \to b-0}{(x\to +\infty)} u(x) v(x) = u(b-0)v(b-0) \in \mathbb{R}$, то тогда в случае сходимости одного из использованных ниже интегралов, получаем:
 \begin{equation*}
-\dint\limits_{a}^{b} u(x) v^{'}(x)dx = \begin{sqcases} u(x)v(x)\end{sqcases}^b_a - \dint\limits_{a}^{b} u^{'}(x) v(x)dx.
+\dint\limits_{a}^{b} u(x) v^{'}(x)dx = \begin{sqcases} u(x)v(x)\end{sqcases}^b_a - \dint\limits_{a}^{b} v(x) u^{'}(x)dx.
 \end{equation*}
-
+\end{theorem}
+\begin{proof}
+	По формулам двойной подстановки для НИ и интегрирования по частям в ОИ: \newline $\dintl_a^{b-0} u(x) dv(x) = \begin{sqcases}\dintl u(x) v^{'}(x) dx\end{sqcases}^{b-0}_{a} = \begin{sqcases}u(x)v(x) - \dintl v(x)du(x)\end{sqcases}^{b-0}_{a} = \begin{sqcases}u(b-0) v(b-0) \in \mathbb{R}\end{sqcases} = \newline = \left(u(b-0) v(b-0) - \dintl v(b-0) u^{'}(b-0) db\right) - \left(v(a)u(a) - \dintl v(a) u^{'}(a) da\right) = \newline = \begin{sqcases}u(x)v(x)\end{sqcases}^{b-0}_{a} - \begin{sqcases}\dintl v(x) u^{'}(x) dx\end{sqcases}^{b-0}_{a} = \begin{sqcases}v(x) u(x)\end{sqcases}^{b-0}_{a} - \dintl_{a}^{b-0} v(x) du(x)$.
+\end{proof}
+\begin{note}
 На практике удобнее использовать:
 \begin{equation*}
 \dint\limits_{a}^{b} udv = \begin{sqcases} uv \end{sqcases}^b_a - \dint\limits_{a}^{b} vdu.
 \end{equation*}
+\end{note}
