@@ -84,6 +84,10 @@
 
 }
 
+\NewDocumentEnvironment{plan}{o}
+{\raggedright \textbf{Краткий план}\IfValueTF{#1}{(\textit{#1})}{}:\begin{enumerate}}
+	{\end{enumerate}}
+
 \newenvironment{theoremNamed}{}{}
 \RenewDocumentEnvironment{theoremNamed}{m o}
 {{\raggedright
