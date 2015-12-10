@@ -1,12 +1,14 @@
 \begin{col-answer-preambule}
-	Для обозначения равномерной сходимости ФР $\sum u_n(x)$ на X будем использовать запись:
+	Обозначение равномерной сходимости:
 	\begin{equation}
 	\label{eq:lecture01-20}
 	\sum u_n(x) \overset{X}{\rightrightarrows}.
 	\end{equation}
-	Критерий Коши сходимости ФР:
-	$\eqref{eq:lecture01-20} \Leftrightarrow \text{для } \forall \; \varepsilon > 0 \; \exists \; \nu (\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \; n$
-	$ \geqslant \nu \; $ и $\text{для }\forall \; m \in \mathbb{N} $ и $\text{для }	\forall \; x \in X \Rightarrow$
+	Критерий Коши равномерной сходимости ФР:
+	$\eqref{eq:lecture01-20} \Leftrightarrow \text{для } \forall \; \varepsilon > 0 \; \exists \; \nu (\varepsilon) \in \mathbb{R} \; |
+	\; \text{для } \forall \; x \in X$
+	$\; \text{и для } \forall \; n$
+	$ \geqslant \nu \; $ и $\newline \text{для }\forall \; m \in \mathbb{N} $ $\Rightarrow$
 	\begin{equation}
 	\label{eq:lecture01-21}
 	\abs{S_{n+m}(x) - S_n(x)} = \abs{ \sum\limits_{k = n + 1}^{k = n + m} u_k(x) } \leqslant \varepsilon.
@@ -16,13 +18,19 @@
 	\begin{equation}
 	\label{eq:lecture01-temp}
 	\end{equation}
+	
+	Будем говорить, что ЧП $\left(a_n\right)$ является \important{сходящейся мажорантой} для ФР $\sum u_n (x)$, если:
+	\begin{enumerate}
+		\item для $\forall \; n \in \mathbb{N}$ и для $\forall \; x \in X \Rightarrow |u_n(x)| \leqslant a_n$,
+		\item ЧР $\sum a_n$ сходится.
+	\end{enumerate}
 \end{col-answer-preambule}
 
 \colquestion{Мажорантный признак Вейерштрасса равномерной сходимости функционального ряда (ФР) и замечания к нему}
 \begin{theorem}[мажорантный признак Вейерштрасса равномерной сходимости ФР] Если ФР имеет на $X$ сходяющуюся числовую мажоранту, то он равномерно сходится на $X$.
 \end{theorem}
 \begin{proof}
-	Доказательство с использованием критерия Коши сходимости числовых последовательностей и критерия Коши сходимости ФР \eqref{eq:lecture01-21}:
+	Доказательство с использованием критерия Коши сходимости числовых последовательностей и критерия Коши равномерной сходимости ФР \eqref{eq:lecture01-21}:
 
 	Т.к. $\sum a_n$ сходится, то
 	\begin{equation}
@@ -30,7 +38,7 @@
 	\text{для } \forall \; \varepsilon > 0 \; \exists \; \nu(\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \;	n \geqslant \nu \text{ и для } \forall \; m \in \mathbb{N} \Rightarrow \abs{\sum_{k = n+1}^{n+m} a_k} \leqslant \varepsilon.
 	\end{equation}
 
-	Если выполняется неравенство $\abs{u_n(x)} \leqslant a_n, \text{ для } \forall \; n \in \mathbb{N} \text{ и для } \forall \; x \in X$, то для частичных сумм ФР $\sum u_n(x)$ имеем: $\abs{S_{m+n} (x) - S_n (x)} = \abs{\sum\limits_{k = n+1}^{n+m} u_k(x)} \leqslant \sum\limits_{k = n + 1}^{n+m} \abs{u_k (x)} \leqslant \sum\limits_{k = n+1}^{n+m} a_k = \abs{\sum\limits_{k = n+1}^{n+m} a_k} \leqslant \varepsilon$, это для $\forall \; n \geqslant \nu = \nu(\varepsilon) \text{ и для } \forall \; m \in \mathbb{N}$, что в силу \eqref{eq:lecture01-21} даёт \eqref{eq:lecture01-20}.
+	Если $\text{для } \forall \; n \in \mathbb{N} \text{ и для } \forall \; x \in X \Rightarrow \abs{u_n(x)} \leqslant a_n$, то для частичных сумм ФР $\sum u_n(x)$ имеем: $\abs{S_{m+n} (x) - S_n (x)} = \abs{\sum\limits_{k = n+1}^{n+m} u_k(x)} \leqslant \sum\limits_{k = n + 1}^{n+m} \abs{u_k (x)} \leqslant \sum\limits_{k = n+1}^{n+m} a_k = \abs{\sum\limits_{k = n+1}^{n+m} a_k} \leqslant \varepsilon$, это для $\forall \; n \geqslant \nu = \nu(\varepsilon) \text{ и для } \forall \; m \in \mathbb{N}$, что в силу \eqref{eq:lecture01-21} даёт \eqref{eq:lecture01-20}.
 \end{proof}
 
 \begin{notes}
