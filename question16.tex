@@ -10,7 +10,7 @@
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	\circled{$\Rightarrow$}. Пусть выполняется \eqref{eq:lecture04-05}, тогда для $\forall \; \varepsilon > 0 \; \exists \; \delta > 0$ такая, что для $\forall \; y \in Y \text{ из } 0 < \abs{y - y_0} \leqslant \delta$, для $\forall \; x \in X \Rightarrow \abs{f(x,y) - \phi(x)} \leqslant \varepsilon$.
+	\circled{$\Rightarrow$}. Пусть выполняется \eqref{eq:lecture04-05}, тогда для $\forall \; \varepsilon > 0 \; \exists \; \delta > 0:$ для $\forall \; y \in Y \text{ из } 0 < \abs{y - y_0} \leqslant \delta$, для $\forall \; x \in X \Rightarrow \abs{f(x,y) - \phi(x)} \leqslant \varepsilon$.
 
 	Рассматривая $\forall \; \left(y_n\right) \in Y$, в пределах точки $y_0$ по найденному ранее  $\delta > 0 \; \exists \; \nu \in \mathbb{R}$ такое, что для $\forall \; n \geqslant \nu \Rightarrow \abs{y_n - y_0} \leqslant \delta$.
 
@@ -47,7 +47,7 @@
 
 	Подставляя $y = y_n$, получаем $0<\abs{y_n - y_0} \leqslant \delta_0 \Rightarrow \abs{f(x_n, y_n) - \phi(x_n)} \leqslant \varepsilon_0$.
 
-	Выбирая теперь $\nu = \dfrac{1}{\delta_0} \in \mathbb{R}, \text{ для } \forall \; n \geqslant \nu \Rightarrow 0 < \abs{y_n - y_0} \leqslant \dfrac{1}{n} \leqslant \dfrac{1}{\nu} = \delta_0$. Отсюда в силу \eqref{eq:lecture04-10} при $\delta = \dfrac{1}{n} > 0$ получаем, что для $\forall \; n \geqslant \nu$ выполняется $\abs{f(x_n,y_n) - \phi(x_n)} > \varepsilon_0$. Противоречие.
+	Выбирая теперь $\nu = \dfrac{1}{\delta_0} \in \mathbb{R}, \text{ для } \forall \; n \geqslant \nu \Rightarrow 0 < \abs{y_n - y_0} \leqslant \dfrac{1}{n} \leqslant \dfrac{1}{\nu}$. Отсюда в силу \eqref{eq:lecture04-10} при $\delta = \dfrac{1}{n} > 0$ получаем, что для $\forall \; n \geqslant \nu$ выполняется $\abs{f(x_n,y_n) - \phi(x_n)} > \varepsilon_0$. Противоречие.
 \end{proof}
 
 \begin{notes}

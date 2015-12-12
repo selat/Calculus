@@ -23,7 +23,7 @@
 	Из \important{теоремы} Кантора для ФНП получаем, что рассматриваемая $f(x,y)$ будет равномерно непрерывна для $\forall \; x \in [a,b]$ и для $\forall \; y \in [c,d]$, т.е.:
 	\begin{equation*}
 	\begin{split}
-	&\text{ для } \forall \; \varepsilon > 0 \; \exists \; \delta = \delta(\varepsilon) > 0, \text{ такая, что для } \forall \; \widetilde{x}, \bar{x} \in [a,b] \text{ и для } \forall \; \widetilde{y}, \bar{y} \in Y \\
+	&\text{ для } \forall \; \varepsilon > 0 \; \exists \; \delta = \delta(\varepsilon) > 0 : \text{для }\forall \; \widetilde{x}, \bar{x} \in [a,b] \text{ и для } \forall \; \widetilde{y}, \bar{y} \in Y \\
 	& \text{ из } \begin{cases}
 	0 < \abs{\bar{x} - \widetilde{x}} \leqslant \delta, \\ 0 < \abs{\bar{y} - \widetilde{y}} \leqslant \delta.
 	\end{cases} \Rightarrow \abs{f(\widetilde{x}, \widetilde{y}) - f(\bar{x}, \bar{y})} \leqslant \varepsilon.
@@ -35,7 +35,7 @@
 	\end{cases}$, получаем:
 	\begin{equation*}
 	\begin{split}
-	& \text{ для } \forall \; \varepsilon > 0 \; \exists \; \delta = \delta (\varepsilon) > 0 \text{ такая, что для } \forall \; y \in [c,d] \text{ из } \abs{y - y_0}  \leqslant \delta(\varepsilon),  \text{ для } \forall \; x \in [a,b] \Rightarrow \\
+	& \text{ для } \forall \; \varepsilon > 0 \; \exists \; \delta = \delta (\varepsilon) > 0: \text{для } \forall \; y \in [c,d] \text{ из } \abs{y - y_0}  \leqslant \delta(\varepsilon),  \text{ для } \forall \; x \in [a,b] \Rightarrow \\
 	& \Rightarrow \abs{f(x, y) - f(x, y_0)} \leqslant \varepsilon.
 	\end{split}
 	\end{equation*}
