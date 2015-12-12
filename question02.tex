@@ -1,8 +1,22 @@
 \begin{col-answer-preambule}
+	Определение ФП частичных сумм ФР:
+	\begin{equation*}
+		S_n(x) = u_1(x) + u_2(x) + \ldots + u_n(x) = \sum\limits_{k=1}^{n}u_k(x),	
+	\end{equation*}
+	Обозначение поточечной сходимости ФР:
+	\begin{equation}
+	\label{eq:lecture01-014}
+	\sum u_n(x) \overset{X}{\rightarrow} S(x) \text{ или } \sum u_n(x) \overset{X}{\rightarrow}.
+	\end{equation}
+	Из необходимого условия сходимости ЧР, имеем:
+	\begin{equation}
+	\label{eq:lecture01-16}
+	u_n(x) \overset{X}{\rightarrow} 0
+	\end{equation}
 	Обозначение равномерной сходимости ФР:
 	\begin{equation}
 	\label{eq:lecture01-20}
-	\sum u_n(x) \overset{X}{\rightrightarrows}.
+	\sum u_n(x) \overset{X}{\rightrightarrows}S(x) \text{ или } \sum u_n(x) \overset{X}{\rightrightarrows}.
 	\end{equation}
 	Критерий Коши равномерной сходимости ФР:
 	\begin{equation}
@@ -14,7 +28,7 @@
 	Критерий Коши сходимости ЧР:
 	\begin{equation}
 	\label{eq:lecture01-temp}
-	\sum a_n \text{ сходится} \Leftrightarrow \text{для } \forall \;  \varepsilon>0 \ \exists \; \nu \in \mathbb{R} : \text{для }\forall \; n \geqslant \nu \; \text{ и} \;  \text{для }\forall\; m \in \mathbb{N} \Rightarrow \abs{S_{n+m} - S_n} = \abs{\sum\limits_{k = n + 1}^{n + m} a_k} \leqslant \varepsilon
+	\sum a_n \text{ сходится} \Leftrightarrow \text{для } \forall \;  \varepsilon>0 \ \exists \; \nu \in \mathbb{R} : \text{для }\forall \; n \geqslant \nu \; \text{ и} \;  \text{для }\forall\; m \in \mathbb{N} \Rightarrow \abs{S_{n+m} - S_n} = \abs{\sum\limits_{k = n + 1}^{n + m} a_k} \leqslant \varepsilon.
 	\end{equation}
 	ЧП $\left(a_n\right)$ является \important{сходящейся числовой мажорантой} для ФР $\sum u_n (x)$, если:
 	\begin{equation}
