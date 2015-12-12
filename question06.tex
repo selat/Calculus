@@ -19,11 +19,11 @@
 	 	\abs{S(x) - S_n(x)} = \abs{\sum_{k = n+1}^{\infty} u_k(x)} \leqslant \varepsilon
 	\end{equation}
 
-	Отсюда получаем, что $\abs{\dint\limits_a^b S(x)dx - I_n} = \abs{\dint\limits_a^b S(x)dx - \dint\limits_a^b S_n(x)dx} =  \abs{\dint\limits_a^b (S(x) - S_n(x))dx} \leqslant $ \\ $\leqslant \dint\limits_a^b \abs{S(x) - S_n(x)}dx \leqslant \dint\limits_a^b \varepsilon dx = M \varepsilon$, где $M = b - a = const \geqslant 0$. 
+	Отсюда получаем, что $\abs{\dint\limits_a^b S(x)dx - T_n} = \abs{\dint\limits_a^b S(x)dx - \dint\limits_a^b S_n(x)dx} =  \abs{\dint\limits_a^b (S(x) - S_n(x))dx} \leqslant $ \\ $\leqslant \dint\limits_a^b \abs{S(x) - S_n(x)}dx \leqslant \dint\limits_a^b \varepsilon dx = M \varepsilon$, где $M = b - a = const \geqslant 0$. 
 	
-	Таким образом, для $\forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \text{ для } \forall \; n \geqslant \nu \Rightarrow \abs{\dint\limits_a^b S(x) dx - I_n} \leqslant M \varepsilon$, поэтому по М-лемме сходимости ЧП следует, что
+	Таким образом, для $\forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \text{ для } \forall \; n \geqslant \nu \Rightarrow \abs{\dint\limits_a^b S(x) dx - T_n} \leqslant M \varepsilon$, поэтому по М-лемме сходимости ЧП следует, что
 	\begin{equation*}
-    	\exists \lim\limits_{n \to \infty} I_n = \dint\limits_a^b S(x)dx = \dint\limits_a^b \left(\sum\limits_{k=1}^{\infty} u_k(x)\right) dx,
+    	\exists \lim\limits_{n \to \infty} T_n = \dint\limits_a^b S(x)dx = \dint\limits_a^b \left(\sum\limits_{k=1}^{\infty} u_k(x)\right) dx,
 	\end{equation*}
 	что равносильно \eqref{eq:lecture01-32}.
 \end{proof}
