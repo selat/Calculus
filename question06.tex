@@ -1,4 +1,10 @@
 \colquestion{Теорема о почленном интегрировании равномерно сходящегося ФР}
+\begin{plan}
+\item Очевидно, что $S(x)$ - непрерывна, поэтому интегрируема
+\item Рассмотрим частичные суммы $T_n = \suml_{k=1}^{n}\int u_k(x)dx$.
+\item Рассмотрим разницу $\abs{T_n - \intl_a^bS(x)}$ и т.к. $\abs{S(x) - S_n(x)} \leqslant \varepsilon$ получим $\intl_a^b (S(x) - S_n(x)) \leqslant M \varepsilon$
+\item Доказываем по М-лемме о сходимости ЧП.
+\end{plan}
 \begin{theorem}[о почленном интегрировании равномерно сходящихся ФР]
 	Если $\forall \; u_n(x) \in C([a,b]), $ \\ для $n \in \mathbb{N}$, то в случае, когда $\sum u_n(x) \overset{[a,b]}{\rightrightarrows}$, возможно почленное интегрирование этого ряда на $[a,b]$, т.е.
 	\begin{equation}
@@ -19,8 +25,8 @@
 	 	\abs{S(x) - S_n(x)} = \abs{\sum_{k = n+1}^{\infty} u_k(x)} \leqslant \varepsilon
 	\end{equation}
 
-	Отсюда получаем, что $\abs{\dint\limits_a^b S(x)dx - T_n} = \abs{\dint\limits_a^b S(x)dx - \dint\limits_a^b S_n(x)dx} =  \abs{\dint\limits_a^b (S(x) - S_n(x))dx} \leqslant $ \\ $\leqslant \dint\limits_a^b \abs{S(x) - S_n(x)}dx \leqslant \dint\limits_a^b \varepsilon dx = M \varepsilon$, где $M = b - a = const \geqslant 0$. 
-	
+	Отсюда получаем, что $\abs{\dint\limits_a^b S(x)dx - T_n} = \abs{\dint\limits_a^b S(x)dx - \dint\limits_a^b S_n(x)dx} =  \abs{\dint\limits_a^b (S(x) - S_n(x))dx} \leqslant $ \\ $\leqslant \dint\limits_a^b \abs{S(x) - S_n(x)}dx \leqslant \dint\limits_a^b \varepsilon dx = M \varepsilon$, где $M = b - a = const \geqslant 0$.
+
 	Таким образом, для $\forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \; | \; \text{ для } \forall \; n \geqslant \nu \Rightarrow \abs{\dint\limits_a^b S(x) dx - T_n} \leqslant M \varepsilon$, поэтому по М-лемме сходимости ЧП следует, что
 	\begin{equation*}
     	\exists \lim\limits_{n \to \infty} T_n = \dint\limits_a^b S(x)dx = \dint\limits_a^b \left(\sum\limits_{k=1}^{\infty} u_k(x)\right) dx,
