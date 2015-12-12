@@ -1,5 +1,5 @@
 \begin{col-answer-preambule}
-	Обозначение поточечной сходимости:
+	Обозначение поточечной сходимости ФП:
 	\begin{equation}
 	\label{eq:lecture01-05}
 	f_n(x) \overset{X}{\rightarrow}f(x)
@@ -10,7 +10,7 @@
 	\text{для } \forall \; \varepsilon > 0 \text{ и }
 	\text{для } \forall \; fix \; x \in X \; \exists \; \nu = \nu(x, \varepsilon) \in \mathbb{R}\; | \text{ для } \forall \; n \geqslant \nu \Rightarrow \abs{f_n(x) - f(x)} \leqslant \varepsilon.
 	\end{equation}
-	Обозначение равномерной сходимости:
+	Обозначение равномерной сходимости ФП:
 	\begin{equation}
 	\label{eq:lecture01-07}
 	f_n(x) \overset{X}{\rightrightarrows}f(x)
@@ -21,9 +21,16 @@
 	\text{для } \forall \; \varepsilon > 0 \; \exists \; \nu = \nu(\varepsilon) \in \mathbb{R}\; | \text{ для } \forall \; fix \; x \in X  \text{ и } \text{для } \forall \; n \geqslant \nu\Rightarrow \abs{f_n(x) - f(x)} \leqslant \varepsilon.
 	\end{equation}
 	\begin{plan}
-		\item Необходимость: по \eqref{eq:lecture01-06fixed}, уйдя от $x: 0 \leqslant r_n \leqslant \varepsilon$.
-		\item Достаточность: написать \eqref{eq:lecture01-06fixed}, вписав $r_n:\abs{f_n(x) - f(x)} \leqslant \sup\limits_{x \in X}\abs{f_n(x) - f(x)} = r_n \leqslant
+		\item Формулировка: $+$.
+		\item Доказательство:
+		\subitem \circled{$\Rightarrow$}: $\abs{f_n(x) - f(x)} \leqslant \varepsilon \Rightarrow r_n = \sup\limits_{x \in X} \abs{f_n(x) - f(x)} \leqslant \varepsilon \Rightarrow 0 \leqslant r_n \leqslant \varepsilon, \text{ т.е. }
+		r_n \xrightarrow[n \to \infty]{}0$.
+		\subitem \circled{$\Leftarrow$}: написать \eqref{eq:lecture01-06fixed}, вписав $r_n \text{ т.е. } \abs{f_n(x) - f(x)} \leqslant \sup\limits_{x \in X}\abs{f_n(x) - f(x)} = r_n \leqslant
 		\varepsilon$.
+		\item Замечания: достаточные условия равномерной (неравномерной) сходимости ФП.
+		\subitem $\abs{f_n(x) - f(x)} \leqslant a_n$, где $\left(a_n\right)$ - б.м.п
+		\subitem $\exists \; x_n \in X \; \,\vert\,\; g_n(x) = \abs{f_n(x) - f(x)} \Rightarrow g_n(x) \centernot{
+			\xrightarrow[n \to \infty]{}} 0$.
 	\end{plan}
 \end{col-answer-preambule}
 
