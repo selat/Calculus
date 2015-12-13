@@ -3,14 +3,14 @@
 Будем говорить, что в $\sum u_n(x)$ \important{возможен почленный предельный переход} $x \to x_0$, если
 \begin{equation}
 \label{eq:lecture01-28}
-\exists \; lim \sum_{n = 1}^{\infty} u_n(x) = \sum_{n = 1}^{\infty} lim u_n(x),
+\exists \; \lim\limits_{x \to x_0}\sum_{n = 1}^{\infty} u_n(x) = \sum_{n = 1}^{\infty} \lim_{x \to x_0} u_n(x),
 \end{equation}
 причём получившийся в левой части \eqref{eq:lecture01-28} ЧР является сходящимся.
 
-В частности, если $x_0 \in X$ и $\forall \; u_n(x)$ непрерывен в некоторой окрестности точки $x_0$, и значит, для $\forall \; n \in \mathbb{N} \; \exists \lim\limits_{x \to x_0} u_n(x) = u_n(x_0)$, то в случае выполнения \eqref{eq:lecture01-28} для суммы $S(x)$ ФР $\sum u_n(x)$ при $x \to x_0$ имеем:
+В частности, если $x_0 \in X$ и $\forall \; u_n(x)$ непрерывен в некоторой окрестности точки $x_0$, и значит, \newline для $\forall \; n \in \mathbb{N} \; \exists \lim\limits_{x \to x_0} u_n(x) = u_n(x_0)$, то в случае выполнения \eqref{eq:lecture01-28} для суммы $S(x)$ ФР $\sum u_n(x)$ при $x \to x_0$ имеем:
 \begin{equation}
 \label{eq:lecture01-29}
-\exists \; \lim\limits_{x \to x_0} S(x) = \lim\limits_{x \to x_0} \sum_{n=1}^{\infty} u_n(x) = \sum_{n=1}^{\infty} \lim\limits_{x \to x_0} u_n(x) = \sum_{n=1}^{\infty} u_n(x_0) = S(x),
+\exists \; \lim\limits_{x \to x_0} S(x) = \lim\limits_{x \to x_0} \sum_{n=1}^{\infty} u_n(x) = \sum_{n=1}^{\infty} \lim\limits_{x \to x_0} u_n(x) = \sum_{n=1}^{\infty} u_n(x_0) = S(x_0),
 \end{equation}
 что соответствует непрерывности $S(x)$ в точке $x_0 \in X$.
 \end{col-answer-preambule}
@@ -18,10 +18,12 @@
 \colquestion{Теорема о непрерывности суммы равномерно сходящегося ФР и замечания к ней}
 \begin{col-answer-preambule}
   \begin{plan}
-    \item Пишем, что нужно обосновать для $\forall x \in X$, при этом нужно использовать односторонние пределы для концевых значений.
-    \item Рассматриваем приращение суммы $\Delta S(x_0)$.
-    \item Рассматриваем две разности частичной суммы и полной суммы (с $x_0$ и $x_0 + \Delta x$).
-    \item Хитро запихиваем обе разности под модуль так, чтобы в итоге выскочило $\Delta S(x_0)$ и получаем непрерывность по M-лемме.
+  	\item Формулировка: по названию + каждый член ряда — непрерывная функция.
+  	\item Доказательство:
+    \subitem Пишем, что нужно обосновать для $\forall \; x \in X$, при этом нужно использовать односторонние пределы для концевых значений.
+    \subitem Рассматриваем приращение суммы $\Delta S(x_0)$.
+    \subitem Рассматриваем две разности частичной суммы и полной суммы (с $x_0$ и $x_0 + \Delta x$).
+    \subitem Хитро запихиваем обе разности под модуль так, чтобы в итоге выскочило $\Delta S(x_0)$ и получаем непрерывность по M-лемме.
   \end{plan}
 \end{col-answer-preambule}
 \begin{theorem}[о непрерывности суммы равномерно сходящегося ФР]
