@@ -5,11 +5,18 @@
 	\sum u_n(x) \overset{X}{\rightarrow}.
 	\end{equation}
 	\begin{plan}
-	\item in progress
+		\item Формулировка: \important{оДин}и - один знак, Ди\important{ни} - непрерывны, Ди\important{ни} - непрерывны.
+		\item Доказательство:
+		\subitem 3 свойства остатка ряда $R_n(x) = S(x) - S_n(x)$: Fun UFO (\textcolor{magenta}{F}u\textcolor{magenta}{n} UFO — функция непрерывна, Fu\textcolor{magenta}{n} \textcolor{magenta}{U}FO — последовательность убывает, Fun U\textcolor{magenta}{FO} — функция к 0).
+		\subitem От противного показать, что это равномерная сходимость через правило де Моргана и принцип выбора (противоречие с последним свойством остатка).
+		\subitem \circled{$\Leftarrow$}: написать \eqref{eq:lecture01-06fixed}, вписав $r_n \text{ т.е. } \abs{f_n(x) - f(x)} \leqslant \sup\limits_{x \in X}\abs{f_n(x) - f(x)} = r_n \leqslant
+		\varepsilon$.
+		\item Теорема: то же самое, только вместо сохранения одного знака члены ФП будут монотонны.
+			\subitem через $u_n(x) = f_n(x) - f_{n-1}(x)$
 	\end{plan}
 \end{col-answer-preambule}
 \colquestion{Признак Дини равномерной сходимости ФР и следствие из него (теорема Дини для ФП)}
-\begin{theorem}[Признак Дини равномерно сходящихся ФР]
+\begin{theorem}[Признак Дини равномерной сходимости ФР]
 	Пусть
 	\begin{enumerate}
 		\item Члены ФР $\sum u_n(x)$ непрерывны и сохраняют один и тот же знак на $X = [a, b], \text{ для } \forall \; n \in \mathbb{N}$.
@@ -32,7 +39,7 @@
 	Если для ФП $f_n(x), n \in \mathbb{N}$ на $X = [a,b]$ выполняются свойства:
 	\begin{enumerate}
 		\item для $\forall \; f_n(x) \in C([a,b])$ и для	 $\forall \; fix \; x \in X \Rightarrow f_n(x)$ монотонна.
-		\item $f_n(x) 	\overset{X}{\longrightarrow}f(x)$. Тогда, если $f(n) \in C([a,b])$, то $f_n(x) \overset{X}{\rightrightarrows}$.
+		\item $f_n(x) 	\overset{X}{\longrightarrow}f(x)$. Тогда, если $f(x) \in C([a,b])$, то $f_n(x) \overset{X}{\rightrightarrows}$.
 	\end{enumerate}
 \end{consequence}
 \begin{proof}
