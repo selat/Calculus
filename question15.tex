@@ -1,5 +1,5 @@
 \begin{col-answer-preambule}
-	Функцию $\phi(x)$, определённую на $X$ будем называть \important{равномерным частным пределом} $f(x,y)$ при $y \to y_0$, если 
+	Функцию $\phi(x)$, определённую на $X$ будем называть \important{равномерным частным пределом} $f(x,y)$ при $y \to y_0$, если
 	\begin{equation}
 	\label{eq:lecture04-04}
 	\text{для } \forall \; \varepsilon > 0 \; \exists \; \delta (\varepsilon) > 0 \; | \; \text{для } \forall \; x \in X \text{ и для } \forall \; y \in Y \text{ из } 0 < |y-y_0| \leqslant \delta \text{ следует } |f(x,y) - \phi(x)| \leqslant \varepsilon.
@@ -12,6 +12,10 @@
 \end{col-answer-preambule}
 
 \colquestion{Признак существования равномерного частного предела для непрерывных Ф2П.}
+\begin{plan}
+\item Теорема Кантора для ФНП (что-то вроде Коши для ЧР).
+\item Хитрая замена нужных x.
+\end{plan}
 \begin{theorem}[признак равномерной сходимости Ф2П]
 	Если функция $f(x,y)$ непрерывна на прямоугольнике $[a,b] \times [c,d]$, являющимся компактом в $\mathbb{R}^2$, и $y_0 \in [c,d]$, то имеем:
 	\begin{equation}
@@ -29,7 +33,7 @@
 	\end{cases} \Rightarrow \abs{f(\widetilde{x}, \widetilde{y}) - f(\bar{x}, \bar{y})} \leqslant \varepsilon.
 	\end{split}
 	\end{equation*}
-	
+
 	Полагая здесь: $\begin{cases}
 	\widetilde{x} = \bar{x} = x \in [a,b],\\ \widetilde{y} = y \in [c,d], \\ \bar{y} = y_0 \in [c,d].
 	\end{cases}$, получаем:

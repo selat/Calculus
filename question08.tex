@@ -9,14 +9,19 @@ a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + \ldots +  a_n(x-x_0)^n + \ldots
 \end{col-answer-preambule}
 
 \colquestion{Теорема Абеля о сходимости степенного ряда (СтР) и замечание к ней.}
+\begin{plan}
+\item Сходящаяся ЧП является ограниченной (т.е. ограничен каждый её член)
+\item Рассматриваем это условие для $x_1$, получаем верхнюю границу для $a_n$.
+\item Затем аналогично рассматриваем условие для $x$, ограничивая сверху $M q^n$.
+\end{plan}
 \begin{statementDotted}{Теорема Абеля}[о сходимости степенных рядов]
-	
+
 	Если СтР \eqref{2.01} сходится при $ x = x_1 \neq x_0 $, то он будет сходится абсолютно для любого $ x $, где
 	\begin{equation}
 	\label{2.02}
 	\abs{x-x_0} < \abs{x_1 - x_0}.
 	\end{equation}
-	
+
 \end{statementDotted}
 \begin{proof}
 	Из сходимости ряда $ \sumnzi a_n(x_1-x_0)^n $ следует в силу необходимого условия сходимости ЧР, что $ a_n(x_1-x_0)^n \xrightarrow[n \to \infty]{} 0$ ,
@@ -27,16 +32,16 @@ a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + \ldots +  a_n(x-x_0)^n + \ldots
 	\label{2.03}
 	\abs{a_n} \leq \dfrac{M}{\abs{x_1-x_0}^n}.
 	\end{equation}
-	
+
 	Для $\forall \; x $, удовлетворяющего \eqref{2.02}, в силу \eqref{2.03} получаем:
 	\begin{equation*}
 	\abs{a_n (x - x_0)^n} = \abs{a_n} \abs{x - x_0}^n \overset{\eqref{2.03}}{\leq}
 	\dfrac{M \abs{x - x_0}^n}{\abs{x_1 - x_0}^n} = Mq^n,
 	\text{ где } q = \dfrac{\abs{x - x_0}}{\abs{x_1 - x_0}} \in [0;1[.
 	\end{equation*}
-	
+
 	Таким образом, мы получили сходящуюся мажоранту, ибо ряд $ \sumnzi Mq^n = M \sumnzi q^n $ сходится при $ q \in [0;1[ $.
-	
+
 	По признаку сравнения сходимости ЧР имеем, что для $ \forall \; x $, удовлетворяющего \eqref{2.02}, ряд \eqref{2.01} будет сходиться.
 \end{proof}
 \begin{note}

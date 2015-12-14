@@ -3,6 +3,18 @@
 \end{col-answer-preambule}
 
 \colquestion{Формула двойной подстановки для НИ и интегрирование по частям в НИ.}
+\begin{plan}
+\item Рассматриваем частичную первообразную $F_0(x) = \intl_{x_0}^xf(t)dt$
+\item По теореме Барроу можно продифференцировать интеграл.
+\item Рассматриваем произвольную первообразную $F(x)$ и замечаем, что $F(x) = F(x_0) + c_0$
+\item $x = a$, $x = b - 0$
+\item Выражаем общий интеграл и получаем нужную формулу. При этом проблемным в формуле будет только $F(b-0)$. Т.е. интеграл сходится $\Leftrightarrow$ сходится $F(b-0)$.
+\end{plan}
+Интегрирование по частям
+
+\begin{plan}
+\item По формулам двойной подстановки и интегрирования по чатям для НИ.
+\end{plan}
 \begin{theorem}[Формула Ньютона-Лейбница для НИ.]
 Пусть для $f(x)$, определённой для $\forall \; x \in [a, b[$, где $b = + \infty$ или $f(b - 0) = \infty$ существует дифференцируемая первообразная $F(x)$, т.е. $\exists \; F^{'}(x) = f(x), \text{для }\forall \; x \in [a, b[$. Тогда имеем:
 \begin{equation*}
@@ -15,7 +27,7 @@
 \end{theorem}
 \begin{proof}
 	Для $fix \; x_0 \in [a,b[$ рассмотрим $F_0(x) = \dintl_{x_0}^	{x}f(t)dt$ - одну из первообразных для $f(x)$, т.к. по теореме Барроу $\exists \; F_0^{'}(x) = f(x)$. Рассмотрим $\forall \; F(x)$ - первообразную $f(x)$ на $[a,b[$. Тогда $\exists \; c_0 = const \; | \; F(x) = F_0(x) + c_0$, т.е. $F(x) - c_0 = F_0(x) = \dintl_{x_0}^{x}f(t)dt$. Полагая здесь $x := a, x := b-0$, имеем: \newline $\begin{cases}F(a) - c_0 = \dintl_{x_0}^{a} f(t)dt, \\ F(b-0) - c_0 = \dintl_{x_0}^{b} f(t)dt. \end{cases} \Rightarrow \left(F(b-0) - c_0\right) - \left(F(a) - c_0\right) = \dintl_{x_0}^{b-0} f(t)dt - \dintl_{x_0}^{a} f(t)dt = \dintl_{x_0}^{b-0} f(t)dt + \dintl_{a}^{x_0} f(t)dt = \dintl_{a}^{b-0} f(t)dt = \newline = F(b-0) - F(a)$.
-	
+
 	$\dintl_{a}^{b-0} f(t)dt$ сходится $\Leftrightarrow F(b-0)$, т.к. $F(a) = const \in \mathbb{R}$.
 \end{proof}
 \begin{note}
