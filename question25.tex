@@ -19,7 +19,7 @@
 	\end{equation}
 \end{statementDotted}
 \begin{proof}
-	Действуя как в предыдущей теореме, получим:
+	Действуя как в первой теореме Фруллани, получим:
 	\begin{align*}
 	& \Phi (a, b) \overset{\eqref{5.04}}{=} \limlim{\alpha \to + 0}{\beta \to + \infty} \dintl_\alpha^\beta \dfrac{f(ax)-f(bx)}{x} \; dx
 	= \ldots
@@ -27,8 +27,8 @@
 	\lim\limits_{\beta \to + \infty} \; \dintl_{\beta a}^{\beta b} \dfrac{f(t)}{t} dt
 	= \\ &
 	= \begin{sqcases}
-	1) \; \exists \; c \in [\alpha a; \alpha b] \Rightarrow \dintl_{\alpha
-		a}^{\alpha b} \dfrac{f(\alpha t)}{t} dt
+	1) \; \exists \; c \in [\alpha a; \alpha b] \; : \; \dintl_{\alpha
+		a}^{\alpha b} \dfrac{f(t)}{t} dt
 	= f(c) \dintl_{\alpha a}^{\alpha b} \dfrac{dt}{t} = f(c) \ln \frac{b}{a}
 	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \\
 	2) \; \dintl_{\beta a}^{\beta b} \dfrac{f(t)}{t} dt
@@ -42,9 +42,7 @@
 	= \\ &
 	= \lim\limits_{\alpha \to +0} f(c) \ln\dfrac{b}{a}
 	= \begin{sqcases}
-	\alpha a \leq c \leq \beta b \\
-	\alpha \to +0, \;
-	c \to 0
+	\alpha a \leq c \leq \alpha b \Rightarrow c \xrightarrow[\alpha \to +0]{} 0	
 	\end{sqcases}
 	= f(0) \ln \dfrac{b}{a}.
 	\end{align*}
