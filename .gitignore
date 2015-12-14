@@ -2,6 +2,7 @@
 lecture*.tex
 matan.tex
 matan.pdf
+colloqium-answers.synctex.gz
 
 # Ignore temporary files
 *.aux
