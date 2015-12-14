@@ -2,6 +2,11 @@
 \end{col-answer-preambule}
 
 \colquestion{Первая теорема Фруллани.}
+\begin{plan}
+\item Раскладываем на два интеграла по лемме Фруллани.
+\item По теореме о среднем для ОИ получаем подобие формулы из условия.
+\item Переходим к пределу в формуле.
+\end{plan}
 \begin{statementDotted}{Первая теорема Фруллани}
 	Если $ f(x) $ непрерывна для $ \forall \; x \geq 0 $ и $ \exists f(\infty) \in \mathbb{R} $, то
 	\begin{equation}
@@ -15,29 +20,29 @@
 	&\Phi (a, b) = \limlim{\alpha \to + 0}{\beta \to + \infty} \; \dintl_\alpha^\beta
 	\dfrac{f(ax)-f(bx)}{x} \; dx \overset{\eqref{5.05}}{=}
 	\limlim{\alpha \to +0}{\beta \to + \infty} \; \dintl_a^b
-	\dfrac{f(\alpha x)-f(\beta x)}{x} \; dx =       
-	\\ & =        
+	\dfrac{f(\alpha x)-f(\beta x)}{x} \; dx =
+	\\ & =
 	\lim\limits_{\alpha \to +0} \; \dintl_a^b \dfrac{f(\alpha x)}{x} \; dx -
-	\lim\limits_{\beta \to + \infty} \dintl_a^b  \dfrac{f(\beta x)}{x} \; dx = 
+	\lim\limits_{\beta \to + \infty} \dintl_a^b  \dfrac{f(\beta x)}{x} \; dx =
 	\\ & =
 	\begin{sqcases}
 	\text{По теореме о среднем для ОИ:} \\
 	\nullFrac
 	1) \; \exists \; c_1 \in [a;b] \Rightarrow \dintl_a^b \dfrac{f(\alpha x)}{x} dx
-	= f(\alpha c_1) \dintl_a^b \dfrac{dx}{x} = f(\alpha c_1) \ln \frac{b}{a} 
+	= f(\alpha c_1) \dintl_a^b \dfrac{dx}{x} = f(\alpha c_1) \ln \frac{b}{a}
 	\nullFrac \\
 	2) \; \exists \; c_2 \in [a;b] \Rightarrow \dintl_a^b \dfrac{f(\beta x)}{x} dx
 	= f(\beta c_2) \dintl_a^b \dfrac{dx}{x} = f(\beta c_2) \ln \frac{b}{a}
-	\end{sqcases} =      
+	\end{sqcases} =
 	\limlim{\alpha \to + 0}{\beta \to + \infty} \; \left(\nullFrac f(\alpha c_1) - f(\beta c_2) \nullFrac\right) \ln \dfrac{b}{a} =
 	\\ & =
 	\begin{sqcases}
-	1) \; \alpha a \leq \alpha c_1 \leq \alpha b \Rightarrow 
-	\sqcase{\alpha \to +0, \; \alpha c_1 \to 0} \Rightarrow f(\alpha c_1) \xrightarrow[\alpha \to +0]{}  f(0) 
+	1) \; \alpha a \leq \alpha c_1 \leq \alpha b \Rightarrow
+	\sqcase{\alpha \to +0, \; \alpha c_1 \to 0} \Rightarrow f(\alpha c_1) \xrightarrow[\alpha \to +0]{}  f(0)
 	\;\;\;\;\;\;\;\;\; \\
-	2) \; \beta a \leq \beta c_2 \leq \beta b \Rightarrow 
+	2) \; \beta a \leq \beta c_2 \leq \beta b \Rightarrow
 	\sqcase{\beta \to +\infty, \; \beta c_2 \to \infty} \Rightarrow f(\beta c_2) \xrightarrow[\beta \to + \infty]{} f(+\infty)
-	\end{sqcases} =        
+	\end{sqcases} =
 	\left(\nullFrac f(0) - f(+\infty) \nullFrac\right) \ln \dfrac{b}{a}.
 	\end{align*}
 \end{proof}

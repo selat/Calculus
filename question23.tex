@@ -6,11 +6,15 @@
 \end{equation}
 где $ a, b = \const > 0 $.
 
-В зависимости от свойств подынтегральной функции в \eqref{5.04}, рассмотрим три основные формулы для вычисления интеграла Фруллани. 
-Для этого нам понадобится с следующая 
+В зависимости от свойств подынтегральной функции в \eqref{5.04}, рассмотрим три основные формулы для вычисления интеграла Фруллани.
+Для этого нам понадобится с следующая
 \end{col-answer-preambule}
 
 \colquestion{Лемма Фруллани.}
+\begin{plan}
+\item Замена $t = ax$.
+\item Замена $z = t / \alpha$.
+\end{plan}
 \begin{lemmaNamed}{Фруллани}
 	Если для функции $ f(x) $, определённой для $ \forall \; x > 0 $, функция $ \dfrac{f(x)}{x} $ интегрируема на любом конечном промежутке из $ \interval]{\; 0; +\infty \; }[ $, то
 	тогда для $ \forall \; a , b, \alpha, \beta = \const > 0$ верно равенство
@@ -18,32 +22,32 @@
 	\label{5.05}
 	\dintl_\alpha^\beta \dfrac{f(ax)-f(bx)}{x} dx =
 	\dintl_a^b \dfrac{f(\alpha x)-f(\beta x)}{x} dx
-	\end{equation}    
+	\end{equation}
 \end{lemmaNamed}
 \begin{proof}$  $
-	
+
 	Используя аддитивность интеграла Римана, после соответствующей замены имеем:
 	\begin{align*}
 	&
 	\dintl_\alpha^\beta \dfrac{f(ax)-f(bx)}{x} dx =
-	\dintl_\alpha^\beta \dfrac{f(ax)}{x} dx - \dintl_\alpha^\beta \dfrac{f(bx)}{x} dx =    
+	\dintl_\alpha^\beta \dfrac{f(ax)}{x} dx - \dintl_\alpha^\beta \dfrac{f(bx)}{x} dx =
 	\begin{sqcases}
 	1) \; t = ax \vert_{\alpha a}^{\beta a} \;  \\
 	2) \; t = bx \vert_{\alpha b}^{\beta b} \;
 	\end{sqcases} =
 	\dintl_{\alpha a}^{\beta a} \dfrac{f(t)}{\frac{t}{a}} \cdot \dfrac{dt}{a} -
-	\dintl_{\alpha b}^{\beta b} \dfrac{f(t)}{\frac{t}{b}} \cdot \dfrac{dt}{b} = 
-	\\ & =     
+	\dintl_{\alpha b}^{\beta b} \dfrac{f(t)}{\frac{t}{b}} \cdot \dfrac{dt}{b} =
+	\\ & =
 	\dintl_{\alpha a}^{\beta a} \dfrac{f(t)}{t} dt -
-	\dintl_{\alpha b}^{\beta b} \dfrac{f(t)}{t} dt = 
+	\dintl_{\alpha b}^{\beta b} \dfrac{f(t)}{t} dt =
 	\left( \nullFrac \dintl_{\alpha a}^{\alpha b} + \dintl_{\alpha b}^{\beta a} \nullFrac \right) -
-	\left( \nullFrac \dintl_{\alpha b}^{\beta a} + \dintl_{\beta a}^{\beta b} \nullFrac \right)         
-	= \dintl_{\alpha a}^{\alpha b} \dfrac{f(t)}{t} dt 
+	\left( \nullFrac \dintl_{\alpha b}^{\beta a} + \dintl_{\beta a}^{\beta b} \nullFrac \right)
+	= \dintl_{\alpha a}^{\alpha b} \dfrac{f(t)}{t} dt
 	- \dintl_{\beta a}^{\beta b} \dfrac{f(t)}{t} dt =
 	\\ & =
 	\sqcase{\text{Some comments here :)}} =
-	\dintl_a^b \dfrac{f(\alpha x)}{\alpha x} \; \alpha \; dx - 
+	\dintl_a^b \dfrac{f(\alpha x)}{\alpha x} \; \alpha \; dx -
 	\dintl_a^b \dfrac{f(\beta x)}{\beta x} \; \beta \; dx =
 	\dintl_a^b \dfrac{f(\alpha x)-f(\beta x)}{x} dx.
-	\end{align*}    
+	\end{align*}
 \end{proof}

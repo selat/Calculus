@@ -4,13 +4,16 @@
 	\label{eq:lecture04-11}
 	\exists \; F(y) = \dintl_a^b f(x,y)dx, y \in Y.
 	\end{equation}
-	
+
 	\eqref{eq:lecture04-11} - \important{интеграл Римана (собственный)}, зависящий от параметра $y \in Y$.
-	
+
 	В дальнейшем интеграл вида \eqref{eq:lecture04-11} будем кратко называть \important{СИЗОП}.
 \end{col-answer-preambule}
 
 \colquestion{Теорема о предельном переходе в собственных интегралах, зависящих от параметра (СИЗОП) и замечания к ней.}
+\begin{plan}
+\item Рассматриваем разность двух интегралов, и показываем, что она $\leqslant M\varepsilon$.
+\end{plan}
 \begin{theorem}[о предельном переходе в СИЗОП]
 	Пусть определён СИЗОП \eqref{eq:lecture04-11}. Тогда, в случае $f(x,y) \underset{y \to y_0}{\overset{[a,b]}{\rightrightarrows}} \phi(x)$, где, как и в определении СИЗОП \eqref{eq:lecture04-11}, предполагая интегрируемость $f(x,y)$ по $x$, получаем:
 	\begin{equation}
@@ -23,9 +26,9 @@
 	\begin{equation*}
 	\abs{F(y) - I} \overset{\eqref{eq:lecture04-11}}{=} \abs{\dintl_a^b \left(f(x,y) - \phi(x)\right) dx} \leqslant \dintl_a^b \abs{f(x,y) - \phi(x)}dx \overset{\eqref{eq:lecture04-04}}{\leqslant} \dintl_a^b \varepsilon dx = \varepsilon(b-a).
 	\end{equation*}
-	
+
 	Таким образом, получаем, что $\exists \; M = b-a = const > 0$ такое, что для $\forall \; \varepsilon > 0 \; \exists \; \delta > 0$ такая, что \newline для $\forall \; y \in Y \text{ из } 0 < \abs{y - y_0} \leqslant \delta \Rightarrow \abs{F(y) - I} \leqslant M \varepsilon$.
-	
+
 	Откуда по $M$-лемме для сходимости Ф1П, получаем: $	F(y) \xrightarrow[y \to y_0]{} I$, т.е. имеем \eqref{eq:lecture04-12}.
 \end{proof}
 \begin{notes}
@@ -36,7 +39,7 @@
 	\end{equation*}
 	то имеем для $\forall \; y_0 \in [c,d] \Rightarrow \eqref{eq:lecture04-12}$.
 	\item Если $f(x,y)$ непрерывна для $\forall \; x \in [a,b]$ и для $\forall \; y \in [c,d]$, тогда справедливо \eqref{eq:lecture04-12}, где $\phi(x) = f(x, y_0)$, для $\forall \; fix \; y_0 \in [c,d]$.
-	
+
 	В частности, при указанных условиях СИЗОП \eqref{eq:lecture04-11} является непрерывной функцией на $Y \in [c,d]$, т.к.
 	\begin{equation*}
 	\exists \; \lim\limits_{y \to y_0} F(y) = \lim\limits_{y \to y_0} \dintl_a^b f(x,y)dx = \dintl_a^b \lim\limits_{y \to y_0} f(x,y)dx= \dintl_a^b f(x,y_0)dx = F(y_0),
