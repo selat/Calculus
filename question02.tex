@@ -36,6 +36,7 @@
 		\text{1.  ЧР} \sum a_n \text{ сходится},
 	\end{equation}
 	\begin{equation}
+	\label{eq:lecture01-mazh-02}
 	\text{2. для }\forall \; n \in \mathbb{N}  \text{ и для } \forall \; x \in X \Rightarrow |u_n(x)| \leqslant a_n.
 	\end{equation}
 \end{col-answer-preambule}
@@ -68,7 +69,7 @@
 	\item Признак Вейерштрасса является лишь достаточным условием равномерной сходимости ФР. На практике сходящуюся числовую мажоранту $\left( a_n \right)$ либо находят с помощью соответствующих оценок $\abs{u_n(x)}$ сверху, либо берут $a_n = \underset{x \in X}{sup} \abs{u_n(x)}$. В последнем случае получаем наиболее точную мажоранту, но в случае расходимости $\sum a_n$ даже для этой самой точной мажоранты ничего о равномерной сходимости ФР сказать нельзя, т.е. требуются дополнительные исследования.
 	\item Обобщая признак Вейерштрасса, где используется сходимость числовой мажоранты - признак равомерной сходимости ФР, используют функцию мажоранты, а именно получаем:
 	\begin{equation*}
-	 \text{если } \exists \; v_n(x) \geqslant 0 \; : \; \abs{u_n(x)} \leqslant v_n(x) \; \text{для } \forall \; n \in \mathbb{N} \text{ и для } \forall \; x \in X \text{ и } \sum v_n(x)	 \overset{X}{\rightrightarrows},
+	 \text{если } \exists \; v_n(x) \geqslant 0 \; \text{, что, во-первых, } \abs{u_n(x)} \leqslant v_n(x) \; \text{для } \forall \; n \in \mathbb{N} \text{ и для } \forall \; x \in X \text{, и, во-вторых, } \sum v_n(x)	 \overset{X}{\rightrightarrows},
 	 \end{equation*}
 	 то тогда для ФР $\sum u_n(x)$ имеем \eqref{eq:lecture01-20}.
 \end{notes}
