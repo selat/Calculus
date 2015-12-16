@@ -14,7 +14,7 @@
 	\label{eq:1_24}
 	\text{для }\forall \; x \in X \text{ и для } \forall \; n \in \mathbb{N} \Rightarrow \abs{a_1 (x) + a_2(x) + \ldots + a_n(x)} \leqslant c,
 	\end{equation}
-	где $c = const > 0$, \important{не зависит ни от $n$, ни от $x$}. Если $\forall \; fix \; x \in X \Rightarrow \left( b_n(x) \right)$ - числовая последовательность является монотонной, то в случае
+	где $c = const > 0$, \important{не зависит ни от $n$, ни от $x$}. Если $\forall \; fix \; x \in X \Rightarrow \left( b_n(x) \right)$ - функциональная последовательность является монотонной, то в случае
 	\begin{equation}
 	\label{eq:1_25}
 	b_n(x) \overset{X}{\rightrightarrows} 0,
@@ -30,7 +30,7 @@
 
 	Если выполняется \eqref{eq:1_25}, то тогда имеем:
 	\begin{equation*}
-	\text{ для } \forall \; \varepsilon > 0 \text{ по } \tilde{\varepsilon} = \dfrac{\varepsilon}{6 c} > 0 \; \exists \; \nu (\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \; n \geqslant \nu(\varepsilon) \text{ и для } \forall \; m \in \mathbb{N} \text{ и для } \forall \; x \in X \Rightarrow \abs{b_{n+1} (x) } \leqslant \tilde{\varepsilon} \text{ и } \abs{b_{n+m} (x)} \leqslant \tilde{\varepsilon}, 
+	\text{ для } \forall \; \varepsilon > 0 \text{ по числу } \tilde{\varepsilon} = \dfrac{\varepsilon}{6 c} > 0 \; \exists \; \nu (\varepsilon) \in \mathbb{R} \; | \; \text{для } \forall \; n \geqslant \nu(\varepsilon) \text{ и для } \forall \; m \in \mathbb{N} \text{ и для } \forall \; x \in X \Rightarrow \abs{b_{n+1} (x) } \leqslant \tilde{\varepsilon} \text{ и } \abs{b_{n+m} (x)} \leqslant \tilde{\varepsilon}, 
 	\end{equation*}
 	поэтому для частичных сумм $S_n(x) = \sum\limits_{k=1}^{n} a_k(x) b_k(x)$ в силу \eqref{eq:1_26} $\text{для } \forall \; n \geqslant \nu(\varepsilon) \text{ и для } \forall \; m \in \mathbb{N} \text{ и для } \forall \; x \in X$ имеем: $\abs{S_{n+m} (x)  - S_n(x)} = \abs{\sum\limits_{k = n+1}^{n+m} a_k(m) b_k(x)} \leqslant 2 \cdot c \cdot(\tilde{\varepsilon} 	+ 2 \tilde{\varepsilon} ) = 6\cdot c \cdot  \tilde{\varepsilon} = \varepsilon$. Отсюда по критерию Коши равномерной сходимости ФР следует, что $\sum\limits a_n(x) b_n(x) \overset{X}{\rightrightarrows}$.
 \end{proof}
