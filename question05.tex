@@ -53,20 +53,20 @@
 
 	Далее из непрерывности $\forall \; u_n(x)$ в $x_0 \in [a,b]$ следует непрерывность частичных сумм в $x_0$ (как конечных сумм непрерывных функций).
 
-	В силу этого, для $ \forall \; \varepsilon \; \exists \; \delta > 0 \; : \; \text{для } \forall \; \abs{\Delta x} \leq \delta \Rightarrow$
+	В силу этого, для $ \forall \; \varepsilon > 0 \; \exists \; \delta > 0 \; : \; \text{для } \forall \; \abs{\Delta x} \leq \delta \Rightarrow$
 	\begin{equation}
     	\label{eq:1_31}
     	\Rightarrow \abs{S_n(x_0 + \Delta x) - S_n(x_0)} \leqslant \varepsilon.
 	\end{equation}
 
-	Таким образом,  в силу \eqref{eq:1_30}, \eqref{eq:1_31} имеем: для $\forall \varepsilon > 0$, выбирая $n \geqslant \nu$ и рассматривая $\forall \abs{\Delta x}	 \leqslant \delta$, имеем:
+	Таким образом,  в силу \eqref{eq:1_30}, \eqref{eq:1_31} имеем: для $\forall \; \varepsilon > 0$, выбирая $n \geqslant \nu$ и рассматривая $\forall \abs{\Delta x}	 \leqslant \delta$, имеем:
 
 	$\abs{\Delta S(x_0)} = \abs{S_n(x_0) - S(x_0) + S_n(x_0 + \Delta x) - S_n(x_0) + S (x_0 + \Delta x) - S_n(x_0 + \Delta x)} \leqslant \\  \leqslant \abs{S_n(x_0) - S(x_0)} + \abs{S_n(x_0 + \Delta x) - S_n(x_0)} + \abs{S(x_0 + \Delta x	) - S_n(x_0 + \Delta x)} \leqslant \varepsilon + \varepsilon + \varepsilon = 3 \cdot \varepsilon$.
 
     Поэтому получаем:
 	для	$\forall \; \varepsilon \; \exists \; \delta > 0 : \; \text{для } \forall \; \abs{\Delta x} \leqslant \delta \Rightarrow \abs{\Delta S(x_0)} \leqslant M \cdot \varepsilon, M = const = 3 > 0$.
 
-	Отсюда по М-лемме для Ф1П следует, что $\Delta S(x_0) \underset{\Delta x \to 0}{\to} 0$, что на языке приращений равносильно \eqref{eq:lecture01-29}. При этом, т.к. из равномерной сходимости следует поточечная сходимость ЧР в правой части \eqref{eq:lecture01-29} будет сходящимся.
+	Отсюда по М-лемме для Ф1П следует, что $\Delta S(x_0) \underset{\Delta x \to 0}{\to} 0$, что на языке приращений равносильно \eqref{eq:lecture01-29}. При этом, т.к. из равномерной сходимости следует поточечная сходимость, ЧР в правой части \eqref{eq:lecture01-29} будет сходящимся.
 \end{proof}
 
 \begin{notes}
