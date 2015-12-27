@@ -1,4 +1,34 @@
 \begin{col-answer-preambule}
+	\textbf{НИ-1 (линейность, аддитивность, монотонность)}. Рассмотрим $f(x)$, определённую для $\forall \; x \in [a; +\infty[$. Предположим, что для $\forall \; A > a \Rightarrow f \in \mathbb{R}([a, A])$, т.е. 
+	\begin{equation}
+	\label{eq:lecture22_01}
+	\exists \; \text{Ф}(A) = \dintl_a^A f(x)dx \in \mathbb{R}.
+	\end{equation}
+	Предел функции \eqref{eq:lecture22_01} при $A \to +\infty$ называется НИ-1, обозначаемый:
+	 \begin{equation}
+	 \label{eq:lecture22_02}
+	 \dintl_a^{+\infty} f(x)dx = \lim\limits_{A \to +\infty} \dintl_a^{+\infty} f(x)dx = \lim\limits_{A \to +\infty} \text{Ф}(A) =  \text{Ф}(+\infty).
+	 \end{equation}
+	 Интеграл \eqref{eq:lecture22_01} сходится $\Leftrightarrow$ в \eqref{eq:lecture22_02} $\text{Ф}(+\infty) \in \mathbb{R}$. В этом случае конечную величину $\text{Ф}(+\infty)$ принимают за значение \eqref{eq:lecture22_02}.
+	 
+	 Геометрически, если $f(x)$ неотрицательная непрерывная для $\forall \; x \geqslant a$ функция, то в случае сходимости \eqref{eq:lecture22_02} его значение соответствует площади неограниченной фигуры между $Ox$ и графиками функции.
+	 
+	 \textbf{НИ-2 (линейность, аддитивность, монотонность)}. Пусть $f(x)$ определена для $\forall \; x \in [a, b[$ и неограничена в левосторонней окрестности точки $b$, т.е. $f(b-0) = \infty$. Если $f(x)$ интегрируема на $\forall \; [a, c] \subset [a, b[$, то для $\forall \; \varepsilon \; \exists \; ]0, b-a[ \Rightarrow$
+	 \begin{equation}
+	 \label{eq:lecture22_06}
+	 \exists \; I(\varepsilon) = \dintl_a^{b-\varepsilon}f(x)dx.
+	 \end{equation}
+	 В этом случае НИ-2 от $f(x)$ по $[a, b[$ называют величину:
+	 \begin{equation}
+	 \label{eq:lecture22_07}
+	 I_0 = \lim\limits_{\varepsilon \to +0}I(\varepsilon) \overset{\eqref{eq:lecture22_06}}{=} \lim\limits_{\varepsilon \to +0} \dintl_a^{b-\varepsilon}f(x)dx = \dintl_a^{b-0} f(x)dx.
+	 \end{equation}
+	 В дальнейшем для простоты вместо \eqref{eq:lecture22_07} для НИ-2 будем просто писать
+	 \begin{equation}
+	 \label{eq:lecture22_08}
+	 I_0 = \dintl_a^b f(x)dx.
+	 \end{equation}
+	 НИ-2 \eqref{eq:lecture22_08} считается сходящимся $\Leftrightarrow$ предел \eqref{eq:lecture22_07} конечен.
 \end{col-answer-preambule}
 
 \colquestion{Теорема о замене переменной в несобственных интегралах (НИ) и замечание к ней.}
