@@ -7,7 +7,7 @@
 	Предел функции \eqref{eq:lecture22_01} при $A \to +\infty$ называется НИ-1, обозначаемый:
 	 \begin{equation}
 	 \label{eq:lecture22_02}
-	 \dintl_a^{+\infty} f(x)dx = \lim\limits_{A \to +\infty} \dintl_a^{+\infty} f(x)dx = \lim\limits_{A \to +\infty} \text{Ф}(A) =  \text{Ф}(+\infty).
+	 \dintl_a^{+\infty} f(x)dx = \lim\limits_{A \to +\infty} \dintl_a^{A} f(x)dx = \lim\limits_{A \to +\infty} \text{Ф}(A) =  \text{Ф}(+\infty).
 	 \end{equation}
 	 Интеграл \eqref{eq:lecture22_01} сходится $\Leftrightarrow$ в \eqref{eq:lecture22_02} $\text{Ф}(+\infty) \in \mathbb{R}$. В этом случае конечную величину $\text{Ф}(+\infty)$ принимают за значение \eqref{eq:lecture22_02}.
 	 
@@ -44,7 +44,7 @@
 	Если функция $x(t) = \phi (t)$ - \important{непрерывно дифференцируема} для $\forall \; t \in [\alpha; \beta[$ и \important{строго монотонна}, то в случае, когда: $\begin{cases}
 	\phi (\alpha) = a, \\
 	\phi (\beta - 0) = b.
-	\end{cases}$, интеграл $\dint\limits_{a}^{b} f(x)dx$, где $b = + \infty$ (НИ-1) либо $f(b-0) = +\infty$ (НИ-2), сходится тогда и только тогда, когда сходится интеграл
+	\end{cases}$, интеграл $\dint\limits_{a}^{b} f(x)dx$, где $b = + \infty$ (НИ-1) либо $f(b-0) = \infty$ (НИ-2), сходится тогда и только тогда, когда сходится интеграл
 	\begin{equation}
 	\label{eq:lecture03-09}
 	\dint\limits_{\alpha}^{\beta} f(\phi(t)) \phi^{'}(t)dt.
