@@ -64,7 +64,7 @@
 	$\abs{\Delta S(x_0)} = \abs{S_n(x_0) - S(x_0) + S_n(x_0 + \Delta x) - S_n(x_0) + S (x_0 + \Delta x) - S_n(x_0 + \Delta x)} \leqslant \\  \leqslant \abs{S_n(x_0) - S(x_0)} + \abs{S_n(x_0 + \Delta x) - S_n(x_0)} + \abs{S(x_0 + \Delta x	) - S_n(x_0 + \Delta x)} \leqslant \varepsilon + \varepsilon + \varepsilon = 3 \cdot \varepsilon$.
 
     Поэтому получаем:
-	для	$\forall \; \varepsilon \; \exists \; \delta > 0 : \; \text{для } \forall \; \abs{\Delta x} \leqslant \delta \Rightarrow \abs{\Delta S(x_0)} \leqslant M \cdot \varepsilon, M = const = 3 > 0$.
+	для	$\forall \; \varepsilon > 0 \; \exists \; \delta > 0 : \; \text{для } \forall \; \abs{\Delta x} \leqslant \delta \Rightarrow \abs{\Delta S(x_0)} \leqslant M \cdot \varepsilon, M = const = 3 > 0$.
 
 	Отсюда по М-лемме для Ф1П следует, что $\Delta S(x_0) \underset{\Delta x \to 0}{\to} 0$, что на языке приращений равносильно \eqref{eq:lecture01-29}. При этом, т.к. из равномерной сходимости следует поточечная сходимость, ЧР в правой части \eqref{eq:lecture01-29} будет сходящимся.
 \end{proof}
