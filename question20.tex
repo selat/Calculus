@@ -64,3 +64,14 @@
     	\item $\exists \dintl_c^{+\infty}dy\dintl_a^{+\infty}f(x, y)dx = \dintl_a^{+\infty}dx
     	\dintl_c^{+\infty}f(x, y)dy)$ - существуют повторные интегралы.
     \end{notes}
+    
+    \begin{theorem}[об интегрировании НИЗОП-2]
+    	Если $f(x,y)$ непрерывна на $[a, b[ \times [c,d]$ и $\dintl_a^b f(x,y)dx = \overset{\interval[{c; d}[}{\rightrightarrows}$, то тогда для НИЗОП-2:
+    	\begin{equation*}
+    	F(y) = \dintl_a^{b-0} f(x,y)dx,
+    	\end{equation*}
+    	имеем:
+    	\begin{equation*}
+    	\exists \; \dintl_c^d F(y)dy =  \dintl_c^d dy \dintl_a^b f(x,y)dx = \dintl_a^b dx \dintl_c^d f(x,y)dy 
+    	\end{equation*}
+    \end{theorem}

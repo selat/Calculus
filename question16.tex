@@ -15,13 +15,13 @@
 	$f(x,y) \underset{y \to y_0}{\overset{X}{\rightrightarrows}} \phi(x) \Leftrightarrow$ для $\forall \; y_n \in Y, y_n \to y_0, y_n \ne y_0$, где $y_0$ - предельная точка для множества $Y$, выполнялось:
 	\begin{equation}
 	\label{eq:lecture04-090}
-	g_n(x) = f(x, y_n) \underset{n \to \infty}{\overset{X}{\rightrightarrows}} \phi(x)
+	\text{ФП }g_n(x) = f(x, y_n) \underset{n \to \infty}{\overset{X}{\rightrightarrows}} \phi(x)
 	\end{equation}
 \end{theorem}
 \begin{proof}
 	\circled{$\Rightarrow$}. Пусть выполняется \eqref{eq:lecture04-05}, тогда для $\forall \; \varepsilon > 0 \; \exists \; \delta > 0:$ для $\forall \; y \in Y \text{ из } 0 < \abs{y - y_0} \leqslant \delta$, для $\forall \; x \in X \Rightarrow \abs{f(x,y) - \phi(x)} \leqslant \varepsilon$.
 
-	Рассматривая $\forall \; \left(y_n\right) \in Y$, в пределах точки $y_0$ по найденному ранее  $\delta > 0 \; \exists \; \nu \in \mathbb{R}$ такое, что для $\forall \; n \geqslant \nu \Rightarrow \abs{y_n - y_0} \leqslant \delta$.
+	Рассматривая $\forall \;$ последовательность Гейне $ \left(y_n\right) \in Y$, в пределах точки $y_0$ по найденному ранее  $\delta > 0 \; \exists \; \nu \in \mathbb{R}$ такое, что для $\forall \; n \geqslant \nu \Rightarrow \abs{y_n - y_0} \leqslant \delta$.
 
 	Окончательно получаем: для $\forall \; \varepsilon > 0 \; \exists \; \nu \in \mathbb{R}$ такое, что для $\forall \; n \geqslant \nu$, для $\forall \; x \in X \Rightarrow \linebreak \Rightarrow \abs{y_n - y_0} \leqslant \delta \Rightarrow \abs{f(x,y_n) - \phi(x)} \leqslant \varepsilon$, т.е. имеем \eqref{eq:lecture04-090}.
 
@@ -60,7 +60,7 @@
 \end{proof}
 
 \begin{notes}
-	\item Доказанная теорема позволяет из соответствующих свойств ФП получить аналогичные свойства для равномерно сходящихся Ф2П, в том числе сформулированный ранее супремальный критерий равномерной сходимости Ф2П и критерий Коши для Ф2П. Кроме того, в силу теоремы Дини	для ФП имеем соответствующую теорему Дини для равномерной сходимости Ф2П.
+	\item Доказанная теорема позволяет из соответствующих свойств ФП получить аналогичные свойства для равномерно сходящихся Ф2П, в том числе сформулированный ранее супремальный критерий равномерной сходимости Ф2П и критерий Коши для равномерной сходимости Ф2П. Кроме того, в силу теоремы Дини	для ФП имеем соответствующую теорему Дини для равномерной сходимости Ф2П.
 
 	\begin{theorem}[Дини для равномерной сходимости Ф2П]
 		Пусть для $\forall \; fix \; y \in Y, f(x,y)$ непрерывна по $x \in [a,b] = X$, причём при монотонной сходимости \newline $y \to y_0 \; (y \uparrow y_0 \text{ либо } y \downarrow y_0)$ соответственно получаем	$f(x,y)$ монотонно сходится к $\phi(x)$ $\left(f(x,y) \uparrow \downarrow \phi(x)\right)$. Тогда, если предельная функция $\phi(x) = \lim\limits_{y \to y_0} f(x,y)$ непрерывна на $X = [a,b]$, то кроме поточечной сходимости будем иметь равномерную сходимость \eqref{eq:lecture04-05}.
@@ -69,6 +69,6 @@
 
 	\begin{theorem}[Стокса-Зейделя]
 		Пусть для $\forall \; fix \; y \in Y, f(x,y)$ непрерывна по $x \in [a,b] = X$.
-		Тогда, если $ f(x,y) \overset{[a,b]}{\underset{y \to y_0}{\rightrightarrows}}  \phi(x)$, где $y_0$ - предельная точка для $Y$, то предельная функция будет непрерывной на $[a,b]$.
+		Тогда, если $ f(x,y) \overset{[a,b]}{\underset{y \to y_0}{\rightrightarrows}}  \phi(x)$, где $y_0$ - предельная точка для $Y$, то предельная функция $\phi(x)$ будет непрерывной на $[a,b]$.
 	\end{theorem}
 \end{notes}

@@ -8,12 +8,12 @@
 \item По теореме Барроу доводим до логического завершения.
 \end{plan}
     \begin{theorem}[О почленном дифференцировании НИЗОП]
-    	Пусть $f(x, y)$ - непрерывна на $\interval[{a; +\infty}[\times\interval[{c; d}]$,
+    	Пусть $f(x, y)$ - непрерывна на $\interval[{a; +\infty}[\times\interval[{c; d}]$, и для неё
     	$\exists \; f'_y(x, y)$ - непрерывная на $\interval[{a; +\infty}[\times\interval[{c; d}]$.
     	Тогда если
     	\begin{enumerate}
-    		\item $\dintl_a^{+\infty}f(x, y)dx \xrightarrow[]{\interval[{a; +\infty}[}$
-    		\item $\dintl_a^{+\infty}f'_y(x, y)dx \overset{\interval[{a; +\infty}[}
+    		\item $\dintl_a^{+\infty}f(x, y)dx \xrightarrow[]{\interval[{c; d}]}$
+    		\item $\dintl_a^{+\infty}f'_y(x, y)dx \overset{\interval[{c; d}]}
     		{\rightrightarrows}$,
     	\end{enumerate}
     	то тогда НИЗОП \eqref{eq:lecture04-18} - функция почленно дифференцируема на $\interval[{a; +\infty}[$, и её производная
@@ -51,3 +51,14 @@
     	дифференцировании вместо равномерной сходимости рассмотрим НИЗОП используя локальную
     	равномерную сходимость соответствующего НИЗОП.
     \end{note}
+    
+    \begin{theorem}[о дифференцировании НИЗОП-2]
+    	Если $f(x,y)$ определена на $[a, b[ \times Y$ и для $\forall \; fix \; y \in Y$ непрерывна на $[a, b[$ по $x$. Если $\exists f^{'}_y(x,y)$ непрерывная на $[a, b[ \times Y$ и $\dintl_a^b f(x,y)dx \overset{Y}{\to}$, а $\dintl_a^b f^{'}_y(x,y) \overset{Y}{\rightrightarrows}$, то тогда справедливо правило Лейбница дифференцирования НИЗОП-2 вида:
+    	\begin{equation*}
+    	F(y) = \dintl_a^{b-0} f(x,y)dx,
+    	\end{equation*}
+    	имеем:
+    	\begin{equation*}
+    	\left( \dintl_a^b f(x,y)dx \right)^{'}_{y} = \dintl_a^b f^{'}_y (x,y)dx
+    	\end{equation*}
+    \end{theorem}

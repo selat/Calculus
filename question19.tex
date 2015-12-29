@@ -32,13 +32,13 @@
   \item применяем теорему о предельном переходе в СИЗОП.
 \end{plan}
     \begin{theorem}[О предельном преходе в НИЗОП]
-    	Пусть для $\forall \; \fix y \in Y \Rightarrow f(x, y)$ непрерывна для $\forall \; x \geqslant a$ и для предельной точки $y \in Y$
+    	Пусть для $\forall \; \fix y \in Y \Rightarrow f(x, y)$ непрерывна для $\forall \; x \geqslant a$ и для предельной точки $y_0 \in Y$
     	имеем
     	\begin{equation}
     	\label{eq:lecture04-26}
     	f(x, y) \overset{\forall \; \interval[{a; A}]}{\underset{y \to y_0}{\rightrightarrows}} \phi(x), \text{ где } \forall \; A > a.
     	\end{equation}
-    	Если $\dintl_a^{+\infty}f(x, y)dx \overset{y}{\rightrightarrows}$, то тогда возможен предельный переход
+    	Если $\dintl_a^{+\infty}f(x, y)dx \overset{Y}{\rightrightarrows}$, то тогда возможен предельный переход
     	\eqref{eq:lecture04-25}.
     \end{theorem}
     \begin{proof}
@@ -49,6 +49,7 @@
     	&\exists \lim\limits_{y \to y_0} F(y) = \lim\limits_{y \to y_0}\dintl_a^{+\infty}f(x, y)dx =
     	\sqcase{\dintl_a^{+\infty} = \lim\limits_{An \to +\infty}\parenthesis{\dintl_{A_0}^{A_1} + \dintl_{A_1}^{A_2} + \ldots
     			+ \dintl_{A_{n - 1}}^{A_n}} = \sum\limits_{n = 1}^{\infty}\dintl_{A_{n - 1}}^{A_n}f(x, y)dx}=\\
+    	&= \lim\limits_{y \to y_0} \sum\limits_{n = 1}^{\infty} \dintl_{A_{n-1}}^{A_n}f(x,y)dx = \sqcase{f(x,y) \underset{y \to y_0}{\overset{[A_{n-1}, A_n]}{\rightrightarrows}} \phi(x), \text{из } \eqref{eq:lecture04-26} \Rightarrow u_n(y) = \dintl_{A_{n-1}}^{A_n}f(x,y)dx \overset{Y}{\rightrightarrows}} = \\
     	&=\sum\limits_{n = 1}^{\infty}\lim\limits_{y \to y_0}\intl_{A_{n - 1}}^{A_n}f(x, y)dx =
     	\sqcase{\text{По теореме о предельном переходе в СИЗОП}} =\\
     	&=\sum\limits_{n = 1}^{\infty}\intl_{A_{n - 1}}^{A_n}\lim\limits_{y \to y_0}f(x, y)dx =
@@ -62,13 +63,13 @@
 
     \begin{consequence}[О непрерывности НИЗОП]
     	Пусть $f(x, y)$ непрерывная для $\forall \; x \in \interval[{a; +\infty}[$ и для
-    	$\forall \; y \in \interval[{c; d}]$. Если интеграл
+    	$\forall \; y \in \interval[{c; d}] \subset \mathbb{R}$. Если интеграл
     	\begin{equation*}
     	\intl_a^{+\infty}f(x, y)dx \overset{\interval[{c; d}]}{\rightrightarrows}
     	\end{equation*}
     	то НИЗОП \eqref{eq:lecture04-18} - непрерывная функция на $\interval[{c; d}]$, т.е.
     	\begin{equation*}
-    	\text{для } \forall \; y \in \interval[{c; d}] \Rightarrow \exists \lim\limits_{y \to y_0}F(y) =
+    	\text{для } \forall \; y_0 \in \interval[{c; d}] \Rightarrow \exists \lim\limits_{y \to y_0}F(y) =
     	\lim\limits_{y \to y_0}\intl_a^{+\infty}f(x, y)dx = \intl_a^{+\infty}f(x, y)dx = F(y_0).
     	\end{equation*}
     \end{consequence}
@@ -100,3 +101,14 @@
     	$\interval[{\alpha; \beta}]$, а значит, в точке $y_0$. А исходя из этого, получаем непрерывность
     	\eqref{eq:lecture04-18} на всём $Y$.
     \end{note}
+    
+    \begin{theorem}[о предельном переходе в НИЗОП-2]
+    	Пусть $f(x,y)$ определена на $[a,b[ \times Y$ и для $\forall \; fix \; y \in Y$ непрерывна по $X = [a,b[$. Если для $\forall \; \varepsilon \in ]0, b-a[ \Rightarrow f(x,y) \underset{y\to y_o}{\overset{\interval[{\alpha; \beta - \varepsilon}]}{\rightrightarrows}} \phi(x)$, где $y_0$ - предельная точка для множества $Y$, то тогда $\dintl_a^b f(x,y) \overset{Y}{\rightrightarrows}$. Для НИЗОП-2 вида
+    	\begin{equation*}
+    	F(y) = \dintl_a^{b-0} f(x,y)dx,
+    	\end{equation*}
+    	имеем:
+    	\begin{equation*}
+    	\exists \; \lim\limits_{y \to y_0} F(y) = \lim\limits_{y \to y_0} \dintl_a^b f(x,y)dx = \dintl_a^b \phi(x)dx = \dintl_a^b \lim\limits_{y \to y_0} f(x,y)dx.
+    	\end{equation*}
+    \end{theorem}
