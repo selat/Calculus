@@ -1,0 +1,61 @@
+\colquestion{Принцип выбора для К.П. и замечание к нему.}
+
+\begin{plan}
+\item Замечаем, что $(x_n)$ и $(y_n)$ - ограничены.
+\item Выбираем сходящуюся подпоследовательность $(x_{m_k})$.
+\item Выбираем сходящуюся подпоследовательность $(y_{n_k})$, $(n_k)$ - подпоследовательность $(m_k)$.
+\end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+\begin{theorem}[Принципе выбора для КП]
+  Если КП $(z_n), n \in \mathbb{N}$, ограниченна, т.е. $\exists M = \const \geqslant 0 \vert \abs{z_n} \leqslant M, \forall n \in \mathbb{N}$,
+  то из $(z_n)$ можно выбрать сходящуюся подпоследовательность
+  \begin{equation}
+    \label{eq:lecture10-04}
+    z_{n_k} \xrightarrow[n_k \to \infty]{} z_0 \in \mathbb{C}, 1 \leqslant n_1 < n_2 < \ldots < n_k < \ldots
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Заметим, что для действительной последовательности ${x_n = \operatorname{Re}z_n \in \R{}}$,
+  ${y_n = \operatorname{Im}z_n \in \R{}}$ в силу неравенств
+  \begin{align*}
+    \abs{x_n} \leqslant \sqrt{x_n^2 + y_n^2} = \abs{z_n},
+    \abs{y_n} \leqslant \sqrt{x_n^2 + y_n^2} = \abs{z_n},
+  \end{align*}
+  из ограниченности $(z_n)$ следует ограниченность $(x_n)$ и $(y_n)$, а тогда в силу принципа выбора
+  для действительной последовательности, например, из ограниченной действительной последовательности
+  $(x_n)$ можно выбрать сходящуюся подпоследовательность
+  \begin{align*}
+    \widetilde{x}_{m_k}\xrightarrow[m_k \to \infty]{} x_0 \in \R{},
+    1 \leqslant m_1 < m_2 < \ldots < m_k < \ldots
+  \end{align*}
+  Далее, в соответствии с полученными индексами $m_k \in \mathbb{N}$ из ограниченной
+  подпоследовательности $(y_{m_k})$ можно выбрать некоторую сходящуюся подпоследовательность
+  $\widetilde{y}_{n_k} \xrightarrow[n_k \to \infty]{}y_0 \in \R{}, (n_k)$ - подпоследовательность
+  индексов $(m_k)$, ${1 \leqslant n_1 < n_2 < \ldots}$
+
+  В свою очередь, для полученных индексов подпоследовательность $(\widetilde{x}_{n_k})$ будет
+  некоторой подпоследовательностью последовательности $(\widetilde{x}_{m_k})$ и поэтому
+  $\widetilde{x}_{n_k} \xrightarrow[n_k \to \infty]{} x_0 \in \R{}$.
+
+  Таким образом, у ограниченной КП $(z_n) = (x_n + iy_n)$ нашлась сходящаяся подпоследовательность
+  $z_{n_k} = \widetilde{x}_{n_k} + i\widetilde{y}_{n_k} \to x_0 + iy_0 = z_0 \in \mathbb{C}$.
+\end{proof}
+\begin{note}
+  На основании принципа выбора для КП по той же схеме, что и для действительных последовательностей,
+  доказывается \important{критерий Коши} сходимости КП:
+
+  $(z_n)$ сходится $\Leftrightarrow (z_n)$ фундаментальна, т.е.
+  \begin{equation}
+    \label{eq:lecture10-05}
+    \forall \varepsilon > 0 \exists \nu_{\varepsilon} \in \R{} \vert \forall m, n \geqslant
+    \nu_{\varepsilon} \Rightarrow \abs{z_n - z_m} \leqslant \varepsilon
+  \end{equation}
+  Отсюда, по правилу Де Моргана получаем, что последовательность $(z_n)$ будет расходится
+  $\Leftrightarrow$
+  \begin{equation}
+    \exists \varepsilon_0 > 0 \vert \forall \nu \in \R{}, \exists m_0, n_0 \geqslant 0 \Rightarrow
+    \abs{z_{n_0} - z_{m_0}} > \varepsilon_0
+  \end{equation}
+\end{note}

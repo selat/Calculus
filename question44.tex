@@ -1,0 +1,45 @@
+\colquestion{Степенная ФКП с натуральным показателем и её свойства.}
+\begin{plan}
+\item Используем экспоненциальное представление.
+\item Подробно расписываем случай $n = 2$.
+\end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+$\omega = f(z) = z^n, n \in \mathbb{N}$. Случай $n = 1 \Leftrightarrow w = z$ - идентичное
+преобразование, которое уже было рассмотрено. Поэтому будет считать, что $n \geq 2$. Тогда,
+используя экспоненциальное представление $z = \abs{z}e^{i\phi}, \phi = \arg z$, имеем
+\begin{align*}
+  \omega = \abs{z}^ne^{in\phi}, \abs{\omega} = \abs{z}^n, \Arg \omega = n\phi + 2\pi k, k \in
+  \mathbb{Z}.
+\end{align*}
+В связи с этим, если, например, мы в \circled{$z$} рассмотрим сектор, ограниченный лучами
+${\phi = \alpha}$ и ${\phi = \beta}$, то в результате в \circled{$\omega$} получим сектор,
+ограниченный лучами $\psi = n \alpha + 2 \pi m$ и $\delta = n \beta + 2 \pi l$, поэтому
+исходный угол $\beta - \alpha$ меду первоначальным лучом в \circled{$z$} перейдёт в угол
+${\delta - \psi = n(\beta - \alpha) + 2\pi p, p \in \mathbb{Z}}$. Произошло увеличение этого
+угла в $n$ раз.
+
+Для определённости рассмотрим частный случай $n = 2$, т.е.
+\begin{align*}
+  \omega = z^2 \Rightarrow \abs{\omega} = \abs{z}^2, \Arg{\omega} = 2\arg{z} + 2\pi k, k \in
+  \mathbb{Z}.
+\end{align*}
+\begin{enumerate}
+\item $\arg z \in \interval]{0; \dfrac{\pi}{2}}[ \Rightarrow \Arg{\omega}$
+    $\in \interval]{2\pi k; \pi + 2\pi k}[$.
+  \item $\arg z = \dfrac{\pi}{2} \Rightarrow \Arg{\omega} = \pi + 2\pi k$.
+  \item $\arg z \in \interval]{\dfrac{\pi}{2}; \pi}[ \Rightarrow \omega $
+    $\in \interval]{\pi + 2\pi k; 2\pi + 2\pi k}[$.
+\end{enumerate}
+в общем случае при $n \geq 2$ обратную функцию к $\omega = t^n$ определяют через решение уравнения
+$t^n = a \in \mathbb{C}$. Если $a \neq 0$, то
+\begin{align*}
+  &t = \abs{a}^{\frac{1}{n}}\parenthesis{\dfrac{\cos(\phi + 2\pi k)}{n} +
+    i\dfrac{\sin(\phi + 2\pi k)}{n}},\\
+  &\phi = \arg \omega \in \interval]{-\pi; \pi}].
+\end{align*}
+Здесь получаем $n$ различных значений, если вместо $k$ брать любые $n$ последовательных целых чисел.
+
+В связи с этим обратная к $\omega$ записывается в виде $\omega = \sqrt[n]{z}$, и она оказывается
+здесь многозначной (имеет $n$ ветвей).

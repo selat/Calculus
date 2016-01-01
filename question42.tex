@@ -1,0 +1,49 @@
+\colquestion{Линейная ФКП и её свойства.}
+\begin{plan}
+\item $\omega_1 = az$.
+\item $\omega_2 = z + b$.
+\item $\omega = az + b$.
+\end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+Линейным будем называть отображение вида $\omega = f(z) = az + b$, где
+$a, b = \const \in \mathbb{C}$. Если $a = 0$, то $\omega = b = \const$ - постоянная ФКП.
+
+Пусть $a \neq 0$, тогда для рассмтриваемой линейной ФКП будет существовать обратная функция
+\begin{align*}
+  &z = f^{-1}(\omega) = \dfrac{1}{a}\omega - \dfrac{b}{a} = a_0\omega + b_0,\\
+  a_0 = \dfrac{1}{a}\neq 0, b_0 = -\dfrac{b}{a},
+\end{align*}
+т.е. опять имеем линейное отображение, поэтому в этом случае любая область $D$ плоскости
+\circled{$Z$} при линейном отображении взаимно однозначно будет отображаться в некоторую область
+плоскости $\omega$.
+
+Для более подробного изучения линейных ФКП, соответствующих отображению при $a \neq 0$, рассмотрим
+частные случаи:
+\begin{enumerate}
+\item $\omega_1 = az, a \neq 0$. Представим $a \in \mathbb{C}$ в экспоненциальном виде
+  \begin{align*}
+    a = re^{i\alpha}, r = \abs{a} > 0, \alpha = \arg a \in \interval]{-\pi; \pi}],
+  \end{align*}
+  получаем $\omega_1 = re^{i\alpha}z \Rightarrow$
+  \begin{align*}
+    &\abs{\omega_1} = \abs{r}\abs{e^{i\alpha}}\abs{z} = \abs{z}r,\\
+    &\Arg{\omega_1} = \arg{re^{i\alpha}} + \Arg{z} = \alpha + \Arg{z}.
+  \end{align*}
+  Эти равенства показывают:
+  \begin{enumerate}
+  \item С помощью $\omega_1$ происходит преобразование подобия с коэффициентом $k = r$ (расширение,
+    если $r > 1$ и сжатие, если $r \leq 1$).
+  \item Для $\phi = \arg z \Rightarrow \psi = \Arg \omega_1 = \alpha + \phi$, что соответствует
+    повороту на угол $\alpha$.
+  \end{enumerate}
+\item $\omega_2 = z + b$. В данном случае геометрически точка \circled{$z$} переходит в точку
+  $\omega_2$ с помощью параллельного переноса на вектор, соответствующий числу $b \in \mathbb{C}$.
+\item Общий случай: $\omega = az + b = a(z + \dfrac{b}{a})$. Получаем:
+  \begin{enumerate}
+  \item Параллельный перенос $\omega_0 = z + b_0, b_0 = \dfrac{b}{a}$.
+  \item $\omega = a\omega_0$ - растяжение (сжатие) и поворот.
+  \end{enumerate}
+  При указанных операциях линейная ФКП осуществляет преобразование подобия плоских фигур.
+\end{enumerate}

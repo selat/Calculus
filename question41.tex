@@ -1,0 +1,43 @@
+\colquestion{Критерий абсолютной сходимости комплексных числовых рядов.}
+\begin{plan}
+\item \circled{$\Rightarrow$} Ограничиваем $|x_n|$ и $|y_n|$ сверху $|z_n|$.
+\item \circled{$\Leftarrow$} Ограничиваем $\abs{z_n}$ сверху $\abs{x_n} + \abs{y_n}$.
+\end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+\begin{theorem}[Критерий абсолютной сходимости КР]
+  $\dsum z_n$ сходится абсолютно $\Leftrightarrow$ одновременно сходятся абсолютно действительные ряды
+$\dsum \operatorname{Re}z_n$ и $\dsum \operatorname{Im}z_n$.
+\end{theorem}
+\begin{proof}
+  \circled{$\Rightarrow$} $\dsum z_n$ сходится абсолютно, т.е. сходится $\dsum \abs{z_n}$. Учитывая,
+  что
+  \begin{align*}
+    \begin{cases}
+      &x_n = \operatorname{Re}z_n,\\
+      &y_n = \operatorname{Im}z_n,\\
+    \end{cases} \Rightarrow
+    \begin{cases}
+      &\abs{x_n} \leqslant \sqrt{x_n^2 + y_n^2} = \abs{z_n},\\
+      &\abs{y_n} \leqslant \sqrt{x_n^2 + y_n^2} = \abs{z_n},\\
+    \end{cases}
+  \end{align*}
+  На основании признака сравнения сходимости положительных ЧР $\Rightarrow$ $\dsum\abs{x_n}$ и $\dsum\abs{y_n}$
+  сходятся. Т.е. ${\dsum x_n = \dsum \operatorname{Re}z_n}$ и
+  ${\dsum y_n = \dsum \operatorname{Im}z_n}$
+  сходятся абсолютно.
+
+  \circled{$\Leftarrow$} Пусть сходятся абсолютно ${\dsum x_n = \dsum \operatorname{Re}z_n}$ и
+  ${\dsum y_n = \dsum \operatorname{Im}z_n}$. Тогда в силу неравенства для
+  \begin{align*}
+    z_n = x_n + iy_n, \abs{z_n} = \sqrt{x_n^2 + y_n^2} = \sqrt{(x_n + y_n)^2 - 2\abs{x_n}\abs{y_n}}
+    \leqslant \abs{x_n} + \abs{y_n},
+  \end{align*}
+  в силу сходимости
+  \begin{align*}
+    \sum(\abs{x_n} + \abs{y_n}) = \sum\abs{x_n} + \sum\abs{y_n},
+  \end{align*}
+  на основании признака сравнения сходимости положительных рядов получаем, что $\dsum\abs{z_n}$
+  сходится, а значит, $\dsum z_n$ сходится абсолютно.
+\end{proof}
