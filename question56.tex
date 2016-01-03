@@ -1,0 +1,94 @@
+\colquestion{Теорема о дифференцировании ИЗОП ФКП и замечание к ней.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+Из интегральной формулы Коши следует
+\begin{align*}
+  \intl_{\partial D}\dfrac{f(t)}{t - z}dt =
+  \begin{cases}
+    2\pi if(z), z \in D,\\
+    0, z \notin D,
+  \end{cases}
+\end{align*}
+В данном случае имеем ИЗОП от ФКП вида
+\begin{equation}
+  \label{eq:lecture32-03}
+  F(z) = \intl_l\phi(t, z)dt,
+\end{equation}
+где $z \in D$ в плоскости \circled{$z$}, а $l$ - некоторая линия в плоскости \circled{$t$}.
+
+В зависимости от свойств подинтегральной функции в \eqref{eq:lecture32-03} исследуем соответствующие
+свойства ИЗОП \eqref{eq:lecture32-03}.
+
+\begin{theorem}[О дифференцировании ИЗОП ФКП]
+  Пусть для $\forall t \in l$ функция $\phi(t, z)$ - аналитическая по $z \in G \subset \mathbb{C}$ -
+  область, причём у $\phi(t, z)$ её производная $\dfrac{\partial \phi(t, z)}{\partial}$непрерывна,
+  как по $z \in G$, так и по $t \in l$.
+
+  Тогда ИЗОП \eqref{eq:lecture32-03} является аналитической функцией в области $G$, производная от
+  которой вычисляется по правилу Лейбница
+  \begin{equation}
+    \label{eq:lecture32-04}
+    F'(z) = \intl_l\dfrac{\partial\phi(t, z)}{\partial z}dt.
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Рассмотрим
+  \begin{align*}
+    x  = \operatorname{Re}z, y = \operatorname{Im}z, \tau = \operatorname{Re}t,
+    s = \operatorname{Im}t, u = \operatorname{Re}\phi(t, z), v = \operatorname{Im}\phi(t, z),
+  \end{align*}
+  по формуле вычисления интеграла ФКП через КРИ-2 имеем
+  \begin{align*}
+    &F(z) = \sqcase{z = x + iy, t = \tau + is, \phi=  u(\tau, s, x, y) + iv(\tau, s, x, y)} =
+    \intl_l(u + iv)(d\tau + ids) = \ldots = H(x, y) + iR(x, y),\\
+    &\text{Где } H(x, y) = \intl_lud\tau - vds, R(x, y) = \intl_lvd\tau + uds.
+  \end{align*}
+  Для обоснования аналитичности $F(z)$ нужно показать, что функции
+  \begin{align*}
+    \begin{cases}
+      H = H(x, y),\\
+      R = R(x, y),\\
+    \end{cases}
+  \end{align*}
+  удовлетворяют условию Коши-Римана
+  \begin{align*}
+    \begin{cases}
+      H'_x = R'_y,\\
+      H'_y = -R'_x.
+    \end{cases}
+  \end{align*}
+  Нетрудно видеть, что интегральное представление от $H(x, y)$ и $R(x, y)$ позволяет использовать
+  теорему о почленном дифференцировании ИЗОП, записанную через КРИ-2.
+
+  В силу этого имеем по правилу Лейбница дфференцирования ИЗОП
+  \begin{enumerate}
+  \item $\exists H'_x = \intl_lu'_xd\tau - v'_xds; \exists R'_y = \intl_lv'_yd\tau + u'_yds$.
+    В силу аналитичности $\phi(t, s)$ имеем
+    \begin{align*}
+      \begin{cases}
+        u'_x = v'_y,
+        v'_x = -u'_y,
+      \end{cases}\text{ т.е. }
+      H'_x = \sqcase{u'_x = v'_x\\u'_y = -v'_x} = \intl_lv'_yd\tau + u'_yds = R'_y.
+    \end{align*}
+  \item $\begin{aligned}[t]
+    \exists H'_y = \intl_lu'_yd\tau - v'_yds = \sqcase{u'_y = -v'_x\\v'_y = u'_x} =
+    -\intl_lv'_xd\tau + u'_xds = -R'_x.
+  \end{aligned}$
+  \end{enumerate}
+  Т.к. для $F(z) = H + iR$ выполняется усовие Коши-Римана, то эта ФКП аналитична, при этом для её
+  производной получаем
+  \begin{align*}
+    F'(z) = H'_x + iR'_x = \intl_lu'_xd\tau - v'_xds + i\intl_lv'_xd\tau + u'_xds = \ldots =
+    \intl_l\dfrac{\partial \phi(t, z)}{\partial z}dt.
+  \end{align*}
+\end{proof}
+\begin{note}
+  При выводе \eqref{eq:lecture32-04} предполагалось, что линия $l$ - ограничена. Доказательство
+  сохраняется и когда $l$ неоограниченна, т.е. когда \eqref{eq:lecture32-03} - НИЗОП ФКП. В этом
+  случае также справедлива формула \eqref{eq:lecture32-04}.
+\end{note}

@@ -1,0 +1,109 @@
+\colquestion{Теорема о разложении ФКП в ряд Лорана.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{theorem}[о разложении ФКП в ряд Лорана]
+  Если $f(z)$ - аналитичная внутри некоторого кольца $r < \abs{z - z_0} < R$
+  с центром $z_0$, то тогда $f(z)$ разлагается в соответствующий ряд Лорана в этом кольце,
+  причём
+  \begin{equation}
+    \label{eq:loran-02}
+    f(z) = \suml_{n = -\infty}^{+\infty}c_n(z - z_0)^n,
+  \end{equation}
+  где
+  \begin{equation}
+    \label{eq:loran-03}
+    c_n = \dfrac{1}{2\pi i}\oint\limits_l\dfrac{f(t)}{(t - z_0)^{n+1}}dt, n \in \mathbb{Z},
+  \end{equation}
+  а $l$ - произвольный замкнутый кусочно-гладкий контур в рассматриваемом кольце.
+
+  Разложение $\eqref{eq:loran-02}$ единственно.
+\end{theorem}
+\begin{proof}
+  Для $\forall \fix z, r < \abs{z - z_0} < R$, рассмотрим
+  ${r < r_1 < \abs{z - z_0} < R_1 < R}$,
+  ${l = l_1^-\cup l_2^+}$, где $l_1: \abs{t - z_0} = R_1$
+  и $l_2: \abs{t - z_0} = R_2$
+  Из интегральной формулы Коши следует представление
+  \begin{align*}
+    f(z) = \dfrac{1}{2\pi i}\oint\limits_l\dfrac{f(t)}{(t - z)}dt = \dfrac{1}{2\pi i}
+    \parenthesis{\intl_{l_2^+}\dfrac{f(t)}{t - z}dt - \intl_{l_1^+}\dfrac{f(t)}{t - z}dt}.
+  \end{align*}
+  \begin{enumerate}
+  \item Если $\abs{z - z_0} < R_1 < R$, то
+    \begin{align*}
+      I_1 &= \dfrac{1}{2\pi i}\oint\limits_{\abs{t - z_0} = R_1}\dfrac{f(t)}{t - z}dt = \sqcase{\dfrac{1}{t - z}
+        = \dfrac{1}{(t - z_0) - (z - z_0)} = \dfrac{1}{(t - z_0)\parenthesis{1 - \frac{z - z_0}{t - z_0}}},\\
+        q = \dfrac{z - z_0}{t -  z_0}, \abs{q} = \dfrac{\abs{z - z_0}}{\abs{t -  z_0}} < \dfrac{R_1}{\abs{t - z_0}} = 1} =\\
+      &= \dfrac{1}{2\pi i}\oint\limits_{\abs{t - z_0} = R_1}\dfrac{f(t)}{t - z}\suml_{n = 0}^{\infty}
+      \parenthesis{\dfrac{z - z_0}{t - z_0}}^ndt =
+      \suml_{n = 0}^{\infty}(z - z_0)^n\dfrac{1}{2\pi i}\oint\limits_{\abs{t - z_0} = R_1}
+      \dfrac{f(t)}{(t - z)^{n + 1}}dt =\\
+      &=\suml_{n = 0}^{\infty}c_n(z - z_0)^n,
+    \end{align*}
+    где $c_n$ вычисляется по формуле $\eqref{eq:loran-03}$ для $n \in \mathbb{N}_0$.
+  \item Пусть $r < r_1 < \abs{z - z_0}$. Тогда
+    \begin{align*}
+      I_2 &= \dfrac{1}{2\pi i}\oint\limits_{\abs{t - z_0} = r_1}\dfrac{f(t)}{t - z}dt = \sqcase{\dfrac{1}{t - z}
+        = \dfrac{1}{(t - z_0) - (z - z_0)} = \dfrac{1}{(z - z_0)\parenthesis{1 - \frac{t - z_0}{z - z_0}}},\\
+        q = \dfrac{t - z_0}{z -  z_0} \Rightarrow
+        q = \dfrac{\abs{t - z_0}}{\abs{z - z_0}} <
+        \dfrac{\abs{t - z_0}}{r_1} = 1} =\\
+      & =-\suml_{k = 1}^{\infty}\dfrac{1}{(z - z_0)^k}\dfrac{1}{2\pi i}\oint\limits_{\abs{t - z_0} = R_1}(t - z_0)^{k - 1}f(t)dt =-\suml_{k = 1}^{\infty}\dfrac{c_{-k}}{(z - z_0)^k},
+    \end{align*}
+    где
+    \begin{align*}
+      c_{-k} = \dfrac{1}{2\pi i}\oint\limits_{l_1^-}(t - z_0)^{k - 1}f(t)dt, k \in \mathbb{N}.
+    \end{align*}
+    Заменяя формально $-k = n$ имеем
+    \begin{align*}
+      c_n = \dfrac{1}{2\pi i}\oint\limits_{l_1^-}(t - z_0)^{-n - 1}f(t)dt = \dfrac{1}{2\pi i}
+      \oint\limits_{l_1^-}\dfrac{f(t)}{(t - z_0)^{n + 1}}dt, n \in \set{-1, -2, -3, \ldots}.
+    \end{align*}
+    Таким образом, коэффициенты $c_n$ также вычисляются по формуле \eqref{eq:loran-03} и для $n < 0$.
+  \end{enumerate}
+
+  Отметим, что несмотря на то, что в доказательстве для вычисления коэффициентов \eqref{eq:loran-03} используются
+  разные контуры, из интегральной теоремы Коши следует, что эти формулы
+  можно использовать в виде \eqref{eq:loran-03} с некоторым общим контуром $ l $, при этом
+  \begin{equation*}
+    f(z) = I_1 - I_2 = \sumnzi c_n (z-z_0)^n + \sum_{n=1}^{\infty} c_{-n} (z-z_0)^{-n} \Leftrightarrow \eqref{eq:loran-02}.
+  \end{equation*}
+
+  \noindent\textit{Единственность:}
+
+  Предположим, что наряду с \eqref{eq:loran-02} имеется разложение $ f(z) = \dsum_{n=-\infty}^{+\infty} d_n (z-z_0)^n $.
+  Тогда из равенств $ \dsum_{n=-\infty}^{+\infty} c_n (z-z_0)^n = \dsum_{n=-\infty}^{+\infty} d_n (z-z_0)^n  $, после умножения на $ (z-z_0)^{-m-1} $ и соответствующего почленного интегрирования, получим:
+  \begin{equation*}
+    \dsum_{n=-\infty}^{+\infty} c_n \dfrac{1}{2 \pi i}
+    \underbrace{\oint\limits_l \dfrac{dz}{(z-z_0)^{m-n+1}} }_{
+      =0, \; m-n \neq 0.
+    }
+    =
+    \dsum_{n=-\infty}^{+\infty} d_n \dfrac{1}{2 \pi i}
+    \underbrace{\oint\limits_l \dfrac{dz}{(z-z_0)^{m-n+1}} }_{
+      =0, \; m-n \neq 0.
+    }
+  \end{equation*}
+
+  Для $ n = m $ следует:
+  \begin{equation*}
+    0 + c_m \dfrac{1}{2 \pi i}
+    \underbrace{\oint\limits_l \dfrac{dz}{z-z_0} }_{
+      =2 \pi i
+    }
+    + 0
+    =
+    0 + d_m \dfrac{1}{2 \pi i}
+    \underbrace{\oint\limits_l \dfrac{dz}{z-z_0} }_{
+      =2 \pi i
+    }
+    + 0
+    \Rightarrow c_m = d_m, \forall \; m \in \mathbb{Z}.
+  \end{equation*}
+
+\end{proof}

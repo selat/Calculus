@@ -1,0 +1,61 @@
+\colquestion{Теорема о существовании первообразной аналитической ФКП.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+В дальнейшем для ФКП $f(z), z \in G$, дифференцируемую функцию $F(z), z \in G$, будем называть
+первообразной на $G$, если $\forall z \in G \Rightarrow F'(z) = f(z)$.
+
+\begin{theorem}[о существовании первообразной для аналитической ФКП]
+  Для аналитической на $G$ функции $f(z)$ всегда существует в $G$ хотя бы одна первообразная
+  $F(z)$, в качестве которой можно взять, например, интеграл с переменным верхним пределом
+  \begin{equation}
+    \label{eq:lecture16-06}
+    F(z) = \intl_{z_0}^{z}f(t)dt,
+  \end{equation}
+  при этом в $G$ интегрирование проводится по кусочно-гладкому контуру
+  $\forall \overrightarrow{z_0z} \subset G$, где $z_0 \in G$ - фиксированная точка.
+\end{theorem}
+\begin{proof}
+  Из интегральной формулы Коши следует, что $F(z) = \intl_{l = \overrightarrow{z_0z}}f(t)dt$
+  корректно определена в силу того, что значение для \eqref{eq:lecture16-06} не зависит от
+  пути $l \subset G$, соединяющего $z_0, z \in G$.
+
+  Придавая точке $z \in G$ произвольное приращение $\Delta z \in \mathbb{C}$ т.ч.
+  $z + \Delta z \in G$, имем
+  \begin{align*}
+    \Delta F(z) = F(z + \Delta z) - F(z) = \intl_{\overrightarrow{z_0,z + \Delta z}}f(t)dt -
+    \intl_{\overrightarrow{z_0z}}f(t)dt = \intl_z^{z + \Delta z}f(t)dt.
+  \end{align*}
+  Отсюда $\forall \Delta z \neq 0$ имеем
+  \begin{align*}
+    \abs{\dfrac{\Delta F(z)}{\Delta z} - f(z)} = \abs{\dfrac{1}{\Delta z}\intl_z^{z + \Delta z}f(t)dt -
+      \dfrac{f(z)}{\Delta z}\intl_z^{z + \Delta z}dt} =
+    \dfrac{1}{\abs{\Delta z}}\abs{\intl_z^{z + \Delta z}(f(t) - f(z))dt} \leq
+    \dfrac{1}{\abs{\Delta z}}\abs{\intl_z^{z + \Delta z}\abs{f(t) - f(z)}\abs{dt}}.
+  \end{align*}
+  Далее, заключая путь $l_0 = \overrightarrow{z,z + \Delta z}$ в соответствующий компакт $G_0 \in G$,
+  в силу теоремы Кантора получаем, что непрерывная $f(t)$ будет равномерно непрерывна на компакте
+  $G_0$, а значит и на $l_0$, т.е.
+  \begin{align*}
+    \forall \varepsilon > 0 \exists \delta_{\varepsilon} > 0 \vert \forall t, z \in G_0,
+    \abs{t - z} \leq \delta \Rightarrow \abs{f(t) - f(z)} \leq \varepsilon,
+  \end{align*}
+  поэтому для любого допустимого $\Delta z \neq 0$,
+  \begin{align*}
+    \abs{\Delta z} \leq \delta \Rightarrow \abs{\dfrac{\Delta F(z)}{\Delta z} - f(z)} \leq
+    \dfrac{1}{\abs{\Delta z}}\abs{\intl_z^{z + \Delta z}\varepsilon\abs{dt}} =
+    \dfrac{\varepsilon}{\abs{\Delta z}}\abs{\intl_z^{z + \Delta z}\abs{dt}} =
+    \sqcase{l_0 = \interval[{z; z + \Delta z}], L_0 = \text{Длина}l_0 = \abs{\Delta z}} \leq
+    \dfrac{\varepsilon}{\abs{\Delta z}}\abs{\Delta z} = \varepsilon.
+  \end{align*}
+  Отсюда в силу произвольности $\varepsilon > 0$ получаем
+  \begin{align*}
+    &\abs{\dfrac{\Delta F(z)}{\Delta z} - f(z)} \xrightarrow[\Delta z \to 0]{} 0, \text{ т.е. }
+    \parenthesis{\dfrac{\Delta F(z)}{\Delta z} - f(z)} \xrightarrow[\Delta z \to 0]{} 0 \Rightarrow\\
+    &\Rightarrow \exists F'(z) = \liml_{\Delta z \to 0}\dfrac{\Delta F(z)}{\Delta z} = f(z),
+  \end{align*}
+  т.е. \eqref{eq:lecture16-06} является одной из первообразных для $f(z)$ в $G$.
+\end{proof}

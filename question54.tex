@@ -1,0 +1,76 @@
+\colquestion{Следствие об общем виде первообразной для аналитической ФКП и замечания к нему.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+\begin{consequence}[Об общем виде первообразной для аналитической ФКП]
+  Для аналитической в односвязной области $G$ функции $f(z)$ любая её первообразная $\Phi(z)$ в $G$
+  отличается от первообразной \eqref{eq:lecture16-06} на соответствующую константу
+  $c_0 = \const \in \mathbb{C}$, т.е.
+  \begin{equation}
+    \label{eq:lecture16-07}
+    \Phi(z) = F(z) + c_0
+  \end{equation}
+\end{consequence}
+\begin{proof}
+  Рассмотрим критерий постоянства аналитической ФКП. Покажем, что если для аналитической ФКП в $G$
+  $H(z) \Rightarrow H'(z) = 0, \forall z \in G$, то $H(z) = \const$. Пусть
+  ${u = \operatorname{Re}H(z)}$, ${v = \operatorname{Im}H(z)}$, тогда отсюда из формулы
+  $H'(z) = u'x + iv'_x$, имеем
+  \begin{align*}
+    u'_x + iv'_x = 0 \Rightarrow
+    \begin{cases}
+      u'_x = 0,\\
+      v'_x = 0,
+    \end{cases}
+  \end{align*}
+  Отсюда, используя интегральное условие Коши-Римана для дифференцируемой ФКП имеем
+  \begin{align*}
+    v'_y = u'_x = 0,
+    u'_y = -v'_x = 0,
+  \end{align*}
+  поэтому
+  \begin{align*}
+    \begin{cases}
+      u'_x = 0,\\
+      u'_y = 0,
+    \end{cases} \Rightarrow u = \const = c_1 \in \R{}, \forall (x, y),\\
+    \begin{cases}
+      v'_x = 0,\\
+      v'_y = 0,
+    \end{cases} \Rightarrow v = \const = c_2 \in \R{}, \forall (x, y),\\
+  \end{align*}
+  Значит
+  \begin{align*}
+    H(z) = u + iv = c_1 + ic_2 = c_0 = \const \in \mathbb{C}.
+  \end{align*}
+  Применяя доказанное к $H(z) = \Phi(z) - F(z)$, где
+  \begin{align*}
+    &\Phi'(z) = f(z), F'(z) = f(z), \forall z \in G \Rightarrow H'(z) = \Phi'(z) - F'(z) =
+    f(z) - f(z) = 0, \text{ т.е. }\\
+    &H(z) = c_0 = \const \Rightarrow \Phi(z) - F(z) = c_0 \Rightarrow \Phi(z) = F(z) + c_0.
+  \end{align*}
+\end{proof}
+\begin{notes}
+\item Из доказанного следствия так же, как и для действительного интеграла, имеем следующий аналог
+  формулы Ньютона-Лейбница (двойной подстановки) для интеграла от аналитической ФКП: если
+  $f(z)$ аналитичекская в $G$, то
+  \begin{align*}
+    \label{eq:lecture16-08}
+    \forall z_1,z_2 \in G \Rightarrow \intl_{z_1}^{z_2}f(z)dz = \Phi(z_2) - \Phi(z_1) =
+    \sqcase{\Phi(z)}_{z_1}^{z_2},
+  \end{align*}
+  где $\Phi(z)$ - одна из первообразных для аналитической $f(z)$ в $G$.
+  \begin{proof}
+    По той же схеме, что и для действительного ОИ.
+  \end{proof}
+\item Как и для действительного ОИ, обосновывается формула интегрирования по частям для интеграла
+  от аналитической ФКП: если $f(z)$ и $g(z)$ аналитические в $G$, то
+  \begin{align*}
+    \forall z_1, z_2 \in G \Rightarrow \intl_{z_1}^{z_2}f(z)g'(z)dz = \intl_{z_1}^{z_2}f(z)dg(z) =
+    \sqcase{f(z)g(z)}_{z_1}^{z_2} - \intl_{z_1}^{z_2}g(z)df(z) =
+    \sqcase{f(z)g(z)}_{z_1}^{z_2} - \intl_{z_1}^{z_2}g(z)f'(z)dz.
+  \end{align*}
+\end{notes}

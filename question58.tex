@@ -1,0 +1,41 @@
+\colquestion{Теорема Мореры и замечание к ней.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+В качестве приложения интегрального представления производных аналитической ФКП докажем теорему
+Мореры, являющуюся в некотором смысле обратной к интегральной формуле Коши.
+
+\begin{theorem}[Мореры]
+  Если $f(z)$ - непрерывная в односвязной области $D \subset \mathbb{C}$ и для любого замкнутого
+  кусочно-гладкого контура
+  \begin{equation}
+    \label{eq:lecture32-07}
+    l \subset D \Rightarrow \oint\limits_lf(z)dz = 0,
+  \end{equation}
+  то тогда $f(z)$ аналитическая в $D$.
+\end{theorem}
+\begin{proof}
+  Фиксируя $z_0 \in D, \forall z \in D$ рассмотрим функцию $\Phi(z) =
+  \oint\limits_{\overrightarrow{z_0z}}f(t)dt$. В силу условия \eqref{eq:lecture32-07} получаем, что
+  $\Phi(z)$ корректно определена в том смысле, что не зависит от пути интегрирования
+  $l_0 = \overrightarrow{z_0z} \subset D$ и соединяет $z_0$ и $z$.
+
+  Действительно, рассмотрим $l_1 = \overrightarrow{z_0z}$ и $l_2 = \overrightarrow{z_0z}$ -
+  различные пути и построим замкнутый контур $l_2^+ \cup l_1^-$, имеем
+  \begin{align*}
+    \oint\limits_{l_1^- \cup l_2^+}f(t)dt = \intl_{l_2^+} + \intl_{l_1^-} = 0 \Rightarrow
+    \intl_{l_2^+}f(t)dt = -\intl_{l_1^-}f(t)dt = \intl_{l_1^+}f(t)dt.
+  \end{align*}
+  В связи с этим мы можем рассматривать $\Phi(z)$ как $\intl_{z_0}^zf(t)dt$, так же, как и в теореме
+  о существовании первообразной для аналитической ФКП, для непрерывной $f(z)$ получаем
+  \begin{align*}
+    \exists \Phi'(z) = \parenthesis{\intl_{z_0}^zf(t)dt}'_z = f(z),
+  \end{align*}
+  Таким образом, $f(z)$ - производная аналитической ФКП, а т.к. любая аналитическая ФКП бесконечное
+  число раз дифференцируема, то $f(z)$ - тоже бесконечное число раз дифференцируема, а значит
+  $f'(z) = \Phi''(z)$, т.е. $f(z)$ - аналитическая в $D$.
+\end{proof}

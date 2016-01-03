@@ -1,0 +1,98 @@
+\colquestion{Интеграл ФКП и его вычисление через КРИ-2.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+Определение интеграла ФКП проводится по той же схеме, что и определение КРИ-2 для действительных
+функций.
+
+Рассмотрим в плоскости \circled{$z$} некоторый ориентированный путь $l$:
+\begin{align*}
+  z = z(t) = x(t) + iy(t), t \vert_{\alpha}^{\beta},
+\end{align*}
+где движение происходит от $z_{\alpha} = x(\alpha) + iy(\alpha)$ до $z_{\beta} = x(\beta) + iy(\beta)$,
+т.е. от $A(x(\alpha), y(\alpha))$ до $B(x(\beta), y(\beta))$. В соответствии с ориентацией
+рассмотрим произвольное разбиение $l = \overrightarrow{AB}$ на $n$ частей точками
+${z_0 = A, z_1, \ldots, z_{n - 1}, z_n = B}$. В результате $l$ разбивается на части
+$l_k = \overrightarrow{z_{k - 1}z_k}, k = \overline{1, n}$. Исходя из рассмотренного разбиения
+$P = \set{z_k}, k = \overline{0, n}$ примем ${d = \underset{k = \overline{1,n}}{\max}\abs
+  {\Delta z_k}, \Delta z_k - z_{k - 1}, k = \overline{1, n}}$. Выбирая произвольным образом множество
+отмеченных точек $Q = \set{M_k}$, ${\forall M_k \in l_k, k = \overline{1, n}}$, составим интегральную
+сумму для $f(z)$, определённую для $\forall z \in l$:
+\begin{equation}
+  \sigma = \suml_{k = 1}^{\infty}f(M_k)\Delta z_k.
+\end{equation}
+ФКП $f(z)$ считается интегрируемой на $l$, если
+\begin{align*}
+  \exists I = \liml_{d \to 0}\sigma \in \mathbb{C}, \text{ т.е. } \forall \varepsilon > 0 \exists
+  \delta_{\varepsilon} > 0 \vert \forall \set{P, Q}, d = \diam P \leq \delta_{\varepsilon} \Rightarrow
+  \abs{\sigma - I} \leq \varepsilon.
+\end{align*}
+
+В этом случае конечное число $I$, не зависящее ни от $P$, ни от $Q$, называется значением интеграла
+от $f(z)$ по кривой $l$ и обозначается $I = \intl_{l = \overrightarrow{AB}}f(z)dz$.
+
+Для вычисления интеграла ФКП через действительный КРИ-2 рассмотрим
+\begin{align*}
+  u = \operatorname{Re}f(z), v = \operatorname{Im}f(z), x = \operatorname{Re}
+  y = \operatorname{Im}z,
+\end{align*}
+тогда в соответствии с используемым разбиением $P = \set{z_k}$, с отмеченными точками $Q = \set{M_k}$
+при параметризации
+\begin{align*}
+  l = \begin{cases}
+    x = x(t),\\
+    y = y(t)
+  \end{cases}, t \vert_{\alpha}^{\beta},
+\end{align*}
+получим некоторое разбиение $\set{t_k}$ промежутка с концами $\alpha$ и $\beta$, в силу которых
+$x_k = x(t_k), y_k = y(t_k), M_k(x(t_k), y(t_k))$.
+
+В соответствии с этим
+\begin{align*}
+  f(M_k) = u(M_k) + iv(M_k) = u(x(t_k), y(t_k)) + iv(x(t_k), y(t_k)).
+\end{align*}
+В результате для интегральной суммы имеем
+\begin{align*}
+  &\sigma = \suml_{k = 1}^{\infty}f(M_k)\Delta z_k = \sqcase{\Delta z_k = \Delta x_k + i\Delta y_k,
+    f(M_k) = u(M_k) + iv(M_k)} =
+  \suml_{k = 1}^n(u(M_k) + iv(M_k))(\Delta x_k + i\Delta y_k) =\\
+  &=\suml_{k = 1}^n(u(M_k)\Delta x_k - v(M_k)\Delta y_k) +
+  i\suml_{k = 1}^n(v(M_k)\Delta x_k + u(M_k)\Delta y_k).
+\end{align*}
+Любая из полученных сумм представляет собой соответствующую интегральную сумму для КРИ вида
+$\intl_lPdx + Qdy$, где в первом случае
+\begin{align*}
+  \begin{cases}
+    P = u,\\
+    Q = -v,
+  \end{cases}
+\end{align*}
+а во втором
+\begin{align*}
+  \begin{cases}
+    P = v,\\
+    Q = u,
+  \end{cases}
+\end{align*}
+В результате получаем
+\begin{equation}
+  \label{eq:lecture16-02}
+  \intl_lf(z)dz = \liml_{d \to 0}\sigma = \intl_l(udx - vdy) + i\intl_lvdx + udy
+\end{equation}
+Данное выражение сводит вычисление интеграла ФКП к вычислению соответствующего действительного КРИ-2,
+при этом, если $l$ задана параметрически, то получаем выражение интеграла ФКП через интеграл от
+КЗФ
+\begin{equation}
+  \label{eq:lecture16-03}
+  \intl_lf(z)dz = \intl_{\alpha}^{\beta}(u(x(t), y(t))x'(t) - v(x(t), y(t))y'(t))dt +
+  i\intl_{\alpha}^{\beta}(v(x(t), y(t))x'(t) - u(x(t), y(t))x'(t))dt
+\end{equation}
+Нетрудно видеть, что формула \eqref{eq:lecture16-03} соответствует формуле формальной замены
+переменных в интеграле ФКП
+\begin{align*}
+  \intl_lf(z)dz = \intl_{\alpha}^{\beta}(u + iv)(dx + idy) = \intl_{\alpha}^{\beta}(udx - vdy) +
+  i\intl_{\alpha}^{\beta}(vdx + udy) \Leftrightarrow \eqref{eq:lecture16-03}.
+\end{align*}

@@ -1,0 +1,66 @@
+\colquestion{Сходящаяся и непрерывная ФКП. Критерий непрерывности ФКП.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+Рассмотрим ФКП $\omega - f(z)$ с областью определения $D \subset \mathbb{C}$. Пусть точка $z_0$ -
+предельная для $D$, т.е. либо внутренняя, либо граничная. Число $p \in \mathbb{C}$ называется
+пределом $f(z)$ в точке $z_0$, если
+\begin{equation}
+  \label{eq:lecture16-01}
+  \forall \varepsilon > 0 \exists \delta_{\varepsilon} > 0 \vert
+  \forall z \in D, 0 < \abs{z - z_0} < \delta_{\varepsilon} \Rightarrow \abs{f(z) - p} < \varepsilon
+\end{equation}
+В этом случае говорят, что функция $f(z)$ сходится к $p \in \mathbb{C}, z \to z_0$ и пишут
+$f(z) \xrightarrow[z \to z_0]{} p$, или $\liml_{z \to z_0}f(z) = p$.
+
+На языке окрестностей имеем
+\begin{align*}
+  f(z) \xrightarrow[z \to z_0]{}p \in \mathbb{C} \Leftrightarrow \forall \varepsilon > 0 \exists
+  \delta > 0 \vert \forall z \in D \cap \overline{B_{\delta}}(z_0) \Rightarrow f(z) \in
+  \overline{B_{\varepsilon}}(p)
+\end{align*}
+
+\begin{theorem}[Критерий сходимости ФКП]
+  Если для ФКП $\omega = f(z), z = x + iy, x = \operatorname{Re}z, y = \operatorname{Im}z$, или
+  $\omega = u + iv, u = u(x, y) = \operatorname{Re}f(z), v = v(x, y) = \operatorname{Im}f(z)$, то
+  \begin{equation}
+    \label{eq:lecture16-02}
+    f(z) \xrightarrow[z \to z_0]{}p \in \mathbb{C} \Leftrightarrow
+    \begin{cases}
+      \exists\liml_{\begin{matrix}
+          x \to x_0\\
+          y \to y_0
+      \end{matrix}}u(x,y) = u_0 = \operatorname{Re}p,\\
+      \exists\liml_{\begin{matrix}
+          x \to x_0\\
+          y \to y_0
+      \end{matrix}}v(x,y) = v_0 = \operatorname{Im}p,
+    \end{cases}
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  По той же схеме, как и в критерии сходимости КП.
+\end{proof}
+
+Пусть $z_0$ - внетренняя точка для $D = D(f) \subset \mathbb{C}$. Говорят, что $\omega = f(z)$
+непрерывна в точке $z_0 \in D$, если $\exists \liml_{z \to z_0}f(z) = f(z_0)$. Аналогично определяется
+нерерывность в граничной точке $z_0 \in D$ (односторонняя непрерывность).
+
+На языке окрестности имеем:
+\begin{align*}
+  &f(z) \text{ непрерывна в } z_0 \in D \Leftrightarrow\\
+  &\Leftrightarrow \forall \varepsilon > 0 \exists \delta > 0 \vert \forall z \in
+  \overline{B}_{\delta}(z_0) \Rightarrow f(z) \in \overline{B}_{\varepsilon}(f(z_0)).
+\end{align*}
+
+\begin{theorem}[Критерий непрерывности ФКП]
+  $\omega = f(z)$ непрерывная в точке $z_0 \in D \Leftrightarrow$
+  $u(x, y) = \operatorname{Re}f(z), v(x, y) = \operatorname{Im}f(z)$
+  непрерывны в $M_0(x_0, y_0)$, где $x_0 = \operatorname{Re}z_0, y_0 = \operatorname{Im}z_0$.
+\end{theorem}
+\begin{proof}
+  Следует их критерия сходимости ФКП.
+\end{proof}

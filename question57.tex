@@ -1,0 +1,68 @@
+\colquestion{Теорема об интегральном представлении производных ФКП и замечания к ней.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{theorem}[Об интегральном представлении производных ФКП]
+  Пусть $f(z)$ аналитическая в односвязной области $D$ с кусочно-гладкой границей $l = \partial D$.
+  Если $f(z)$ непрерывна в $\overline{D}$, то $f(z)$ бесконечное число раз дифференцируема в $D$, и
+  при этом
+  \begin{equation}
+    \label{eq:lecture32-05}
+    \forall z \in D \Rightarrow f^{(n)}(z) = \dfrac{1}{2\pi i}\oint\limits_l
+    \dfrac{f(t)}{(t - z)^{n + 1}}dt, n \in \mathbb{N}_0,
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  При $n = 0$ \eqref{eq:lecture32-05} соответствует интегральной формуле Коши
+  \begin{equation}
+    \label{eq:lecture32-06}
+    \begin{cases}
+      f(z) =  \dfrac{1}{2\pi i}\oint\limits_l\phi(t, z)dt,\\
+      \phi(t, z) = \dfrac{f(t)}{t - z}, t \in l, z \in D,\\
+    \end{cases}
+  \end{equation}
+  Если зафиксировать $t$ и заключить точку $z \in D$ в соответствующий компакт $G \subset D$ с
+  кусочно-гладкой границей $l_0 = \partial G$, то $\forall t \in l_0, \forall z \in G \Rightarrow
+  t - z \neq 0$, поэтому функция $\phi(t, z)$ в \eqref{eq:lecture32-06} аналитична по $z \in G$, для
+  её производной имеем
+  \begin{align*}
+    \dfrac{\partial \phi(t, z)}{\partial z} = \parenthesis{\dfrac{f(t)}{t - z}}'_z =
+    \dfrac{f(t)}{(t - z)^2}.
+  \end{align*}
+  Далее, по формуле Коши для многосвязной области имеем
+  \begin{align*}
+    f(z) \overset{\eqref{eq:lecture32-06}}{=}\dfrac{1}{2\pi i}\oint\limits_{l = \partial D}\phi(t, z)dt
+    = \ldots = \dfrac{1}{2\pi i}\oint\limits_{l_0 = \partial G}\phi(t, z)dt.
+  \end{align*}
+  Отсюда, в силу теоремы о дифференцировании ИЗОП ФКП, получаем
+  \begin{align*}
+    \exists f'(z) = \dfrac{1}{2\pi i}\oint\limits_{l_0}\dfrac{\partial \phi(t, z)}{\partial z}dt =
+    \dfrac{1}{2\pi i}\oint\limits_{l_0}\dfrac{f(t)}{(t - z)^2}dt
+  \end{align*}
+  Применяя снова формулу Коши для многосвязной области получаем
+  \begin{align*}
+    f'(z) = \dfrac{1}{2\pi i}\oint\limits_{l}\dfrac{f(t)}{(t - z)^2}dt,
+  \end{align*}
+  т.е. формула \eqref{eq:lecture32-05} верна для $n = 1$. Далее, по индукции, доказывается
+  справедливость \eqref{eq:lecture32-05} для $\forall n \in \mathbb{N}_0$.
+\end{proof}
+\begin{notes}
+\item Обоснование формулы \eqref{eq:lecture32-05} показывает, что если $f(z)$ аналитическая в $D$,
+  то она бесконечное число раз дифференцируема в любой внутренней точке из $D$.
+\item Формула \eqref{eq:lecture32-05} справедлива также для многосвязной области $D$, при этом
+  за $l$ берётся полная граница для $D$.
+\item Как и интегральную формулу Коши, на практике формулу \eqref{eq:lecture32-05} переписывают в
+  виде
+  \begin{align*}
+    \oint\limits_l\dfrac{f(z)}{(z - z_0)^{n + 1}}dz =
+    \begin{cases}
+      \dfrac{2\pi i}{n!}f^{(n)}(z_0), z \in D,\\
+      0, z \notin D,
+    \end{cases}
+  \end{align*}
+  и используют для вычисления соответствующего интеграла ФКП.
+\end{notes}
