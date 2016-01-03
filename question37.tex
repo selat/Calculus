@@ -1,0 +1,86 @@
+\colquestion{Комплексная форма И.Ф. Преобразование Фурье и его свойства.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+Пусть выполнены для $f(x)$ все условия теоремы о её представлении в виде интеграла Фурье. Тогда
+\begin{align*}
+  f(x) = \Phi(x) = \dfrac{1}{2\pi}\intl_{-\infty}^{+\infty}dy\intl_{-\infty}^{+\infty}f(t)\cos y(t - x)dt.
+\end{align*}
+В дальнейшем все соответствующие НИ-1 будем рассматривать в смысле $v.p.$ В этом случае
+\begin{align*}
+  \forall B > 0 \Rightarrow \intl_{-B}^Bdy\intl_{-\infty}^{+\infty}f(t)\sin y(t - x)dt = 0.
+\end{align*}
+А отсюда при
+\begin{align*}
+  B \to +\infty v.p.\intl_{-\infty}^{+\infty}dy\intl_{-\infty}^{+\infty}f(t)\sin y(t - x)dt = 0.
+\end{align*}
+В дальнейшем $v.p.$ будем опускать. Поэтому, используя мнимую единицу $i (i^2 = -1)$, получаем
+\begin{align*}
+  &f(x) = \dfrac{1}{2\pi}\intl_{-\infty}^{+\infty}dy\intl_{-\infty}^{+\infty}f(t)\cos y(t - x)dt +
+  \dfrac{i}{2\pi}\intl_{-\infty}^{+\infty}dy\intl_{-\infty}^{+\infty}f(t)\sin y(t - x)dt =\\
+  &=\dfrac{1}{2\pi}\intl_{-\infty}^{+\infty}dy\intl_{-\infty}^{+\infty}f(t)(\cos y(t - x) + i\sin y(t - x))dt
+  = \sqcase{e^{i\phi} = \cos\phi + i\sin\phi} =
+\end{align*}
+\begin{equation}
+  \label{eq:lecture27-14}
+  = \dfrac{1}{2\pi}\intl_{-\infty}^{+\infty}dy\intl_{-\infty}^{+\infty}e^{iy(t - x)}f(t)dt.
+\end{equation}
+\eqref{eq:lecture27-14} даёт комплексную форму ИФ из которой следует
+\begin{align*}
+  f(x) = \dfrac{1}{2\pi}\intl_{-\infty}^{+\infty}\parenthesis{e^{-ixy}\intl_{-\infty}^{+\infty}e^{iyt}f(t)dt}
+  dy =
+\end{align*}
+\begin{equation}
+  \label{eq:lecture27-15}
+  \dfrac{1}{\sqrt{2\pi}}\intl_{-\infty}^{+\infty}e^{-ixy}F(y)dy
+\end{equation}
+где
+\begin{equation}
+  \label{eq:lecture27-16}
+  F(y) = \dfrac{1}{\sqrt{2\pi}}\intl_{-\infty}^{+\infty}e^{iyt}f(t)dt.
+\end{equation}
+\eqref{eq:lecture27-16} - преобразование Фурье функции $f(t)$, которое может быть не только
+действительным, но и комплексно-значным для $t \in \R{}$. Сам \eqref{eq:lecture27-16} подразумевается
+в смысле $v.p.$
+
+Функция $F(y)$ в \eqref{eq:lecture27-16} - образ $f(x)$ при преобразовании Фурье, сама $f(x)$ -
+первообразная для \eqref{eq:lecture27-16}. Его можно восстановить по формуле \eqref{eq:lecture27-15},
+где интеграл также поразумевается в смысле $v.p.$. \eqref{eq:lecture27-15} - обратное преобразование
+Фурье.
+
+Можно показать, что преобразование Фурье \eqref{eq:lecture27-16} обладает следующими свойствами
+\begin{enumerate}
+\item Линейность: Если $f(x)$ и $g(x)$ имеют преобразования Фурье $F(y)$ и $G(y)$, то тогда
+  \begin{align*}
+    \forall \mu,\lambda \in \R{} \Rightarrow h(x) = \lambda f(x) + \mu g(x)
+  \end{align*}
+  имеет преобразовение Фурье $H(y) = \lambda F(y) + \mu G(y)$.
+
+  По ММИ это свойство обобщается на любое число слогаемых.
+\item $F(y) \xrightarrow[y \to \infty]{} 0$. Доказательство следует из теоремы Римана-Лебега.
+\item Если $f(x)$ непрерывна для $\forall x \in \R{}$, то $F(y)$ также будет непрерывна.
+\item Если для $f(x)$ наряду с её прФ $F(y)$ существует прФ для $xf(x) - S(y)$, то тогда в случае
+  выполнения \eqref{eq:lecture27-01} и сходимости $\intl_{-\infty}^{+\infty}\abs{xf(x)}dx$ при
+  выполнении условий сходимости ИФ получим, что $F'(y)$ будет прФ функции $(ixf(x))$. Доказательство
+  следует из теоремы о почленном дифференцировании НИЗОП и правила Лейбница дифференцирования
+  НИЗОП, т.к. для интеграла $\intl_{-\infty}^{+\infty}itf(t)e^{iyt}d$ имеем сходящуюся мажоранту
+  \begin{align*}
+    \intl_{-\infty}^{+\infty}\abs{itf(t)e^{iyt}}dt = \sqcase{\abs{e^{iyt}} = 1} =
+    \intl_{-\infty}^{+\infty}\abs{tf(t)}dt \text{ - сходится,}
+  \end{align*}
+  а поэтому будет сходится равномерно, а тогда
+  \begin{align*}
+    \exists F'(y) = \dfrac{1}{\sqrt{2\pi}}\parenthesis{\intl_{-\infty}^{+\infty}f(t)e^{iyt}dt}'_y=
+    \dfrac{1}{\sqrt{2\pi}}\intl_{-\infty}^{+\infty}\parenthesis{f(t)e^{iyt}}'_ydt =
+    \dfrac{1}{\sqrt{2\pi}}\intl_{-\infty}^{+\infty}itf(t)e^{iyt}dt -
+  \end{align*}
+  преобразование Фурье функции $ixf(x)$.
+
+  При соответствующих условиях это свойство по ММИ обобщается: $\forall k \in \mathbb{N} \Rightarrow
+  F^{(k)}(y)$ - прФ функции $(ix)^kf(x)$. На основании свойств можно использовать прФ для вычисления
+  соответствующих интегралов и решения дифференциальных и интегральных уравнений и их систем.
+\end{enumerate}

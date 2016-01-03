@@ -1,0 +1,90 @@
+\colquestion{Теорема о поточечной сходимости И.Ф. Следствие из неё и замечание к ней.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{equation}
+  \label{eq:lecture27-02}
+  a(y) = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\cos ytdt,
+\end{equation}
+\begin{equation}
+  \label{eq:lecture27-03}
+  b(y) = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\sin ytdt,
+\end{equation}
+
+Из теоремы Римана-Лебега: для кусочно-непрерывной функции $g(t)$ и абсолютно интегрируемой на
+$\interval[{a; +\infty}[$ имеем
+\begin{equation}
+  \label{eq:lecture27-10}
+  \liml_{A \to +\infty}\intl_a^{+\infty}g(t)\sin At = 0
+\end{equation}
+
+\begin{theorem}[О поточечной сходимости ИФ]
+  Если $f(x)$ - абсолютно интегрируема на $\R{}$, т.е. сходится \eqref{eq:lecture27-01}, то в случае,
+  когда для
+  \begin{equation}
+    \label{eq:lecture27-12}
+    x_0 \in \R{} \Rightarrow S_0 \in \R{} \vert \exists \liml_{t \to +0}
+    \parenthesis{\dfrac{f(x_0 + t)}{t} + \dfrac{f(x_0 - t) - 2s_0}{t}} \in \R{},
+  \end{equation}
+  то тогда в точке $x_0$ для ИФ имеем $\Phi(x_0) = S_0$
+\end{theorem}
+\begin{proof}
+  Для $A > 0$ воспользуемся обобщением интеграла Дирихле из котором следует
+  \begin{equation}
+    \label{eq:lecture27-13}
+    \dfrac{2}{\pi}\intl_0^{+\infty}\dfrac{\sin At}{t}dt = 1.
+  \end{equation}
+  Из \eqref{eq:lecture27-13} для \eqref{eq:lecture27-06} в точке $x = x_0$ получаем
+  \begin{align*}
+    &F(A, x_0) - S_0 = \dfrac{1}{\pi}\intl_0^{+\infty}\dfrac{f(x_0 - u) + f(x_0 + u)}{u}\sin Audu -
+    \dfrac{2S_0}{\pi}\intl_0^{+\infty}\dfrac{\sin Au}{u}du =\\
+    &=\dfrac{1}{\pi}\intl_0^{+\infty}\dfrac{f(x_0 - u) + f(x_0 + u) - 2S_0}{u}\sin Audu =
+    \sqcase{g(u) = \dfrac{f(x_0 - u) + f(x_0 + u) - 2S_0}{u};\\ \exists g(+0) = \liml_{u \to +0}g(u) \in
+      \R{}} =\\
+    &=\intl_0^{+\infty}g(u)\sin Audu = \sqcase{\text{Теорема Римана-Лебега}}
+    \xrightarrow[A \to +\infty]{}0,
+  \end{align*}
+  поэтому
+  \begin{align*}
+    F(A, x_0) \xrightarrow[A \to +\infty]{}S_0 \Rightarrow \Phi(x_0) =
+    \liml_{A \to +\infty}F(A, x_0) = S_0.
+  \end{align*}
+\end{proof}
+
+\begin{consequence}
+  Для кусочно-непрерывной абсолютно интегрируемой на $\R{}$ функции $f(x)$, имеем кусочно-непрерывную
+  производную на любом конечном промежутке, её интеграл Фурье в любой точке $x_0 \in \R{}$ сходится к
+  \begin{align*}
+    \Phi(x_0) = \dfrac{f(x_0 - 0) + f(x_0 + 0)}{2}.
+  \end{align*}
+\end{consequence}
+\begin{proof}
+  Для доказательства достаточно взять
+  \begin{align*}
+    S_0 = \dfrac{f(x_0 - 0) + f(x_0 + 0)}{2},
+  \end{align*}
+  а тогда
+  \begin{align*}
+    \dfrac{f(x_0 - t) + f(x_0 + t) - 2S_0}{t} = \dfrac{f(x_0 -t) - f(x_0 - 0)}{t} +
+    \dfrac{f(x_0 + t) - f(x_0 + 0)}{t} \xrightarrow[t \to +0]{} f'_+(x_0 + 0) - f'_-(x_0 - 0) \in
+    \R{},
+  \end{align*}
+  т.е. выполняется условие \eqref{eq:lecture27-10}, а тогда по доказанной теореме
+  \begin{align*}
+    \Phi(x_0) = S_0 = \dfrac{f(x_0 - 0) + f(x_0 + 0)}{2}.
+  \end{align*}
+\end{proof}
+
+\begin{note}
+  Если $x \in \R{}$ - точка непрерывности для $f$, т.е. $f(x_0 - 0) = f(x) = f(x_0 + 0)$, то тогда
+  при выполнении остальных соответствующих условий доказанной теоремы получаем для интеграла Фурье
+  \begin{align*}
+    &\Phi(x) = \dfrac{f(x_0 - 0) + f(x_0 + 0)}{2} = f(x), \text{ т.е.}\\
+    &f(x) = \dfrac{1}{\pi}\intl_0^{+\infty}(a(y)\cos xy + b(y)\sin xy)dy,
+  \end{align*}
+  где $a(y)$, $b(y)$ вычисляется по формулам \eqref{eq:lecture27-02}, \eqref{eq:lecture27-03}.
+\end{note}

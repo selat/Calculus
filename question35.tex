@@ -1,0 +1,60 @@
+\colquestion{Формула Дирихле для интегралов Фурье (И.Ф.) и следствие из неё.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{equation}
+  \label{eq:lecture27-01}
+  \intl_{-\infty}^{\infty}\abs{f(x)}dx
+\end{equation}
+
+Рассмотрим $\forall A > 0$ при фиксированном $x \in \R{}$
+\begin{equation}
+  \label{eq:lecture27-06}
+  F(A, x) = \dfrac{1}{\pi}\intl_{-\infty}^{\infty}f(t)\cos y(t - x)dt
+\end{equation}
+\begin{equation}
+  \label{eq:lecture27-07}
+  \Phi(x) = \liml_{A \to +\infty}F(A, x).
+\end{equation}
+
+\begin{theorem}[Формула Дирихле для интегралов Фурье]
+  При условной сходимости \eqref{eq:lecture27-01} для \eqref{eq:lecture27-06} справедлива формула
+  Дирихле
+  \begin{equation}
+    \label{eq:lecture27-08}
+    F(A, x) = \dfrac{1}{\pi}\intl_0^{+\infty}(f(x - u) + f(x + u))\dfrac{\sin Au}{u}du.
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  В силу сходимости \eqref{eq:lecture27-01} в \eqref{eq:lecture27-06} возможно изменение порядка
+  интегрирования, в силу которого имеем
+  \begin{align*}
+    F(A, x) = \liml_{B \to +\infty}\dfrac{1}{\pi}\intl_0^A\parenthesis{
+      \intl_{-B}^Bf(t)\cos y(t-x)dt}dy.
+  \end{align*}
+  Здесь предельный переход для внешнего интеграла подразумевается в смысле $v. p.$ НИЗОП. В
+  результате получим
+  \begin{align*}
+    &F(A, x) = \liml_{B \to +\infty}\dfrac{1}{\pi}\intl_{-B}^B\parenthesis{\intl_0^Af(t)\cos y(t-x)dy}dt =
+    \liml_{B \to +\infty}\dfrac{1}{\pi}\intl_{-B}^B\sqcase{f(t)\dfrac{\sin y(t - x)}{t - x}}_0^Adt =\\
+    &=\dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\dfrac{\sin A(t - x)}{t - x}dt =
+    \sqcase{t - x = v}_{-\infty}^{+\infty} = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(x + v)
+    \dfrac{\sin Av}{v}dv = \dfrac{1}{\pi}\parenthesis{\intl_{-\infty}^0 + \intl_0^{+\infty}} =\\
+    &=\sqcase{1) u = -v\vert_{-\infty}^0, dv = -du\\
+      2) u = v\vert_0^{+\infty}, dv = du} =
+    \dfrac{1}{\pi}\parenthesis{-\intl_{+\infty}^0f(x -u)\dfrac{\sin A(-u)}{-u}du +
+      \intl_0^{+\infty}f(x + u)\dfrac{\sin Au}{u}du} =\\
+    &= \dfrac{1}{\pi}\intl_0^{+\infty}(f(x - u) + f(x + u))\dfrac{\sin Au}{u}du.
+  \end{align*}
+\end{proof}
+
+\begin{consequence}
+  В силу представления \eqref{eq:lecture27-08} из \eqref{eq:lecture27-07} для ИФ получаем
+  \begin{equation}
+    \Phi(x) = \liml_{A \to +\infty}\dfrac{1}{\pi}\intl_0^{+\infty}\dfrac{f(x - u) + f(x + u)}{u}\sin Audu.
+  \end{equation}
+\end{consequence}
