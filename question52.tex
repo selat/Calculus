@@ -1,0 +1,28 @@
+\colquestion{Независимость от пути интегрирования интеграла от аналитической ФКП.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+\begin{consequence}[независимость интеграла от аналитической ФКП от пути интегрирования]
+  Если $f(z)$ - аналитическая в $G$, то $\forall z_1, z_2 \in G$ и любых кусочно-гладких путей
+  $l_1 \subset G, l_2 \subset G$ с началом в $z_1$ и концом в $z_2$ (ориентированных от $z_1$ к $z_2$)
+  имеем
+  \begin{align*}
+    \intl_{l_1}f(z)dz = \intl_{l_2}f(z)dz.
+  \end{align*}
+\end{consequence}
+\begin{proof}
+  Рассмотрим $l_1^+ = \overrightarrow{z_1z_2}$, $l_2^- = \overrightarrow{z_1z_2}$ и составим замкнутый
+  кусочно-гладкий путь $l = l_1^+ \cup l_2^-$, проходящий через точки $z_1, z_2 \in \mathbb{C}$.
+  Тогда по интегральной теореме Коши получаем
+  \begin{align*}
+    \intl_lf(z)dz = 0 \Rightarrow \intl_{l_1^+\cap l_2^-}f(z)dz = 0 \Rightarrow
+    \intl_{l_1^+}f(z)dz + \intl_{l_2^-}f(z)dz = 0 \Rightarrow
+    \intl_{l_1^+}f(z)dz = -\intl_{l_2^-}f(z)dz \Rightarrow
+    \intl_{l_1^+}f(z)dz = \intl_{l_2^+}f(z)dz
+  \end{align*}
+\end{proof}
+В дальнейшем для ФКП $f(z), z \in G$, дифференцируемую функцию $F(z), z \in G$, будем называть
+первообразной на $G$, если $\forall z \in G \Rightarrow F'(z) = f(z)$.

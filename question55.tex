@@ -1,0 +1,63 @@
+\colquestion{Интегральная формула Коши.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+\begin{theorem}[Интегральная формула Коши]
+  Пусть $f(z)$ аналитическая в односвязной области $D \subset \mathbb{C}$, а $l \subset D$ - простой
+  замкнутый контур, ограниченный некоторой замкнутой областью (компактом) $D_0 \subset D$, тогда
+  \begin{equation}
+    \label{eq:lecture32-01}
+    \forall z_0 \in D_0 \Rightarrow f(z_0) = \oint\limits_{l = \sigma D_0}\dfrac{f(t)}{t - z_0}dt
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Для простоты ограничим внутреннюю точку $z_0 \in D_0 \subset D$ кругом $K_r = \set{\abs{t - z_0} =
+    r \vert t \in D_0}$, целиком лежащим в $D_0$. Используя интегральную теорему Коши, нетрудно
+  показать, что
+  \begin{equation}
+    \label{eq:lecture32-02}
+    I = \dfrac{1}{2\pi i}\oint\limits_l\dfrac{f(t)}{t - z_0}dt =
+    \dfrac{1}{2\pi i}\oint\limits_{\sigma K_r}\dfrac{f(t)}{t - z_0}dt.
+  \end{equation}
+  Рассмотрим $G = D - K_r$, тогда
+  \begin{align*}
+    \forall t \in G \Rightarrow t - z_0 \neq 0 \Rightarrow F(t) = \dfrac{f(t)}{t - z_0}
+  \end{align*}-
+  аналитическая в $G$, поэтому по интегральной теореме Коши
+  \begin{align*}
+    \oint\limits_{\sigma G}F(t)dt = 0 \Rightarrow
+    \intl_{l_0^-}F(t)dt - \intl_{l^+}F(t)dt = 0 \Rightarrow
+    I = \oint\limits_{l^+}\dfrac{f(t)}{t - z_0}dt = - \intl_{l_0^-}\dfrac{f(t)}{t - z_0} =
+    \intl_{l_0^+}F(t)dt \Rightarrow \eqref{eq:lecture32-02}.
+  \end{align*}
+  Используя важный пример из предыдущей лекции имеем
+  \begin{align*}
+    &\abs{I - f(z_0)} = \abs{\dfrac{1}{2\pi i}\oint\limits_{\sigma K_r}\dfrac{f(t)}{t - z_0}dt -
+      \dfrac{f(z_0)}{2\pi i}\oint\limits_{\sigma K_r}\dfrac{dt}{t - z_0}} =
+    \dfrac{1}{2\pi}\abs{\oint\limits_{\abs{t - z_0} = r}\dfrac{f(t) -f(z_0)}{t - z_0}dt} \leq\\
+    &\leq
+    \dfrac{1}{2\pi}\abs{\oint\limits_{\abs{t - z_0} = r}\dfrac{\abs{f(t) -f(z_0)}}{\abs{t - z_0}}\abs{dt}}
+    = \sqcase{\abs{t - z_0} = r} =
+    \dfrac{1}{2\pi}\oint\limits_{\abs{t - z_0} = r}\dfrac{\abs{f(t) -f(z_0)}}{r}\abs{dt}.
+  \end{align*}
+  Учитывая, что $G_0 = \set{\abs{t - z_0} \leq r \vert t \in G}$ является компактом, а для $f(t)$
+  имеем непрерывность на $G_0$. По теореме Кантора для ФКП получаем, что $f(t)$ равномерно непрерывна
+  на $l_r = \set{\abs{t - z_0} = r \vert t \in G}$, поэтому
+  \begin{align*}
+    \forall \varepsilon > 0 \exists \delta_{\varepsilon} > 0 \vert \forall t, z_0 \in G,
+    \abs{t - z_0} \leq \delta \Rightarrow \abs{f(t) - f(z_0)} \leq \varepsilon.
+  \end{align*}
+  Выбирая $\delta > 0$ достаточно малым, так, чтобы $\delta \leq r$, получим, что
+  \begin{align*}
+    &\forall t \in l_r \Rightarrow \abs{f(t) - f(z_0)} \leq \varepsilon, \text{ отсюда}\\
+    &\forall \varepsilon > 0 \Rightarrow \abs{I - f(z_0)}
+    \leq \dfrac{1}{2\pi}\oint\limits_{l_r}\dfrac{\abs{f(t) -f(z_0)}}{r}\abs{dt} \leq
+      \dfrac{\varepsilon}{2\pi r}\oint\limits_{l_r}\abs{dt} = \dfrac{\varepsilon}{2\pi r}
+      \text{ Длина }l_r = \dfrac{\varepsilon}{2\pi r}2\pi r = \varepsilon,
+  \end{align*}
+  поэтому в силу произвольности $\varepsilon > 0$ получаем, что $I = f(z_0)$, т.е. приходим к
+  интегральной формуле Коши \eqref{eq:lecture32-01}.
+\end{proof}

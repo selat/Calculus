@@ -1,0 +1,109 @@
+\colquestion{Обратные гиперболические и тригонометрические ФКП.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+\begin{enumerate}
+\item Обратный гиперболический $\sin$.
+
+  $\omega = \Arsh z$ определяется как все решения уравнения относительно $z$
+  \begin{align*}
+    &z = \sh \omega = \dfrac{e^{\omega} - e^{-\omega}}{2} \Leftrightarrow
+    e^{2\omega} - 2ze^{\omega} - 1 = 0 \Leftrightarrow\\
+    &\Leftrightarrow
+    e^{\omega} = z \pm \sqrt{z^2 + 1} \Leftrightarrow \omega = \Ln\parenthesis{z \pm \sqrt{z^2 +
+        1}}.\\
+    &\Arsh z = \Ln\parenthesis{z \pm \sqrt{z^2 + 1}}.
+  \end{align*}
+
+\item Обратный гиперболический $\cos$.
+
+  $\omega = \Arch z$ определяется в как все решения уравнения $z = \ch \omega$ относительно $z$.
+  Имеем
+  \begin{align*}
+    &z = \ch \omega = \dfrac{e^{\omega} + e^{-\omega}}{2} \Leftrightarrow e^{2\omega} - 2ze^{\omega} + 1 = 0
+    \Leftrightarrow\\
+    &\Leftrightarrow e^{\omega} = z\pm\sqrt{z^2 - 1}, \omega = \Ln\parenthesis{z \pm \sqrt{z^2 - 1}}.\\
+    &\Arch z = \Ln\parenthesis{z \pm \sqrt{z^2 - 1}}
+  \end{align*}
+
+\item Обратный гиперболический $\tg$.
+
+  $\omega = \Arth z$ определяется как все решения относительно $z$ уравнения $\th \omega = z$. Имеем
+  \begin{align*}
+    &z = \th \omega = \dfrac{e^{2\omega} - 1}{e^{2\omega} + 1} \Leftrightarrow\\
+    &\Leftrightarrow e^{2\omega} = \dfrac{1 + z}{1 - z}, \omega = \dfrac{1}{2}\Ln
+    \parenthesis{\dfrac{1 + z}{1 - z}}.\\
+    &\Arth z = \dfrac{1}{2}\Ln\parenthesis{\dfrac{1 + z}{1 - z}}, z \neq \pm 1.
+  \end{align*}
+
+\item Обратный гиперболический $\ctg$.
+
+  $\omega = \Arcth z$ определяется как все решения относительно $z$ уравнения $\cth \omega = z$.
+  Имеем
+  \begin{align*}
+    &z = \cth \omega = \dfrac{e^{2\omega} + 1}{e^{2\omega} - 1} \Leftrightarrow\\
+    &\Leftrightarrow e^{2\omega} = \dfrac{z + 1}{z - 1}, \omega = \dfrac{1}{2}\Ln
+    \parenthesis{\dfrac{z + 1}{z - 1}}.\\
+    &\Arcth z = \dfrac{1}{2}\Ln\parenthesis{\dfrac{z + 1}{z - 1}}, z \neq \pm 1.
+  \end{align*}
+
+\item Комплексный $\arcsin$.
+
+  $\omega = \Arcsin z$ определяется как все решения относительно $z$ уравнения $\sin \omega = z$.
+  Имеем
+  \begin{align*}
+    &z = \sin \omega = \dfrac{e^{i\omega} - e^{-i\omega}}{2i} \Leftrightarrow
+    e^{2i\omega} - 2ize^{i\omega} - 1 = 0 \Leftrightarrow\\
+    &\Leftrightarrow e^{i\omega} = iz \pm \sqrt{1 - z^2}, \omega = -i\Ln\parenthesis{iz \pm \sqrt{1 -
+        z^2}}.\\
+    &\Arcsin z = -i\Ln\parenthesis{iz \pm \sqrt{1 - z^2}}.
+  \end{align*}
+
+\item Комплексный $\arccos$.
+
+  $\omega = \Arccos z$ определяется как все решения относительно $z$ уравнения $\cos \omega = z$.
+  Имеем
+  \begin{align*}
+    &z = \cos \omega = \dfrac{e^{i\omega} + e^{-i\omega}}{2} \Leftrightarrow
+    e^{2i\omega} - 2ze^{i\omega} + 1 = 0 \Leftrightarrow\\
+    &\Leftrightarrow e^{i\omega} = z \pm \sqrt{z^2 - 1}, \omega = -i\Ln\parenthesis{z \pm
+      \sqrt{z^2 - 1}}.\\
+    &\Arccos z = -i\Ln\parenthesis{z \pm \sqrt{z^2 - 1}}.
+  \end{align*}
+
+\item Комплексный $\arctg$.
+
+  $\omega = \Arctg z$ определяется как все решения относительно $z$ уравнения $\tg \omega = z$.
+  Имеем
+  \begin{align*}
+    &z = \tg \omega = \dfrac{e^{2i\omega} - 1}{i(e^{2i\omega} + 1)} \Leftrightarrow\\
+    &\Leftrightarrow e^{2i\omega} = \dfrac{1 + iz}{1 - iz}, \omega = -\dfrac{i}{2}\Ln
+    \parenthesis{\dfrac{1 + iz}{1 - iz}}.\\
+    &\Arctg z = -\dfrac{i}{2}\Ln\parenthesis{\dfrac{1 + iz}{1 - iz}}, z \neq \pm i.
+  \end{align*}
+
+\item Комплексный $\arcctg$.
+
+  $\omega = \Arcctg z$ определяется как все решения относительно $z$ уравнения $\ctg \omega = z$.
+  Имеем
+  \begin{align*}
+    &z = \ctg \omega = \dfrac{i(e^{2i\omega} + 1)}{e^{2i\omega} - 1} \Leftrightarrow\\
+    &\Leftrightarrow e^{2i\omega} = \dfrac{z + i}{z - i}, \omega = -\dfrac{i}{2}\Ln
+    \parenthesis{\dfrac{z + i}{z - i}}.\\
+    &\Arcctg z = -\dfrac{i}{2}\Ln\parenthesis{\dfrac{z + i}{z - i}}, z \neq \pm i.
+  \end{align*}
+\end{enumerate}
+
+\begin{note}
+  Исходя из общей формулы для обратных гиперболических и тригонометрических ФКП вводятся главные
+  значения этих ФКП $\operatorname{arsh} z, \operatorname{arch} z$ и т.д. При этом из полученных
+  функций выбираются выражения, которые для соответствующих действительных значений переменной $z$
+  дают то же, что и ранее рассмотренные обратные гиперболические и тригонометрические функции, при
+  этом, кроме формальной замены общего комплексного логарифма в полученных функциях на главное
+  значение логарифма, иногда приходится вводить некоторые постоянные поправки, вид которых зависит
+  от  выбора главного значения аргумента ($\arg z \in \interval]{-\pi; \pi}]$ или
+      ${\arg z \in \interval[{0; 2\pi}[}$).
+\end{note}

@@ -1,0 +1,125 @@
+\colquestion{Дифференцируемые ФКП. Критерий Коши-Римана дифференцируемости ФКП и замечания к нему.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+Для получения условия дифференцируемости ФКП через её действительную $u = \operatorname{Re}f(z)$ и
+мнимую $v = \operatorname{Im}f(z)$ части будем использовать \important{условие Коши-Римана}
+\begin{align*}
+  \begin{cases}
+    u = u(x, y),
+    v = v(x, y),
+  \end{cases}
+\end{align*}
+
+считаются удовлетворяющими условию Коши-Римана, если у них существуют соответствующие производные
+первого порядка, для которых выполняется
+\begin{equation}
+  \begin{cases}
+    \label{eq:lecture16-08}
+    u'_x = v'_y\\
+    u'_y = -v'_x\\
+  \end{cases}
+\end{equation}
+
+
+\begin{theorem}[Критерий Коши-Римана дифференцируемости ФКП]
+  ФКП $f(z) = u + iv$ дифференцируема в области $G \subset D(f) \Leftrightarrow
+  u = \operatorname{Re}f(z), v = \operatorname{Im}f(z)$ удовлетворяют условию Коши-Римана
+  \eqref{eq:lecture16-08}.
+\end{theorem}
+\begin{proof}
+  \circled{$\Rightarrow$} Пусть $f(z)$ - дифференцируема в $G$. Тогда $\forall z \in G \Rightarrow
+  \exists f'(z) \in \mathbb{C}$, т.е.
+  \begin{align*}
+    \exists\liml_{\Delta z \to 0}\dfrac{\Delta f(z)}{\Delta z} = \sqcase{
+      f = u + iv,
+      \Delta f = \Delta u + i\Delta v,
+      \Delta u = u(x + \Delta x, y + \Delta y) - u(x, y),
+      \Delta v = v(x + \Delta x, y + \Delta y) - v(x, y)} = f'(z) \in \mathbb{C}.
+  \end{align*}
+  В силу любого допустимого $\Delta z = \Delta x + i \Delta y$ при $\Delta z \to 0 \Rightarrow
+  \Delta x \to 0, \Delta y \to 0$, а тогда из того, что для Ф2П из существования двойного предела
+  следует существование соответствующих частных пределов, при использовании приращений вдоль
+  координатных осей получаем
+  \begin{enumerate}
+  \item $\begin{aligned}[t]
+    \Delta y = 0, \Delta x \to 0 \Rightarrow f'(z) = \liml_{\Delta x \to 0}
+    \dfrac{u(x + \Delta x, y) - u(x, y) + i(v(x + \Delta x, y) - v(x, y))}{\Delta x} =
+    u'_x + iv'_x.
+  \end{aligned}$
+  \item $\begin{aligned}[t]
+    \Delta x = 0, \Delta y \to 0 \Rightarrow f'(z) = \liml_{\Delta y \to 0}
+    \dfrac{u(x, y + \Delta y) - u(x, y) + i(v(x, y + \Delta y) - v(x, y))}{i\Delta y} =
+    v'_y - iu'_y.
+  \end{aligned}$
+  \end{enumerate}
+
+  $f(z) = u'_x + iv'_x = v'_y - iu'_y$. Из равенства получаем
+  \begin{equation}
+    \begin{cases}
+      u'_x = v'_y\\
+      u'_y = -v'_x\\
+    \end{cases} \Leftrightarrow \eqref{eq:lecture16-08}
+  \end{equation}
+
+  \circled{$\Leftarrow$} Для простоты будем считать, что для Ф2П
+  \begin{align*}
+    \begin{cases}
+      u = \operatorname{Re}f(z),\\
+      v = \operatorname{Im}f(z),
+    \end{cases}
+  \end{align*}
+  существуют не только частные производные, удовлетворяющие \eqref{eq:lecture16-08}, но и что эти
+  производные непрерывны, т.е. используемые функции непрерывно дифференцируемы, а тогда
+  соответствующие их приращения записываются в виде
+  \begin{align*}
+    &\Delta u(x, y) = u(x + \Delta x, y + \Delta y) - u(x, y) = u'_x\Delta x + u'_y \Delta y +
+    o(\sqrt{\Delta x^2 + \Delta y^2})\\
+    &\Delta v(x, y) = v(x + \Delta x, y + \Delta y) - v(x, y) = v'_x\Delta x + v'_y \Delta y +
+    o(\sqrt{\Delta x^2 + \Delta y^2})\\
+  \end{align*}
+  Отсюда, для
+  \begin{align*}
+    &\Delta f(z) = f(z + \Delta z) - f(z) = \Delta u + i \Delta v \Rightarrow\\
+    &\Rightarrow \Delta f(z) = u'_x\Delta x + u'_y \Delta y + o(\sqrt{\Delta x^2 + \Delta y^2}) +
+    i\parenthesis{v'_x\Delta x + v'_y \Delta y + o(\sqrt{\Delta x^2 + \Delta y^2})} =\\
+    &=(u'_x + iv'_x)\Delta x + (u'_y + iv'_y)\Delta y + o(\sqrt{\Delta x^2 + \Delta y^2}) =
+    \sqcase{
+      u'_x = v'_y\\
+      u'_y = -v'_x} =\\
+    &=(v'_y + iv'_x)\Delta x + (-v'_x + iv'_y)\Delta y + o(\sqrt{\Delta x^2 + \Delta y^2}) = \\
+    &=(\Delta x + i\Delta y)v'_y + (i\Delta x - \Delta y)v'_x + o(\sqrt{\Delta x^2 + \Delta y^2}) =\\
+    &=(\Delta x + i\Delta y)v'_y + i(i\Delta x + i\Delta y)v'_x + o(\sqrt{\Delta x^2 + \Delta y^2})=\\
+    &= (\Delta x + i\Delta y)(v'_y + iv'_x) + o(\sqrt{\Delta x^2 + \Delta y^2}) =
+    \sqcase{\Delta x + i\Delta y = \Delta z,\\
+      \abs{\Delta z} = \sqrt{\Delta x^2 + \Delta y^2}} =
+    (v'_y + iv'_x)\Delta z + \gamma, \text{ где } \gamma = o(\abs{\Delta z}), \Delta \to 0.
+  \end{align*}
+  Имеем
+  \begin{align*}
+    \abs{\dfrac{\gamma}{\Delta z}} \overset{\Delta z \neq 0}{=}
+    \abs{\dfrac{o(\abs{\Delta z})}{\abs{\Delta z}}} \xrightarrow[\Delta z \to 0]{} 0, \text{ т.е. }
+    \gamma = o(\Delta z), \Delta z \to 0.
+  \end{align*}
+  Из полученного представления $\Delta f(z) = (v'_y + iv'_x)\Delta z + o(\Delta z), \Delta z \to 0$,
+  получаем в силу определения дифференцируемость $f(z)$. Её производную, в частности, можно
+  вычислить по формуле $f'(z) = v'_y + iv'_x$.
+\end{proof}
+\begin{notes}
+\item При обосновании достаточности существенную роль играло предположение о непрерывной
+  дифференцируемости $u = \operatorname{Re}f(z)$ и $v = \operatorname{Im}f(z)$. В общем случае
+  можно показать, что это предположение излишне, но тогда доказательство значительно усложняется.
+\item Если у нас $f(z)$ дифференцируема в $G \subset D(f)$, то $f(z)$ будет бесконечное число
+  раз дифференцируема в $G$, т.е. $\exists f'(z)$ - .. для ФКП и существование всех остальных
+  производных высших порядков.
+\item Из доказательства теоремы и условия Коши-Римана \eqref{eq:lecture16-08} следует, что
+  производную ФКП можно вычислить через её действительную и мнимую части, используя одну из
+  формул
+  \begin{align*}
+    f'(z) = u'_x + iv'_x = u'_x - iu'_y = v'_y + iv'_x = v'_y - iu'_y.
+  \end{align*}
+\end{notes}

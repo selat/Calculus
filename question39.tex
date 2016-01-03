@@ -1,0 +1,58 @@
+
+
+\colquestion{Критерий сходимости комплексных последовательностей (К.П.) и замечание к нему.}
+\begin{col-answer-preambule}
+  \begin{equation}
+    \label{eq:lecture10-01}
+    \forall \varepsilon > 0, \exists \nu_{\varepsilon} \vert \forall n \geqslant \nu_{\varepsilon} \Rightarrow \abs{z_n - z_0} \leqslant \varepsilon.
+  \end{equation}
+\end{col-answer-preambule}
+\begin{theorem}[Критерий сходимости КП]
+  \begin{equation}
+    \label{eq:lecture10-02}
+    z_n = x_n + iy_n \xrightarrow[n \to \infty]{} z_0 = x_0 + iy_0 \Leftrightarrow
+  \end{equation}
+  \begin{equation}
+    \label{eq:lecture10-03}
+    x_n \xrightarrow[n \to \infty]{} x_0, y_n \xrightarrow[n \to \infty]{} y_0, x_n,x_0 - \operatorname{Re} z_n, z_0; y_n, y_0 - \operatorname{Im} z_n, z_0;
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  \circled{$\Rightarrow$} Пусть выполняется \eqref{eq:lecture10-01}, тогда, учитывая
+  \begin{align*}
+    &\abs{x_n - x_0} \leqslant \sqrt{(x_n - x_0)^2 + (y_n - y_0)^2} = \abs{z_n - z_0},\\
+    &\abs{y_n - y_0} \leqslant \sqrt{(x_n - x_0)^2 + (y_n - y_0)^2} = \abs{z_n - z_0},\\
+  \end{align*}
+  в силу \eqref{eq:lecture10-01} имеем
+  \begin{align*}
+    \forall \varepsilon > 0 \exists \nu_{\varepsilon} \in \R{} \vert \forall n \geqslant \nu_{\varepsilon} \Rightarrow \abs{x_n - x_0} \leqslant \varepsilon,
+    \abs{y_n - y_0} \leqslant \varepsilon,
+  \end{align*}
+  т.е. имеем \eqref{eq:lecture10-03}.
+
+  \circled{$\Leftarrow$} $\forall \varepsilon > 0$ по $\widetilde{\varepsilon} = \dfrac{\varepsilon}{\sqrt{2}} > 0$
+  в силу \eqref{eq:lecture10-03} имеем
+  \begin{align*}
+    &\exists \nu_1 \in \R{} \vert \forall n \geqslant \nu_1 \Rightarrow \abs{x_n - x_0} \leqslant \widetilde{\varepsilon},\\
+    &\exists \nu_2 \in \R{} \vert \forall n \geqslant \nu_2 \Rightarrow \abs{y_n - y_0} \leqslant \widetilde{\varepsilon},\\
+  \end{align*}
+  Отсюда, выбирая $\nu = \max\set{\nu_1, \nu_2}, \forall n \geqslant \nu \Rightarrow$
+  \begin{align*}
+    &\abs{x_n - x_0} \leqslant \widetilde{\varepsilon} = \dfrac{\varepsilon}{\sqrt{2}},\\
+    &\abs{y_n - y_0} \leqslant \widetilde{\varepsilon} = \dfrac{\varepsilon}{\sqrt{2}},\\
+    &\abs{z_n - z_0} = \sqrt{(x_n - x_0)^2 + (y_n - y_0)^2} \leqslant \sqrt{\dfrac{\varepsilon^2}{2} + \dfrac{\varepsilon^2}{2}} = \varepsilon.
+  \end{align*}
+\end{proof}
+
+\begin{notes}
+\item Критерий сходимости КП сводит исследование этих последовательностей на сходимость
+  к исследованию двух действительных последовательностей из действительной и мнимой
+  частей рассматриваемой КП. В связи с этим большинство свойств действительных последовательностей
+  автоматически переносятся на КП. В то же время не все свойства действительных последовательностей,
+  связанные с неравенствами, выполняются для КП. Это обусловлено тем, что, в отличие от множества
+  $\R{}$, которое можно упорядочить, в множестве $\mathbb{C}$ нельзя ввести отношение порядка
+  между числами, удовлетворяющее всем аксиомам порядка, поэтому, например, для КП не рассматривается
+  предельный переход в неравенствах, и, в частности, не используют теорему о пределе сжатой
+  последовательности, а также определяется понятие монотонности КП.
+\item Предел линейной комбинации, произведения и частного.
+\end{notes}

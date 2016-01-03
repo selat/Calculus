@@ -1,0 +1,62 @@
+\colquestion{Логарифмическая ФКП и общая степенная ФКП.}
+\begin{plan}
+\item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+\item Расписываем $\Ln\parenthesis{\dfrac{z_1}{z_2}}$ и $\Ln\parenthesis{z_1z_2}$.
+\item Общая степенная функция $z^{\alpha} \overset{z \neq 0}{=} e^{\alpha \Ln z}$.
+\item Общая показательная функция $a^z = e^{z\Ln a}$.
+\end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+Логарифмическая ФКП $\omega = \Ln z$ определяется как решение уравнения $e^{\omega} = z$, для
+получения явной формулы для решения этого уравнения запишем
+\begin{align*}
+  &z = x + iy, \omega = u + iv; x, y, v, u \in \R{}.\\
+  &e^{u + iv} = x + iy \Rightarrow e^u(\cos v + i\sin v) = x + iy \Rightarrow\\
+  &\Rightarrow
+  \begin{cases}
+    e^u\cos v = x,\\
+    e^u\sin v = y,
+  \end{cases}
+\end{align*}
+\begin{enumerate}
+\item $\begin{aligned}[t]
+  x^2 + y^2 = e^{2u}(\cos^2v + \sin^2v) = e^{2u} \Rightarrow u = \dfrac{1}{2}\ln(x^2 + y^2) =
+  \ln\sqrt{x^2 + y^2} = \ln\abs{z}, z \neq 0.
+\end{aligned}$
+\item $\begin{aligned}[t]
+\begin{cases}
+  \cos v = \dfrac{x}{e^u} = \dfrac{x}{\sqrt{x^2 + y^2}},\\
+  \sin v = \dfrac{y}{e^u} = \dfrac{y}{\sqrt{x^2 + y^2}},\\
+\end{cases}
+\end{aligned}$
+  поэтому, используя $\phi = \arg z$ и учитывая, что $\cos \phi =
+  \dfrac{\operatorname{Re} z}{\abs{z}}$, ${\sin \phi = \dfrac{\operatorname{Im}z}{\abs{z}}}$,
+  получаем
+  $\begin{aligned}[t]
+    \begin{cases}
+      \cos v = \cos \phi\\
+      \sin v = \sin \phi\\
+    \end{cases}
+    \Rightarrow v = \phi + 2\pi k, k \in \mathbb{Z}.\\
+    \forall z \neq 0 \Rightarrow \Ln z = u + iv = \ln\abs{z} + i(\phi + 2\pi k) =
+    \ln\abs{z} + i(\arg z + 2\pi k), k \in \mathbb{Z}.
+  \end{aligned}$
+\end{enumerate}
+Логарифм ФКП - многозначная функция. Для неё ветвь, соответствующая $k = 0$ - главное значение
+$\Ln z, z \neq 0$, и обозначается $\ln z = \ln\abs{z} + i\arg z$. Используя форм. действия над
+множествами, в силу определения $\Ln z$ имеем
+\begin{align*}
+  \forall z_1, z_2 \neq 0,
+  \Ln(z_1z_2) = \Ln z_1 + \Ln z_2,\\
+  \Ln\parenthesis{\dfrac{z_1}{z_2}} = \Ln z_1 - \Ln z_2.\\
+\end{align*}
+В общем случае имеем
+\begin{align*}
+  \Ln 1 = 2\pi ki, k \in \mathbb{Z}, k = 0 \Rightarrow \Ln 1 = 0.\\
+  \text{ Аналогично } \Ln(-1) = i\pi(2k + 1), k \in \mathbb{Z}.
+\end{align*}
+Используя экспоненциальную и логарифмическую ФКП, по аналогии с основным логарифмическим тождеством
+для действительных функций, в общем случае для $a, b \in \mathbb{C}, a \neq 0$ полагают
+$a^b = e^{b\Ln a}$. На основании этого определения общая степенная функция
+$z^{\alpha} \overset{z \neq 0}{=} e^{\alpha \Ln z}$ и общая показательная функция $a^z = e^{z\Ln a}$, которая, вообще говоря, многозначна.

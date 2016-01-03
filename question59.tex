@@ -1,0 +1,69 @@
+\colquestion{Теорема о разложении ФКП в степенной ряд и замечания к ней.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{equation}
+  \label{eq:lecture33-04}
+  \suml_{n = 0}^{\infty}c_n(z - z_0)^n = c_0 + c_1(z - z_0) + \ldots + c_n(z - z_0)^n + \ldots
+\end{equation}
+
+\begin{theorem}[О разложении ФКП в СтР]
+  Если $f(z)$ - аналитическая в односвязной области $D$, то тогда $f(z)$ разлагается в СтР
+  \eqref{eq:lecture33-04} внутри круга $K_R = \set{\abs{z - z_0} < R \vert z \in D} \subset D$,
+  где $R = \min\limits_{t \in \partial D}d(z_0, z)$ - наименьшее расстояние от центра разложения
+  $z_0$ до ближайшей граничной точки в $D$ для $f(z)$.
+\end{theorem}
+\begin{proof}
+  Рассмотрим
+  \begin{align*}
+    \forall \fix z \in K_R, l_R = \partial K_R = \set{\abs{z - z_0} = R \vert z \in D},
+  \end{align*}
+  тогда полагаем
+  \begin{align*}
+    q = \abs{\dfrac{z - t}{t - z_0}}, z \in K_R, t \in l_R \Rightarrow 0 \leq q < 1.
+  \end{align*}
+  Используя разложение
+  \begin{align*}
+    \dfrac{1}{t - z} = \dfrac{1}{(t - z_0) - (z - z_0)} = \dfrac{1}{(t - z_0)(1 - \frac{z - z_0}{t -
+        z_0})} = \suml_{k = 0}^{\infty}\dfrac{(z - z_0)^k}{(t - z_0)^{k + 1}},
+  \end{align*}
+  и учитывая, что после домножения на $f(t)$ получим равномерно сходящийся ряд, почленно
+  проинтегрировав который получаем
+  \begin{align*}
+    \oint\limits_{l_R}\dfrac{f(t)}{t - z}dt = \suml_{k = 0}^{\infty}\oint\limits_{l_R}
+    \dfrac{f(t)dt}{(t - z_0)^{k + 1}}(z - z_0)^k.
+  \end{align*}
+  Отсюда, в силу интегральной формулы Коши и интегрального представления производной аналитической
+  ФКП, имеем
+  \begin{align*}
+    f(z) = \dfrac{1}{2\pi i}\oint\limits_{l_R}\dfrac{f(t)}{t - z}dt = \ldots =
+    \suml_{k = 0}^{\infty}\dfrac{f^{(k)}(z_0)}{k!}(z - z_0)^k,
+  \end{align*}
+  т.е. получаем разложение в СтР, являющийся рядом Тейлора.
+\end{proof}
+\begin{notes}
+\item Если $f(z)$ разлагается в СтР \eqref{eq:lecture33-04} с центром $z_0$, то радиус сходимости $R$
+  это расстояние от $z_0$ до ближайшей особой точки для $f(z)$, что соответствует максимальному кругу
+  аналитичности.
+\item Доказанная теорема показывает, что в ??? в СтР и дифференцируемости ???.
+\item по аналогии с действительными разложениями получим соответствующие разложения в СтР для
+  некоторых ФКП.
+  \begin{enumerate}
+  \item $(1 + z)^{\alpha} = e^{\alpha \ln(1 + z)} = 1 +
+    \suml_{n = 1}^{\infty}\dfrac{\alpha(\alpha - 1) \ldots (\alpha - n + 1)}{n!}z^n$;
+  \item $e^z = \suml_{n = 0}^{\infty}\dfrac{z^n}{n!}, z \in \mathbb{C}$;
+  \item $\ln(1 + z) = \sum_{n = 1}^{\infty}\dfrac{(-1)^{n - 1}z^n}{n}, \abs{z} < 1, z \neq -1$;
+  \item $\begin{aligned}[t]
+    &\sin z = \sum_{n = 0}^{\infty}\dfrac{(-1)^nz^{2n + 1}}{(2n + 1)!}, z \in \mathbb{C};\\
+    &\cos z = \sum_{n = 0}^{\infty}\dfrac{(-1)^nz^{2n}}{(2n)!}, z \in \mathbb{C}; \\
+  \end{aligned}$
+  \item $\begin{aligned}[t]
+    &\sh z = \sum_{n = 0}^{\infty}\dfrac{z^{2n + 1}}{(2n + 1)!}, z \in \mathbb{C};\\
+  	&\ch z = \sum_{n = 0}^{\infty}\dfrac{z^{2n}}{(2n)!}, z \in \mathbb{C}; \\
+  \end{aligned}$
+  \end{enumerate}
+\end{notes}
