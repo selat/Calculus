@@ -1,0 +1,71 @@
+\colquestion{И.Ф. для чётных и нечётных функций. Синус- и косинус-преобразование Фурье.}
+%% \begin{plan}
+%% \item $z = x + iy, \omega = u + iv$. Выражаем $u, v$.
+%% \end{plan}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+Пусть $f(x)$ чётна на $\R{}$, тогда
+\begin{equation}
+\label{eq:lecture27-17}
+a(y) = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\cos ytdt =
+\dfrac{2}{\pi}\intl_0^{+\infty}f(t)\cos ytdt
+\end{equation}
+\begin{equation}
+b(y) = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\sin ytdt = 0.
+\end{equation}
+
+При выполнении соответствующих условий в силу теоремы о поточечной сходимости ИФ и в случае
+непрерывности $f(x)$ имеем
+\begin{equation}
+\label{eq:lecture27-18}
+f(x) = \Phi(x) = \intl_0^{+\infty}a(y)\cos xydy.
+\end{equation}
+В соответствии с \eqref{eq:lecture27-17} - \eqref{eq:lecture27-18} для $f(x)$, определённой для
+$x \in \interval]{0; +\infty}[$ её $\cos$-преобразованием Фурье называется
+\begin{equation}
+\label{eq:lecture27-19}
+\Phi_c(y) = \sqrt{\dfrac{2}{\pi}}\intl_0^{+\infty}f(t)\cos ytdt,
+\end{equation}
+а тогда в силу \eqref{eq:lecture27-18} сама $f(x)$ будет восстанавливаема на $x > 0$ по
+своему $\cos$-преобразованию \eqref{eq:lecture27-20} по формуле
+\begin{equation}
+\label{eq:lecture27-20}
+f(x) = \sqrt{\dfrac{2}{\pi}}\intl_0^{+\infty}\Phi_c(y)\cos xydy.
+\end{equation}
+
+Аналогично, если $f(x)$ - нечётна на $\R{}$, то
+\begin{align}
+\label{eq:lecture27-21}
+&a(y) = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\cos ytdt = 0,\\
+&b(y) = \dfrac{1}{\pi}\intl_{-\infty}^{+\infty}f(t)\sin ytdt =
+\dfrac{2}{\pi}\intl_0^{+\infty}f(t)\sin ytdt.\\
+\end{align}
+Отсюда, при выполнении соответствующего условия на непрерывность $f(x)$ получаем
+\begin{equation}
+\label{eq:lecture27-22}
+f(x) = \Phi(x) = \intl_0^{+\infty}b(y)\sin xydy.
+\end{equation}
+В соответствии с \eqref{eq:lecture27-21} - \eqref{eq:lecture27-22} для $f(x)$, определённой
+для $x > 0$ её $\sin$-преобразованием Фурье называется
+\begin{equation}
+\label{eq:lecture27-23}
+\Phi_x(y) = \sqrt{\dfrac{2}{\pi}}\intl_0^{+\infty}f(t)\sin ytdt,
+\end{equation}
+а сама $f(x)$ для $x > 0$ в силу \eqref{eq:lecture27-21} - \eqref{eq:lecture27-22}
+восстанавливается по формуле
+\begin{equation}
+\label{eq:lecture27-24}
+f(x) = \sqrt{\dfrac{2}{\pi}}\intl_0^{+\infty}\Phi_s(y)\sin xydy,
+\end{equation}
+В этом случае для $f(x)$, определённой для $x > 0$ строим их чётные (нечётные) продолжения
+\begin{align*}
+f_{\text{чн}}(x) = f(\abs{x}), x \in \R{},\\
+f_{\text{неч}}(x) = f(\abs{x})\sgn x, x \in \R{},
+\end{align*}
+а полученные для этих функций интегралы Фурье назовём соответствующими интегралами Фурье по
+$\cos$ и $\sin$.
+
+Так же, как и общее прФ, $\sin$ и $\cos$ прФ могут использоваться для вычисления интегралов,
+решения дифференциальных и интегральных уравнений.
