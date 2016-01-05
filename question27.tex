@@ -1,0 +1,150 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Г-функция Эйлера и её основные свойства}
+
+Эйлеровым интегралом II рода или $\Gamma$-функцией Эйлера называется НИЗОП
+\begin{equation}
+  \label{eq:lecture06-10}
+  \Gamma(a) = \int\limits_0^{+\infty}e^{-x}x^{a - 1}dx.
+\end{equation}
+\eqref{eq:lecture06-10} является НИЗОП смешанного типа. Для исследования его на поточечную
+сходимость отделим возможные особенности $x = 0$ и $x = +\infty$ следующим образом
+\begin{equation}
+  \label{eq:lecture06-11}
+  \Gamma(a) = \int\limits_0^1e^{-x}x^{a - 1}dx + \int\limits_1^{+\infty}e^{-x}x^{a - 1}dx.
+\end{equation}
+Для подынтегральной функции $f(x, a) = e^{-x}x^{a - 1}$ в \eqref{eq:lecture06-11} имеем
+\begin{enumerate}
+\item $f(x, a) \underset{x \to +0}{\sim}x^{a - 1} = \dfrac{1}{x^{1 - a}}$.
+  Поэтому по степенному признаку сходимости НИ-2 получаем, что первое слагаемое в
+  \eqref{eq:lecture06-11} сходится тогда и только тогда, когда $1 - a < 1 \Leftrightarrow a > 0$.
+\item Учитывая, что экспонента при $x \to +\infty$ растёт быстрее любой степенной функции и значит,
+  например
+  \begin{equation*}
+    \dfrac{x^{a + 1}}{e^x} \xrightarrow[x \to +\infty]{\forall a \in \R{}} 0.
+  \end{equation*}
+  \begin{equation*}
+    \abs{f(x, a)} = \parenthesis{\dfrac{x^{a + 1}}{e^x}}\cdot \dfrac{1}{x^2} \leqslant
+    \dfrac{\const}{x^2} = \phi(x).
+  \end{equation*}
+  Поэтому сходится интеграл
+  \begin{equation*}
+    \int\limits_1^{+\infty}\phi(x)dx \; = \int\limits_1^{+\infty}\dfrac{\const}{x^2}dx \;\;\;\;  (a > 2 > 1)
+  \end{equation*}
+  Поэтому по признаку сравнения для НИ-1 второе слагаемое в \eqref{eq:lecture06-11} будет сходиться
+  для $\forall a \in \R{}$.
+\end{enumerate}
+Значит, множеством поточечной сходимости для функции в \eqref{eq:lecture06-10} будет интервал
+$\interval]{0; +\infty}[$.
+
+    Используя правило Вейерштрасса равномерной сходимости НИЗОП-2 можно показать, что в своей области поточечной сходимости
+    $\Gamma(a)$ сходится локально равномерно, т.е.
+    \begin{equation*}
+      \forall \interval[{a_0; b_0}] \subset \interval]{0; +\infty}[ \Rightarrow \Gamma(a)
+    \overset{\interval[{a_0; b_0}]}{\rightrightarrows}
+    \end{equation*}
+    Отсюда, в силу теоремы о непрерывности НИЗОП, получаем, что $\Gamma(a)$ - непрерывная
+    $\forall a > 0$. Кроме того, учитывая, что
+    \begin{equation*}
+      \forall \interval[{a_0; b_0}] \subset \interval]{0; +\infty}[ \Rightarrow
+    \int\limits_0^{+\infty}f'_a(x, a)dx = \int\limits_0^{+\infty}e^{-x}x^{a - 1}\ln xdx
+    \overset{\interval[{a_0; b_0}] \subset \interval[{0; +\infty}[}{\rightrightarrows}
+    \end{equation*}
+
+    Получаем, что в силу непрерывности $f(x, a)$ и $f'_a(x, a)$ $\Gamma$-функция
+    \eqref{eq:lecture06-10} будет непрерывно дифференцируемой для $\forall a > 0$, причём,
+    в силу правила Лейбница, имеем:
+    \begin{equation*}
+      \exists \Gamma'(a) = \int\limits_0^{+\infty}\parenthesis{e^{-x}x^{a - 1}}'_adx =
+      \int\limits_0^{+\infty}e^{-x}x^{a - 1}\ln xdx.
+    \end{equation*}
+    Отсюда, учитывая, что
+    \begin{equation*}
+      \forall m \in \mathbb{N} \Rightarrow
+      \int\limits_0^{+\infty}\parenthesis{e^{-x}x^{a - 1}}^{(m)}_adx =
+      \int\limits_0^{+\infty}e^{-x}x^{a - 1}\ln^m xdx
+      \overset{\interval[{a_0; b_0}]}{\rightrightarrows}
+    \end{equation*}
+
+    Получаем, что $\Gamma(a)$ бесконечное число раз непрерывно дифференцируема $\forall a > 0$,
+    причём
+    \begin{equation*}
+      \forall m \in \mathbb{N} \Rightarrow
+      \Gamma^{(m)}(a) = \int\limits_0^{+\infty}e^{-x}x^{a - 1}\ln^m xdx.
+    \end{equation*}
+    Используя интегрирование по частям $\forall a > 0$, имеем:
+    \begin{align*}
+      \Gamma(a) = \int\limits_0^{+\infty}e^{-x}d\parenthesis{\dfrac{x^a}{a}} =
+      \sqcase{\underbrace{\dfrac{x^ae^{-x}}{a}}_{=0}}_0^{+\infty} -
+      \int\limits_0^{+\infty}\dfrac{x^a}{a}d\parenthesis{e^{-x}} =
+      \dfrac{1}{a}\int\limits_0^{+\infty}e^{-x}x^{(a + 1) - 1}dx = \dfrac{\Gamma(a + 1)}{a}.
+    \end{align*}
+    В результате имеем формулу понижения аргумента для $\Gamma$-функции:
+    \begin{equation}
+      \label{eq:lecture06-12}
+      \Gamma(a + 1) = a\Gamma(a), \forall a > 0.
+    \end{equation}
+
+    Из этой формулы для $a = n \in \mathbb{N}$ получаем обобщение факториала на действительный случай:
+    \begin{equation*}
+      \Gamma(n + 1) = n\Gamma(n) = n!\Gamma(1).
+    \end{equation*}
+    \begin{equation*}
+      \Gamma(1) = \int\limits_0^{+\infty}e^{-x}dx = \sqcase{-e^{-x}}_0^{+\infty} = 1.
+    \end{equation*}
+    \begin{equation}
+      \label{eq:lecture06-13}
+      \Gamma(n + 1) = n!, \forall n \in \mathbb{N}_0.
+    \end{equation}
+
+    Используя интеграл Эйлера-Пуассона имеем
+    \begin{equation*}
+      \Gamma\left(\frac{1}{2}\right) = \int\limits_0^{+\infty}e^{-x}x^{-\frac{1}{2}}dx = \sqcase{x = t^2} =
+      2\int\limits_0^{+\infty}e^{-t^2}dt = 2 \cdot \dfrac{\sqrt{\pi}}{2} = \sqrt{\pi}.
+    \end{equation*}
+    Отсюда, в силу формулы понижения аргумента \eqref{eq:lecture06-12}, получаем значение функции
+    для полуцелых значений аргумента:
+    \begin{align*}
+      \forall n \in \mathbb{N} \Rightarrow \Gamma\parenthesis{n + \dfrac{1}{2}} =
+      \parenthesis{n + \dfrac{1}{2}} \Gamma\parenthesis{n - \dfrac{1}{2}} = \hdots =
+      \dfrac{2n - 1}{2}\cdot\dfrac{2n - 3}{2}\cdot \hdots \cdot \Gamma\parenthesis{\dfrac{1}{2}}=
+      \dfrac{\parenthesis{2n - 1}!!}{2^n}\sqrt{\pi}
+    \end{align*}
+    \begin{equation}
+      \label{eq:lecture06-14}
+      \Gamma\parenthesis{n + \dfrac{1}{2}} = \dfrac{(2n - 1)!!}{2^n}\sqrt{\pi},
+      \forall n \in \mathbb{N}
+    \end{equation}
+
+    Полученные формулы понижения аргумента позволяют свести вычисление значения $\Gamma(a),$  $ a > 0$
+    к вычислению при  $a \in \interval]{0; 1}[$.
+
+        Используя интеграл Эйлера-Пуассона, получим формулу дополнения для $\Gamma$-функции. Для
+        $\forall a \in \interval]{0; 1}]$ имеем
+    \begin{align*}
+      &\Gamma(a)\Gamma(1 - a) = \parenthesis{\int\limits_0^{+\infty}e^{-t}t^{a - 1}dt}
+      \parenthesis{\int\limits_0^{+\infty}e^{-y}y^{-a}dy} =
+      \int\limits_0^{+\infty}\int\limits_0^{+\infty}e^{-t-y}t^{a - 1}y^{-a}dtdy =\\
+      &=\int\limits_0^{+\infty}\parenthesis{\int\limits_0^{+\infty}e^{-t-y}t^{a - 1}y^{-a}dt}dy =
+      \sqcase{&y = \fix\\ &t = xy\vert_0^{+\infty}\\ &dt = ydx} =
+      \int\limits_0^{+\infty}\parenthesis{\int\limits_0^{+\infty}e^{-xy-y}x^{a - 1}y^{a - 1}y^{-a}ydx}dy =\\
+      &=\int\limits_0^{+\infty}\parenthesis{\int\limits_0^{+\infty}e^{-y(x + 1)}x^{a - 1}dx}dy =
+      \int\limits_0^{+\infty}\parenthesis{\int\limits_0^{+\infty}e^{-y(x + 1)}x^{a - 1}dy}dx =
+      \int\limits_0^{+\infty}\sqcase{-\dfrac{x^{a - 1}}{x + 1}e^{-y(x + 1)}}_{y = 0}^{y = +\infty}dx =\\
+      &=\int\limits_0^{+\infty}\dfrac{x^{a - 1}}{x + 1}dx = E(a) = \dfrac{\pi}{\sin\pi a}.
+    \end{align*}
+    Получаем формулу дополнения для $\Gamma$-функции
+    \begin{equation}
+      \label{eq:lecture06-15}
+      \Gamma(a)\Gamma(1 - a) = \dfrac{\pi}{\sin\pi a}, 0 < a < 1
+    \end{equation}
+    Формулы \eqref{eq:lecture06-15} и \eqref{eq:lecture06-12} позволяют свести вычисление для \linebreak
+    $a > 0$ к вычислению для $a \in \interval]{0; \dfrac{1}{2}}]$.
+    Из \eqref{eq:lecture06-15} в частности при $a = \dfrac{1}{2}$ получаем
+    \begin{equation}
+      \label{eq:lecture06-16}
+      \Gamma\parenthesis{\dfrac{1}{2}} = \sqrt{\pi}
+    \end{equation}
+    В свою очередь, используя \eqref{eq:lecture06-16}, можно ещё раз вычислить интеграл
+    Эйлера-Пуассона.

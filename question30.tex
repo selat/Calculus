@@ -1,0 +1,70 @@
+\colquestion{Теорема о тригонометрическом многочлене наименьшего отклонения.}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{equation}
+  \label{eq:lecture06-07}
+  T_n(x) = \dfrac{A_0}{2} + \suml_{k = 1}^n(A_k\cos kx + B_k\sin kx).
+\end{equation}
+
+\begin{equation}
+  \label{eq:lecture06-08}
+  A_m = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}T_n(x)\cos mx dx, m = \overline{0, n};
+\end{equation}
+
+\begin{equation}
+  \label{eq:lecture06-09}
+  B_m = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}T_n(x)\sin mx dx, m = \overline{1, n};
+\end{equation}
+
+\begin{equation}
+  \label{eq:lecture06-10}
+  \dfrac{1}{\pi}\intl_{-\pi}^{\pi}T_n^2(x)dx = \dfrac{A_0^2}{2} + \suml_{k = 1}^n(A_k^2 + B_k^2).
+\end{equation}
+
+\begin{equation}
+  \Delta = \norm{f(x) - T_n(x)} = \parenthesis{\intl_{-\pi}^{\pi}(f(x) - T_n(x))^2dx}^{\frac{1}{2}}
+  \label{eq:lecture06-11}
+\end{equation}
+
+\begin{theorem}[О ТМ наименьшего отклонения]
+  Среди ТМ \eqref{eq:lecture06-07} фиксированной степени $\leq n$ многочлен Фурье для $f(x)$ на
+  $\interval[{-\pi; \pi}]$ - многочлен
+  \begin{equation}
+    S_n(x) = \dfrac{a_0}{2} + \suml_{k = 1}^n(a_k\cos kx + b_k\sin kx),
+  \end{equation}
+  коэффициенты которого вычисляются по формулам
+  \begin{align}
+    a_m = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}f(x)\cos mx dx, m = \overline{0, n};\\
+    b_m = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}f(x)\sin mx dx, m = \overline{1, n};\\
+  \end{align}
+\end{theorem}
+\begin{proof}
+  Рассматривая произвольный тригонометрический многочлен \eqref{eq:lecture06-07} $\fix$ степени
+  $\leq n$ и используя формулы \eqref{eq:lecture06-08}, \eqref{eq:lecture06-09},
+  \eqref{eq:lecture06-10}, для отклонения \eqref{eq:lecture06-11} имеем
+  \begin{align*}
+    &\Delta = \parenthesis{\norm{f(x) - T_n(x)}} = \intl_{-\pi}^{\pi}(f(x) - T_n(x))^2dx =
+    \intl_{-\pi}^{\pi}f^2(x)dx - 2\intl_{-\pi}^{\pi}f(x)T_n(x)dx + \intl_{-\pi}^{\pi}T_n^2(x)dx =\\
+    &=\intl_{-\pi}^{\pi}f^2(x)dx - 2\parenthesis{\dfrac{A_0}{2}\intl_{-\pi}^{\pi}f(x)dx +
+      \suml_{k = 1}^n\parenthesis{A_k\intl_{-\pi}^{\pi}f(x)\cos kxdx + B_k \intl_{-\pi}^{\pi}f(x)\sin kxdx}}
+    + \pi\parenthesis{\dfrac{A_0^2}{2} + \suml_{k = 1}^n(A_k^2 + B_k^2)} =\\
+    &=\intl_{-\pi}^{\pi}f^2(x)dx - 2\pi\parenthesis{\dfrac{a_0A_0}{2}  + \suml_{k = 1}^n(a_kA_k + b_kB_k)}
+    + \pi\parenthesis{\dfrac{A_0^2}{2} + \suml_{k = 1}^n(A_k^2 + B_k^2)}=\\
+    &=\intl_{-\pi}^{\pi}f^2(x)dx + \dfrac{\pi}{2}\parenthesis{A_0^2 - a_0A_0
+      + 2\suml_{k = 1}^n(A_k^2 - 2a_kA_k)} + \pi\suml_{k = 1}^n(B_k^2 - 2b_kB_k)=\\
+      &=\intl_{-\pi}^{\pi}f^2(x)dx + \dfrac{\pi}{2}(A_0 - a_0)^2
+      + \pi\suml_{k = 1}^n(A_k - a_k)^2 + \pi\suml_{k = 1}^n(B_k - b_k)^2
+          - \dfrac{\pi}{2}\parenthesis{a_0^2 + 2\suml_{k = 1}^na_k^2 + 2\suml_{k = 1}^nb_k^2} \geq\\
+          &\geq \sqcase{\forall A_k \in \R{}, k = \overline{0, n},\\
+            \forall B_k \in \R{}, k = \overline{1, n},} \geq
+          \intl_{-\pi}^{\pi}f^2(x)dx - \pi\parenthesis{a_0^2 + 2\suml_{k = 1}^na_k^2
+            + 2\suml_{k = 1}^nb_k^2}.
+  \end{align*}
+  RHS не зависит от выбора $T_n(x)$ и минимум достигается при
+  \begin{align*}
+    &\forall A_k = a_k, k = \overline{0, n},\\
+    &\forall B_k = b_k, k = \overline{1, n},
+  \end{align*}
+\end{proof}

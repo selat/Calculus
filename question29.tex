@@ -1,0 +1,88 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{Теорема об ортогональности основной тригонометрической системы, следствие из неё и замечание к ней.}
+
+Система функций
+\begin{equation}
+  \label{eq:lecture06-03}
+  1, \cos x, \sin x, \cos 2x, \sin 2x, \ldots, \cos nx, \sin nx, \ldots -
+\end{equation}
+\important{основная тригонометрическая система} (ОТС). Функции \eqref{eq:lecture06-03} имеют общий
+$\R{}_+$ период, равный $T_0 = 2\pi$.
+
+\begin{theorem}[Об ортогональности ОТС]
+  Система функций \eqref{eq:lecture06-03} ортогональна на $\interval[{-\pi; \pi}]$.
+\end{theorem}
+\begin{proof}
+  $\forall k, m \in \mathbb{N}_0, k \neq m$ имеем:
+  \begin{enumerate}
+  \item $\begin{aligned}[t]
+    & <\cos kx, \cos mx> = \intl_{-\pi}^{\pi}\underbrace{\cos kx \cos mx}_{\text{чётная}}dx =
+    =2\intl_0^{\pi}\dfrac{1}{2}(\cos(k - m)x + \cos(k + m)x)dx = \\
+    &=\sqcase{\dfrac{\sin(k - m)x}{k - m} + \dfrac{\sin(k + m)x}
+      {k + m}}_0^{\pi} = \sqcase{\sin \pi n = 0, \forall n \in \mathbb{Z}} = 0,\\
+    &\text{Т.е. } \cos kx \bot \cos mx, \forall k \neq m.
+  \end{aligned}$
+  \item $\begin{aligned}[t]
+    & <\cos kx, \sin mx> = \intl_{-\pi}^{\pi}\underbrace{\cos kx \sin mx}_{\text{нечётная}}dx = 0\\
+    &\text{Т.е. } \cos kx \bot \sin mx, \forall k \neq m.
+  \end{aligned}$
+  \item $\begin{aligned}[t]
+    & <\sin kx, \sin mx> = \intl_{-\pi}^{\pi}\underbrace{\sin kx \sin mx}_{\text{чётная}}dx
+    =2\intl_0^{\pi}\dfrac{1}{2}(\cos(k - m)x - \cos(k + m)x)dx = \\
+    &=\sqcase{\dfrac{\sin(k - m)x}{k - m} - \dfrac{\sin(k + m)x}
+      {k + m}}_0^{\pi} = \sqcase{\sin \pi n = 0, \forall n \in \mathbb{Z}} = 0,\\
+    &\text{Т.е. } \sin kx \bot \sin mx, \forall k \neq m.
+  \end{aligned}$
+  \end{enumerate}
+\end{proof}
+
+\begin{consequence}
+  Ортогональной ОТС \eqref{eq:lecture06-03} соответствует ортонормированная тригонометрическая
+  система на $\interval[{-\pi; \pi}]$:
+  \begin{equation}
+    \label{eq:lecture06-04}
+    \dfrac{1}{\sqrt{2\pi}}, \dfrac{\cos x}{\sqrt{\pi}}, \dfrac{\sin x}{\sqrt{\pi}},
+    \dfrac{\cos 2x}{\sqrt{\pi}}, \dfrac{\sin 2x}{\sqrt{\pi}}, \ldots,
+    \dfrac{\cos nx}{\sqrt{\pi}}, \dfrac{\sin nx}{\sqrt{\pi}}, \ldots
+  \end{equation}
+\end{consequence}
+\begin{proof}
+  Следует из того, что
+  \begin{align*}
+    &\norm{1} = \parenthesis{\intl_{-\pi}^{\pi}1^2dx}^{\frac{1}{2}} = \sqrt{2\pi};\\
+    &\norm{\cos kx} = \parenthesis{\intl_{-\pi}^{\pi}\cos^2kx^2dx}^{\frac{1}{2}} =
+    \parenthesis{2\intl_{0}^{\pi}\dfrac{1 + \cos 2kx}{2}dx}^{\frac{1}{2}} =
+    \parenthesis{\sqcase{x + \dfrac{\sin 2kx}{2k}}}^{\frac{1}{2}} = \sqrt{\pi};\\
+    &\norm{\sin kx} = \parenthesis{\intl_{-\pi}^{\pi}\sin^2kx^2dx}^{\frac{1}{2}} =
+    \parenthesis{2\intl_{0}^{\pi}\dfrac{1 - \cos 2kx}{2}dx}^{\frac{1}{2}} =
+    \parenthesis{\sqcase{x - \dfrac{\sin 2kx}{2k}}}^{\frac{1}{2}} = \sqrt{\pi};\\
+  \end{align*}
+  Поэтому в силу доказанной выше теоремы система \eqref{eq:lecture06-04} будет не только
+  ортогональной на $\interval[{-\pi; \pi}]$, но и ортонормированной на $\interval[{-\pi; \pi}]$, т.к.
+  норма любой функции из \eqref{eq:lecture06-04} равна 1.
+\end{proof}
+\begin{notes}
+\item Т.к. $T_0 = 2\pi > 0$ - общий период функций \eqref{eq:lecture06-03}, то на основании леммы об
+  интеграле от интегрируемой периодической функции, рассмотренном на промежутке длины периода,
+  получаем, что ОТС ортогональна на любом отрезке $\interval[{a; a + 2\pi}], \fix a \in \R{}$. В
+    доказанной теореме для удобства было взято $a = -\pi$.
+  \item Наряду с ортогональной \eqref{eq:lecture06-03} и ортонормированной \eqref{eq:lecture06-04}
+    рассмотрим также \important{обобщённую тригонометрическую систему}
+    \begin{equation}
+      \label{eq:lecture06-05}
+      1, \cos \dfrac{\pi x}{l}, \sin \dfrac{\pi x}{l}, \ldots, \cos \dfrac{\pi nx}{l},
+      \sin \dfrac{\pi nx}{l}, \ldots
+    \end{equation}
+    у функций которой общий период $T = 2l > 0$. \eqref{eq:lecture06-05} также будет ортогональной
+    на любом отрезке $\interval[{a; a + 2\pi}], \fix a \in \R{}$ и ей будет соответствовать следующая
+      \important{обобщённая ортонормированная система}
+      \begin{equation}
+        \label{eq:lecture06-06}
+        \dfrac{1}{\sqrt{2\pi}}, \dfrac{1}{\sqrt{l}}\cos \dfrac{\pi x}{\sqrt{\pi}},
+        \dfrac{1}{\sqrt{l}}\sin \dfrac{\pi x}{\sqrt{\pi}}, \ldots
+        \dfrac{1}{\sqrt{l}}\cos \dfrac{\pi nx}{\sqrt{\pi}},
+        \dfrac{1}{\sqrt{l}}\sin,\dfrac{\pi nx}{\sqrt{\pi}}, \ldots
+      \end{equation}
+\end{notes}
