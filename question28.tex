@@ -1,0 +1,189 @@
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\colquestion{В-функция Эйлера и её основные свойства.}
+
+\important{Эйлеровым интегралом I рода} или \important{B-функцией Эйлера} называется НИЗОП-2 следующего вида:
+\begin{equation}
+    \label{6.17}
+    B(a; b) = \dintl_0^1 x^{a-1} (1-x)^{b-1} \; dx,
+\end{equation}
+где $ a, b $ - некоторые константы.
+
+$  $\\
+
+Для исследования \eqref{6.17} на сходимость, отделяя возможные особенности, имеем:
+\begin{equation*}
+    B(a, b) = \dintl_0^\frac{1}{2} x^{a-1} (1-x)^{b-1} \; dx + \dintl_\frac{1}{2}^1 x^{a-1} (1-x)^{b-1} \; dx.
+\end{equation*}
+
+Для подынтегральной функции $ f(x) = x^{a-1} (1-x)^{b-1} $ в точках $ x=0 $ и $ x=1 $ получаем:
+\begin{enumerate}
+    \item $ x=0 $: $\;\;\;$ $ f(x) \underset{x \to +0}{\sim} x^{a-1} = \dfrac{1}{x^{1-a}}$.
+
+    Отсюда видно, что первое слагаемое будет сходиться при $ 1-a < 1 \Leftrightarrow a > 0$.
+
+    \item $ x=1 $: $\;\;\;$ $ f(x) \underset{x \to 1-0}{\sim} (1-x)^{b-1} = \dfrac{1}{(1-x)^{1-b}}$.
+
+    Аналогичным образом имеем условие сходимости второго слагаемого:
+    ${ 1-b < 1 \Leftrightarrow b > 0 }$.
+\end{enumerate}
+
+Таким образом, областью сходимости для B-функции Эйлера будет
+$ \begin{cases}
+    a > 0,\\
+    b > 0.
+\end{cases} $
+
+$  $\\\\
+
+В дальнейшем нам понадобится представление B-функции не в виде НИЗОП-2, а в виде НИЗОП смешанного типа.
+Для этого введём замену
+$ x = \dfrac{t}{1+t} \Rightarrow t = \dfrac{x}{1-x} \dvert_0^{+\infty}, $ \linebreak
+$ dx = \dfrac{dt}{(1+t)^2} $. Имеем:
+\begin{equation}
+    \label{6.18}
+    B(a,b) \overset{\eqref{6.17}}{=}
+    \dintl_0^{+\infty} \left(\dfrac{t}{1+t}\right)^{a-1} \left(1-\dfrac{t}{1+t}\right)^{b-1} \; \dfrac{dt}{(1+t)^2} =
+    \dintl_0^{+\infty} \dfrac{t^{a-1}}{(1+t)^{a+b}} \; dt.
+\end{equation}
+
+Отсюда, учитывая, что B-функция симметрична относительно своих переменных, т. е.
+\begin{equation*}
+    B(a, b) \overset{\eqref{6.17}}{=} \sqcase{x = 1-y} =
+    \dintl_0^1 (1-y)^{a-1} y^{b-1} \; dy =
+    \sqcase{y \leftrightarrow x} =
+    \dintl_0^1 x^{b-1} (1-x)^{a-1} \; dx
+    = B(b,a) ,
+\end{equation*}
+получаем НИЗОП смешанного типа:
+\begin{equation}
+    \label{6.19}
+    B(a,b) = \dintlzi \dfrac{t^{b-1} \; dt}{(1+t)^{a+b}}.
+\end{equation}
+
+\begin{theorem}[связь между B- и Г- функциями]
+    Для любых $ a, b > 0 $ имеем:
+    \begin{equation}
+        \label{6.20}
+        B(a, b) = \dfrac{\Gamma(a) \; \Gamma(b)}{\Gamma (a + b)}.
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    Используя определения B- и Г- функций и представление \eqref{6.18}, получаем:
+    \begin{align*}
+        &
+        B(a, b) \cdot \Gamma(a+b)
+        = \left( \dintlzi \dfrac{t^{a-1}}{(1+t)^{a+b}} \; dt \right)
+        \cdot \left( \dintlzi e^{-x} x^{a+b-1} \; dx \right)
+        = \\ &
+        = \dintlzi  \dintlzi  \dfrac{e^{-x} \; x^{a+b-1} \; t^{a-1} }{(1+t)^{a+b}} \; dx \; dt
+        = \dintlzi  \left(\dintlzi  \dfrac{e^{-x} \; x^{a+b-1} \; t^{a-1} }{(1+t)^{a+b}} \; dx\right) dt
+        = \\ &
+        = \begin{sqcases}
+            t =  \fix\\
+            x = (1+t)y \Rightarrow dx = (1+t)dy \\
+            y = \dfrac{x}{1+t} \dvert_0^{+\infty}
+        \end{sqcases}
+        = \dintlzi \left( \dintlzi \dfrac{e^{-(1+t)y} \left((1+t)y\right)^{a+b-1} \; t^{a-1}}{(1+t)^{a+b}} \;  (1+t) \; dy \right) dt
+        = \\ &
+        = \dintlzi \left( \dintlzi e^{-(1+t)y} \; y^{a+b-1} \; t^{a-1} \; dy \right) dt
+        = \dintlzi \left( \dintlzi e^{-(1+t)y} \; y^{a+b-1} \; t^{a-1} \; dt \right) dy
+        = \\ &
+        = \begin{sqcases}
+            y = \fix\\
+            t = \dfrac{z}{y} \Rightarrow dt = \dfrac{dz}{y} \\
+            z = \sqcase{-y}_0^{+\infty}
+        \end{sqcases}
+        = \dintlzi \left( \dintlzi e^{-(y+z)} \; y^{b-1} \; z^{a-1} \; dz \right) dy
+        = \dintlzi \dintlzi \left(e^{-y} y^{b-1}\right)  \left(e^{-z} z^{a-1} \right)
+            dy \; dz
+        = \\ &
+        = \dintlzi \underbrace{\left( \dintlzi e^{-y} y^{b-1} dy \right)  }_{\Gamma(b)}
+            e^{-z} z^{a-1} \;  dz
+        = \Gamma(b) \dintlzi e^{-z} z^{a-1} \; dz
+        = \Gamma(a) \cdot \Gamma(b) \Rightarrow \eqref{6.20}.
+    \end{align*}
+\end{proof}
+
+\begin{note}
+    Из \eqref{6.20} на основании соответствующих свойств Г-функций получаем аналогичные свойства B-функций:
+    \begin{enumerate}
+        \item \textit{Симметричность:}
+        \begin{equation}
+            \label{6.21}
+            \begin{cases}
+                B(a, b) = \dfrac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}, \\
+                B(b, a) = \dfrac{\Gamma(b) \Gamma(a)}{\Gamma(b+a)}
+            \end{cases}
+            \Rightarrow
+            \begin{cases}
+                B(a, b) = B(b, a), \\
+                \forall \; a, b > 0
+            \end{cases}
+        \end{equation}
+
+        \item \textit{Формулы понижения аргумента:}
+        \begin{align*}
+            & B(a+1, b) = \dfrac{\Gamma(a+1) \Gamma(b)}{\Gamma(a+b+1)} =
+            \dfrac{a \; \Gamma(a) \; \Gamma(b)}{(a+b) \; \Gamma(a+b)} =
+            \dfrac{a}{a+b} B(a, b), \;\;\; \forall \; a > 0, b > 0,
+            \\ &
+            B(a, b+1) = \dfrac{b}{a+b} B(a, b),  \;\;\; \forall \; a > 0, b > 0.
+        \end{align*}
+
+        \item \textit{Значения B-функции при натуральном значении одного из аргументов:}
+        \begin{align*}
+            &
+            B(n+1, b) = \dfrac{n}{b+n} \; B(n, b) = \dfrac{n(n-1)}{(b+n)(b+n-1)} \; B(n-1, b)   = \ldots =
+            \\ &
+            = \dfrac{n \cdot (n-1) \cdot \ldots  \cdot 2  \cdot 1 }{(b+n) \cdot (b+n-1) \cdot \ldots \cdot (b+2) \cdot (b+1)} \; B(1, b).
+        \end{align*}
+        Отсюда, учитывая, что $ B(1, b) \overset{\eqref{6.17}}{=} \dintl_0^1 (1-x)^{b-1} \; dx = \sqcase{- \dfrac{(1-x)^b}{b}}_0^1  \overset{b>0}{=} \dfrac{1}{b}$, получаем:
+        \begin{equation}
+            \label{6.22}
+            B(n+1, b) = \dfrac{n!}{b(b+1) \ldots (b+n)} , \;\; b > 0, \;\; n \in \mathbb{N}.
+        \end{equation}
+        Аналогично, в силу симметрии, для $ \forall \; m \in \mathbb{N} $:
+        \begin{equation}
+            \label{6.23}
+            B(a, m+1) = \dfrac{m!}{a(a+1) \ldots (a+m)} , \;\; a > 0.
+        \end{equation}
+
+        Из \eqref{6.22} и \eqref{6.23}, при $ a = n \in \mathbb{N} $ и $ b = m \in \mathbb{N} $, имеем формулу для вычисления значения B-функции с натуральными аргументами:
+        \begin{equation}
+            \label{6.24}
+            B(n+1, m+1) = \dfrac{n!}{m(m+1) \ldots (m+n)} = \dfrac{m!}{n(n+1) \ldots (n+m)}
+            = \dfrac{m! \; n!}{(m+n+1)!} \; .
+        \end{equation}
+
+        Непосредственной проверкой убеждаемся, что \eqref{6.24} верно не только в случае, когда $ n, m \in \mathbb{N} $, но и при $ n, m \in \mathbb{N}_0 $.
+
+        \item \textit{Вычисление значения В-функции, когда оба аргумента - полуцелые числа:}
+        \begin{equation} \begin{split}
+            & \forall \; n, m \in \mathbb{N} \; \Rightarrow \; B\left(n+\dfrac{1}{2}, \; m+ \dfrac{1}{2}\right)
+            = \dfrac{\Gamma(n + \dfrac{1}{2})\Gamma(m+ \dfrac{1}{2})}{\Gamma(n+m+1)}
+            = \\ &
+            = \begin{sqcases}
+                \Gamma \left(k+\dfrac{1}{2}\right) = \dfrac{(2k-1)!!}{2^k} \sqrt{\pi} \\
+                \Gamma (n+m+1) = (n+m)! \\
+                \forall \; k \in \mathbb{N} \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+            \end{sqcases}
+            = \dfrac{(2n-1)!!(2m-1)!!}{(n+m)! \cdot 2^{n+m}} \cdot \pi.
+        \end{split}
+        \end{equation}
+
+        \item \textit{Формула дополнения для В-функции:}
+        \begin{equation}
+            \label{6.26}
+            \forall \; a \in ]0;1[ \;\; \Rightarrow \;
+            B(a, 1-a) = \dfrac{\Gamma(a)\Gamma(1-a)}{\Gamma(a+1-a)} =
+            \dfrac{\;\left(\dfrac{\pi}{\sin \pi a}\right)\;}{\Gamma(1)} =
+            \dfrac{\pi}{\sin \pi a}.
+        \end{equation}
+        Отсюда, в частности, для $ n = \dfrac{1}{2} $ имеем:
+        \begin{equation*}
+            B\left(\dfrac{1}{2}, \; \dfrac{1}{2}\right) = \dfrac{\pi}{\sin \dfrac{\pi}{2}} = \pi.
+        \end{equation*}
+    \end{enumerate}
+\end{note}
