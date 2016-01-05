@@ -1,0 +1,96 @@
+\colquestion{Обобщённое равенство Парсеваля и следствие из него (о почленном интегрировании Р.Ф.).}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{theorem}[Обобщённое равенство Парсеваля]
+  Пусть $2\pi$ периодические функции $f, g \in \R{}(\interval[{-\pi; \pi}])$ имеют РФ
+  \begin{align}
+    f(x) \sim \dfrac{a_0}{2} + \suml_{k = 1}^{\infty}(a_k\cos kx + b_k\sin kx),\\
+    g(x) \sim \dfrac{\widetilde{a_0}}{2} + \suml_{k = 1}^{\infty}(\widetilde{a_k}\cos kx
+    + \widetilde{b_k}\sin kx),
+  \end{align}
+  Тогда выполняется обобщённое равнство Парсеваля
+  \begin{equation}
+    \label{eq:lecture06-33}
+    \dfrac{1}{\pi}\intl_{-\pi}^{\pi}f(x)g(x)dx = \dfrac{a_0\widetilde{a_0}}{2} +
+    \suml_{k = 1}^{\infty}(a_k\widetilde{a_k} + b_k\widetilde{b_k})
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Учитывая, что $\forall f, g$ выполняется равнствво Парсеваля, то
+  \begin{equation}
+    \dfrac{\widetilde{a_0}^2}{2} + \suml_{k = 1}^{\infty}(\widetilde{a_k}^2 + \widetilde{b_k}^2) =
+    \dfrac{1}{\pi}\intl_{-\pi}^{\pi}g^2(x)dx,
+  \end{equation}
+  и, учитывая, что
+  \begin{align*}
+    f(x) \pm g(x) \sim \dfrac{a_0 \pm \widetilde{a_0}}{2} + \suml_{k = 1}^{\infty}
+    ((a_k \pm \widetilde{a_k})\cos kx + (b_k \pm \widetilde{b_k})\sin kx),
+  \end{align*}
+  приходим к равенствам Парсеваля
+  \begin{align*}
+    \dfrac{1}{\pi}\intl_{-\pi}^{\pi}(f(x) \pm g(x))^2dx =
+    \dfrac{(a_0 \pm \widetilde{a_0})^2}{2} + \suml_{k = 1}^{\infty}
+    ((a_k \pm \widetilde{a_k})^2 + (b_k \pm \widetilde{b_k})^2),
+  \end{align*}
+  Беря отдельно уравнения со знаком ``+'' и ``-'' и вычитая из почленно, получим
+  \begin{align*}
+    &\dfrac{1}{\pi}\intl_{-\pi}^{\pi}f(x)g(x)dx =
+    \dfrac{1}{4\pi}\parenthesis{\intl_{-\pi}^{\pi}(f(x) + g(x))^2dx -
+      \intl_{-\pi}^{\pi}(f(x) - g(x))^2dx} =\\
+    &=\dfrac{1}{4}
+    \parenthesis{\dfrac{(a_0 + \widetilde{a_0})^2 - (a_0 - \widetilde{a_0})^2}{2}
+      + \suml_{k = 1}^{\infty}\parenthesis{(a_k + \widetilde{a_k})^2 - (a_k - \widetilde{a_k})^2
+        + (b_k + \widetilde{b_k})^2 - (b_k - \widetilde{b_k})^2}} =\\&= \ldots =
+    \dfrac{a_0\widetilde{a_0}}{2} +
+    \suml_{k = 1}^{\infty}(a_k\widetilde{a_k} + b_k\widetilde{b_k})
+  \end{align*}
+\end{proof}
+
+\begin{consequence}[О почленном интегрировании РФ]
+  РФ $2\pi$-периодической функции $f \in \R{}(\interval[{-\pi; \pi}])$ можно почленно интегрировать
+  по любому промежутку $\interval[{x_0; x}] \subset \interval[{-\pi; \pi}]$, и при этом будет
+  выполнятся равенство
+  \begin{equation}
+    \label{eq:lecture06-35}
+    \intl_{x_0}^xf(t)dt = \dfrac{a_0}{2}\intl_{x_0}^xdx + \suml_{k = 1}^{\infty}
+    (a_k\intl_{x_0}^x\cos ktdt + b_k\intl_{x_0}^x \sin ktdt),
+  \end{equation}
+  независимо от характера сходимости РФ для $f(x)$.
+\end{consequence}
+\begin{proof}
+  Рассмотрим функцию
+  \begin{align*}
+    g(t) = \begin{cases}
+      1, t \in \interval[{x_0; x}] \subset \interval[{-\pi; \pi}],\\
+      0, t \in \interval[{-\pi; x_0}[ \cup \interval]{x; \pi}],
+    \end{cases}
+  \end{align*}
+  Для коэффициентов её РФ имеем
+  \begin{align*}
+    \widetilde{a_0} = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}g(t)dt = \dfrac{1}{\pi}\intl_{x_0}^xdt.
+  \end{align*}
+  Аналогично
+  \begin{align*}
+    \widetilde{a_k} = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}g(t)\cos ktdt = \ldots =
+    \dfrac{1}{\pi}\intl_{x_0}^x\cos ktdt, \forall k \in \mathbb{N}.
+  \end{align*}
+  Точно так же
+  \begin{align*}
+    \widetilde{b_k} = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}g(t)\sin ktdt = \ldots =
+    \dfrac{1}{\pi}\intl_{x_0}^x\sin ktdt, \forall k \in \mathbb{N},
+  \end{align*}
+  поэтому в силу обобщённого равенства Парсеваля \eqref{eq:lecture06-33} получаем
+  \begin{align*}
+    \intl_{x_0}^xf(t)dt = \ldots = \intl_{-\pi}^{\pi}f(t)g(t)dt =
+    \dfrac{a_0\widetilde{a_0}}{2} +
+    \suml_{k = 1}^{\infty}(a_k\widetilde{a_k} + b_k\widetilde{b_k}) =
+    \dfrac{a_0}{2}\intl_{x_0}^xdt + \suml_{k = 1}^{\infty}(a_k\intl_{x_0}^x\cos kt dt
+    + b_k\intl_{x_0}^x\sin kt dt),
+  \end{align*}
+  что соответствует почленному интегралу РФ для $f(x)$ на $\interval[{x_0; x}] \subset
+  \interval[{-\pi; \pi}]$, при этом сам РФ для $f \in \R{}(\interval[{-\pi; \pi}])$ может как
+  сходится, так и расходится, а проинтегрированный ряд \eqref{eq:lecture06-35} будет уже
+  всегда сходится.
+\end{proof}

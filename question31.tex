@@ -1,0 +1,88 @@
+\colquestion{Формула Дирихле для частных сумм ряда Фурье (Р.Ф.) и замечание к ней.}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{equation}
+  \label{eq:lecture06-18}
+  a_k = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}f(x)\cos kxdx,
+\end{equation}
+\begin{equation}
+  \label{eq:lecture06-19}
+  b_k = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}f(x)\sin kxdx,
+\end{equation}
+
+\begin{theorem}[Формула Дирихле для частных сумм ряда Фурье]
+  Пусть $f(x) - 2\pi$ периодическая и интегрируемая на $\interval[{-\pi; \pi}]$ функция. Тогда для
+  $\forall x_0 \in \R{}$ значение частных сумм ряда Фурье
+  \begin{align*}
+    S_n(x) = \dfrac{a_0}{2} + \suml_{k =1}^na_k\cos kx + b_k\sin kx, n \in \mathbb{N}_0
+  \end{align*}
+  для $f(x)$ вычисляются по формуле Дирихле\
+  \begin{equation}
+    \label{eq:lecture06-24}
+    S_n(x_0) = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}(f(x_0 - t) + f(x_0 + t))\dfrac
+    {\sin\parenthesis{n + \frac{1}{2}}}{2\sin\frac{t}{2}}dt
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Используя \eqref{eq:lecture06-18}-\eqref{eq:lecture06-19}, имеем
+  \begin{align*}
+    &S_n(x_0) = \dfrac{1}{2\pi}\intl_{-\pi}^{\pi}f(x)dx + \dfrac{1}{\pi}\suml_{k=1}^n\parenthesis{
+      \parenthesis{\intl_{-\pi}^{\pi}f(x)\cos kxdx}\cos kx_0 +
+      \parenthesis{\intl_{-\pi}^{\pi}f(x)\sin kxdx}\sin kx_0 } =\\
+    &=\dfrac{1}{\pi}\intl_{-\pi}^{\pi}\parenthesis{\dfrac{1}{2} + \suml_{k = 1}^n
+      (\cos kx \cos kx_0 + \sin kx \sin kx_0)}f(x)dx =
+    \dfrac{1}{\pi}\intl_{-\pi}^{\pi}\parenthesis{\dfrac{1}{2} + \suml_{k = 1}^n
+      \cos k(x - x_0)}f(x)dx =\\
+    &=\sqcase{
+      \dfrac{1}{2} + \suml_{k =1}^n\cos k\phi = \dfrac{\frac{\sin \phi}{2} + \suml_{k =1}^n
+        2\sin \frac{\phi}{2}\cos k\phi}{2\sin \frac{\phi}{2}} =
+      \dfrac{\frac{\sin \phi}{2} + \suml_{k =1}^n\parenthesis{
+          -\sin(k - \frac{1}{2})\phi + \sin(k + \frac{1}{2})\phi}}{2\sin \frac{\phi}{2}} =
+      \dfrac{\sin(n + \frac{1}{2})\phi}{2\sin \frac{\phi}{2}},\\
+      \phi = x - x_0\vert_{-\pi - x_0}^{\pi - x_0}, dx = d\phi
+    }=\\
+    &=\dfrac{1}{\pi}\intl_{-\pi-x_0}^{\pi - x_0}f(x_0 + \phi)\parenthesis{\dfrac{
+        \sin(n + \frac{1}{2})\phi}{2\sin\frac{\phi}{2}}}d\phi=
+    \sqcase{f - 2\pi \text{ периодическая},\\
+      T = (\pi - x_0) - (-\pi - x_0) = 2\pi}=
+    \dfrac{1}{\pi}\parenthesis{\intl_{-\pi}^0 + \intl_0^{\pi}}=\\
+    &=\sqcase{1) t = -\phi\vert_{\pi}^0, d\phi = -dt\\
+      2) t = \phi\vert_{0}^{\pi}, d\phi = dt} =
+    \dfrac{1}{\pi}\parenthesis{
+      -\intl_{\pi}^{0}f(x_0 - t)\parenthesis{\dfrac{
+          \sin(n + \frac{1}{2})(-t)}{2\sin\frac{-t}{2}}}dt
+      +
+      \intl_{0}^{\pi}f(x_0 + t)\parenthesis{\dfrac{
+          \sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}}dt =
+    }=\\
+    &=\dfrac{1}{\pi}\intl_{0}^{\pi}(f(x_0 - t) + f(x_0 + t))\parenthesis{\dfrac{
+        \sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}}dt.
+  \end{align*}
+\end{proof}
+\begin{notes}
+\item Применим \eqref{eq:lecture06-24} к $f(x) = 1, \forall x \in \R{}$. Учитывая, что
+  \begin{align*}
+    &a_0 = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}dx = 2,
+    \forall a_k = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}\cos kxdx = 0,\\
+    &\forall b_k = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}\sin kxdx = 0,\text{ получаем}\\
+    &\forall S_n(x) = 1, n \in \mathbb{N}_0, 1 = \dfrac{1}{\pi}\intl_{0}^{\pi}2
+    \parenthesis{\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}}dt, \text{т.е.}
+  \end{align*}
+  \begin{equation}
+    \label{eq:lecture06-25}
+    \intl_{0}^{\pi}\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}dt = \dfrac{\pi}{2}.
+  \end{equation}
+\item $\begin{aligned}[t]
+  D_n(t)\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}, n \in \mathbb{N}_0 - \text{ ядро Дирихле.}
+\end{aligned}$
+  Для неё в точке $t = 2\pi m, m \in \mathbb{Z}$, где $\sin \frac{t}{2}$ - устранимый разрыв, т.к.
+  \begin{align*}
+    \exists \liml_{t \to 2\pi m}D_n(t) = \sqcase{\dfrac{0}{0}} = \liml_{t \to 2\pi m}
+    \dfrac{(n + \frac{1}{2})\cos(n + \frac{1}{2})t}{\cos \frac{t}{2}} =
+    \dfrac{(n + \frac{1}{2})\cos(m(2n + 1)\pi}{\cos \pi m} = \ldots = (n + \frac{1}{2}) \in \R{},
+  \end{align*}
+  поэтому в LHS формулы \eqref{eq:lecture06-25} имеем СИЗОП, зависящий от параметра
+  $n \in \mathbb{N}_0$, а сама формула \eqref{eq:lecture06-25} аналогична интегралу Дирихле.
+\end{notes}
