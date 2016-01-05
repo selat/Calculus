@@ -1,0 +1,79 @@
+\colquestion{Теорема о поточечной сходимости Р.Ф. Следствие из неё и замечание к ней.}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{theorem}[О поточечной сходимости ряда Фурье]
+  Если для $2\pi$-периодической функции $f(x) \in \R{}(\interval[{-\pi; \pi}])$ в $x_0 \in \R{}$
+  найдётся $s_0 \in \R{}$ т.ч.
+  \begin{equation}
+    \label{eq:lecture06-27}
+    \exists \liml_{t \to 0}\dfrac{f(x_0 - t) + f(x_0 + t) - 2S_0}{t}\in \R{},
+  \end{equation}
+  то тогда ряд Фурье для $f(x)$ сходится в $x_0$ к значению $S_0$.
+\end{theorem}
+\begin{proof}
+  Из формулы Дирихле \eqref{eq:lecture06-24} и аналога \eqref{eq:lecture06-25} интеграла Дирихле
+  имеем
+  \begin{align*}
+    &S_n(x_0) - S_0 = \dfrac{1}{\pi}\intl_0^{\pi}(f(x_0 - t) + f(x_0 + t))\parenthesis{
+      \dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}}dt
+    -
+    S_0\dfrac{2}{\pi}\intl_0^{\pi}\parenthesis{\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}}dt=\\
+    &=\dfrac{1}{\pi}\intl_0^{\pi}g_0(t)\sin\parenthesis{n + \frac{1}{2}}tdt, g_0(t)
+    \dfrac{f(x_0 + t) + f(x_0 - t) - 2S_0}{2\sin \frac{t}{2}}.
+  \end{align*}
+  Учитывая, что $2\sin\frac{t}{2} \underset{t \to +0}{\sim} t$, или
+  \begin{align*}
+    \exists \liml_{t \to +0}g_0(t) = \liml_{t \to +0}\dfrac{f(x_0 - t) + f(x_0 + t) - 2S_0}{t} \in \R{},
+  \end{align*}
+  в силу \eqref{eq:lecture06-27}, поэтому $t = 0$ - точка устранимого разрыва для $g_0(t)$.
+
+  Во всех остальных точка $t \in \interval]{0; \pi}]$ у $g_0(t)$ особенностей не будет, отсюда в силу
+      \begin{align*}
+        f(x) \in \R{}(\interval[{-\pi; \pi}]) \Rightarrow g_0 \in \R{}(\interval[{-\pi; \pi}]),
+      \end{align*}
+      а тогда по лемме Римана-Лебега
+      \begin{align*}
+        \intl_0^{\pi}g_0(t)\sin(n + \frac{1}{2})tdt \xrightarrow[n \to \infty]{}0 \Rightarrow
+        \liml_{n \to \infty}(S_n(x_0) - S_0) = 0 \Rightarrow \exists \liml_{n \to \infty}S_n(x_0) = S_0
+        \in \R{}.
+      \end{align*}
+\end{proof}
+\begin{consequence}
+  Пусть для $2\pi$-периодической $f(x) \in \R{}(\interval[{-\pi; \pi}])$ в точке $x_0 \in \R{}
+  \Rightarrow \exists f(x_0 \pm 0) \in \R{}$ и $\exists f'_{\pm} \in \R{}$, тогда ряд Фурье для
+  $f(x)$ в точке $x_0$ сходится к значению
+  \begin{align*}
+    S_0 = \dfrac{1}{2}(f(x_0 - 0) + f(x_0 + 0))
+  \end{align*}
+\end{consequence}
+\begin{proof}
+  Нужно проверить, выполняется ли \eqref{eq:lecture06-27} используемого $S_0$
+  \begin{align*}
+    &\liml_{t \to +0}\dfrac{f(x_0 - t) + f(x_0 + t) - 2\dfrac{f(x_0 + 0) - f(x_0 - 0)}{2}}{t} =\\
+    &=\liml_{t \to +0}\dfrac{f(x_0 - t) - f(x_0 - 0)}{t} + \dfrac{f(x_0 + t) - f(x_0 + 0)}{t} =\\
+    &=f'_+(x_0 + 0) - f'_-(x_0 - 0) \in \R{}.
+  \end{align*}
+\end{proof}
+
+\begin{note}
+  В дальнейшем будем говорить, что функция $f(x)$ является кусочно-дифференцируемой на
+  $\interval[{a; b}]$, если
+  \begin{align*}
+    \exists a = x_0 < x_1 < \ldots < x_{n - 1} < x_n = b - \text{ разбиение } \interval[{a; b}],
+  \end{align*}
+  если
+  \begin{enumerate}
+  \item На любом интервале $\interval]{x_{k - 1}; x_k}], k = \overline{1, n}, f(x)$ дифференицруема и
+      имеет односторонние пределы
+      \begin{align*}
+        f(x_m \pm 0) \in \R{}, m = \overline{1, n - 1}, \exists f(a + 0), f(b - 0) \in \R{}
+      \end{align*}
+    \item Существуют односторонние производные $f'_+(x_m), f'_-(x_m), m = \overline{1, n - 1},
+      \exists f'_+(a + 0), \exists f'_+(b - 0) \in \R{}$, при вычислении которых функцию доопредлеяют
+      в концевых точках $x_m, m = \overline{0, n}$ заменой на соответствующие односторонние пределы.
+  \end{enumerate}
+  Если $f(x)$ - кусочно-дифференцируема на $\forall \interval[{a; b}] \subset \R{}$, то она
+  считается кусочно-дифференцируемой на $\R{}$.
+\end{note}

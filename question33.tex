@@ -1,0 +1,53 @@
+\colquestion{Достаточное условие равномерной сходимости Р.Ф.}
+
+\begin{col-answer-preambule}
+\end{col-answer-preambule}
+
+\begin{theorem}[Достаточное условие равномерной сходимости РФ]
+  Пусть $2\pi$-периодическая функция $f \in \mathbb{C}(\interval[{-\pi; \pi}]])$ и имеет
+    кусочно-непрерывную производную. Тогда РФ для $f(x)$ сходится к этой функции на
+    $\interval[{-\pi; \pi}]]$ абсолютно и равномерно.
+\end{theorem}
+\begin{proof}
+  Т.к. $f(x)$ имеет кусочно-непрерывную производную на $\interval[{-\pi; \pi}]$, то этот
+  отрезок можно разбить на конечное число частей, внутри каждой из которых $\exists f'(x)$
+  непрерывная, а на концах любое из отрезков разбиения у $f(x)$ существуют конечные производные.
+  Для простоты будем считать, что это условие выполняется для $\interval[{-\pi; \pi}]$.
+
+  В силу $2\pi$-периодичности имеем
+  \begin{align*}
+    \forall x \in \R{} \Rightarrow f(x + 2\pi) = f(x), f'(x + 2\pi) = f'(x).
+  \end{align*}
+  Учитывая, что на концах $f(-\pi) = f(\pi)$, то
+  \begin{align*}
+    f'(x) \sim \suml_{k = 1}^{\infty}kb_k\cos kx - ka_k\sin kx,
+  \end{align*}
+  где $a_k, b_k$ - коэффициенты Фурье для $f(x)$ на $\interval[{-\pi; \pi}]$. Используя
+  \text{неравенство Бесселя} для $f'(x)$, получаем
+  \begin{align*}
+    \suml_{k = 1}^n(kb_k)^2 + (-ka_k)^2 \leq \dfrac{1}{\pi}\intl_{-\pi}^{\pi}(f'(x))^2dx.
+  \end{align*}
+  Имеем
+  \begin{align*}
+    0 \leq \abs{a_k} + \abs{b_k} = \dfrac{\abs{ka_k}}{k} + \dfrac{\abs{kb_k}}{k} \leq
+    \dfrac{1}{2}((kb_k)^2 + \frac{1}{k^2}) + \dfrac{1}{2}((ka_k)^2 + \frac{1}{k^2}) \leq
+    \sqcase{
+      \dfrac{\alpha + \beta}{2} \geq \sqrt{\alpha\beta}\\
+      1) \alpha = kb_k, \beta = \dfrac{1}{k}\\
+      2) \alpha = ka_k, \beta = \dfrac{1}{k}} = \dfrac{1}k^2(a_k^2 + b_k^2) + \dfrac{1}{k^2}
+  \end{align*}
+  Отсюда получаем
+  \begin{align*}
+    \suml_{k = 1}^n(\abs{a_k} + \abs{b_k}) \leq \dfrac{1}{2}\suml_{k = 1}^nk^2(a_k^2 + b_k^2) +
+    \suml_{k = 1}^n\dfrac{1}{k^2} \leq \dfrac{1}{2\pi}\intl_{-\pi}^{\pi}(f'(x))^2dx + \const.
+  \end{align*}
+  По критерию сходимости положительных рядов получаем, что $\dfrac{\abs{a_0}}{2} +
+  \suml_{k = 1}^n(\abs{a_k} + \abs{b_k})$ сходится. А т.к. этот ряд - мажоранта для РФ $f(x)$, т.к.
+  \begin{align*}
+    \begin{cases}
+      \abs{a_k\cos kx} \leq \abs{a_k}, k \in \mathbb{N},\\
+      \abs{b_k\sin kx} \leq \abs{b_k}, k \in \mathbb{N},
+    \end{cases}
+  \end{align*}
+  то (эта мажоранта сходящаяся) РФ для $f(x)$ будет сходится по признаку Вейерштрасса.
+\end{proof}
