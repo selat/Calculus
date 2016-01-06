@@ -40,7 +40,7 @@
     	$y \in \interval[{c; d}]$, но и для случая $x \in \interval ]{a; +\infty}[$,
     	$y \in \interval[{c; d}]$, при условии, что дополнительно ко всем условиям указанной
     	теоремы выполняется, что точка $x = a$ не является точкой разрыва второго рода для
-    	$g(x, y)$, т.е.
+    	$f(x, y)$, т.е.
     	\begin{equation*}
     	\exists \liml_{x \to a+0}f(x, y) \in \R{}
     	\end{equation*}
@@ -60,10 +60,15 @@
     		\item  $\dintl_a^{+\infty}f(x, y)dx \overset{\interval[{c; +\infty}[}
     		{\rightrightarrows}, \dintl_a^{+\infty}f(x, y)dx
     		\overset{\interval[{a; +\infty}[}{\rightrightarrows}$
-    	\end{enumerate}
-    	\item $\exists \dintl_c^{+\infty}dy\dintl_a^{+\infty}f(x, y)dx = \dintl_a^{+\infty}dx
-    	\dintl_c^{+\infty}f(x, y)dy)$ - существуют повторные интегралы.
-    \end{notes}
+    	
+    	\item Существует один из интегралов: $\exists \dintl_c^{+\infty}dy\dintl_a^{+\infty}f(x, y)dx$ или $ \dintl_a^{+\infty}dx
+    	\dintl_c^{+\infty}f(x, y)dy)$
+	    \end{enumerate}
+	    При выполнении всех этих условий имеем:
+	    $\exists \dintl_c^{+\infty}dy\dintl_a^{+\infty}f(x, y)dx = \dintl_a^{+\infty}dx
+	    \dintl_c^{+\infty}f(x, y)dy)$
+	    
+	\end{notes}
     
     \begin{theorem}[об интегрировании НИЗОП-2]
     	Если $f(x,y)$ непрерывна на $[a, b[ \times [c,d]$ и $\dintl_a^b f(x,y)dx = \overset{\interval[{c; d}[}{\rightrightarrows}$, то тогда для НИЗОП-2:
