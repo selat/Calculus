@@ -21,7 +21,7 @@
   для $f(x)$ вычисляются по формуле Дирихле\
   \begin{equation}
     \label{eq:lecture06-24}
-    S_n(x_0) = \dfrac{1}{\pi}\intl_{-\pi}^{\pi}(f(x_0 - t) + f(x_0 + t))\dfrac
+    S_n(x_0) = \dfrac{1}{\pi}\intl_{0}^{\pi}(f(x_0 - t) + f(x_0 + t))\dfrac
     {\sin\parenthesis{n + \frac{1}{2}}}{2\sin\frac{t}{2}}dt
   \end{equation}
 \end{theorem}
@@ -75,7 +75,8 @@
     \intl_{0}^{\pi}\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}dt = \dfrac{\pi}{2}.
   \end{equation}
 \item $\begin{aligned}[t]
-  D_n(t)\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}, n \in \mathbb{N}_0 - \text{ ядро Дирихле.}
+  D_n(t) =\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}, n \in \mathbb{N}_0 -
+  \text{ ядро Дирихле.}
 \end{aligned}$
   Для неё в точке $t = 2\pi m, m \in \mathbb{Z}$, где $\sin \frac{t}{2}$ - устранимый разрыв, т.к.
   \begin{align*}
